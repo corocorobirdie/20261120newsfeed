@@ -202,6 +202,8 @@ def main(argv=None):
     ap.add_argument("--no-build", action="store_true")
     ap.add_argument("--date", help="YYYY-MM-DD（テスト用）")
     ap.add_argument("--light", action="store_true", help="テスト用: 軽量モデルだけを使う（上位モデルの無料枠を温存）")
+    ap.add_argument("--only", help="テスト用: 指定したタブだけ作る（例: ruscn または papers,japan）")
+    ap.add_argument("--out", help="テスト用: 結果をこのファイルに書き出し、data/ やサイトは更新しない")
     args = ap.parse_args(argv)
 
     cfg = load_yaml("config.yaml")
@@ -220,8 +222,12 @@ def main(argv=None):
     summ = Gemini(gcfg, "summary_models")   # 要約（質が大事）: 上位モデル
     status: dict = {}
 
+    only = set(args.only.split(",")) if args.only else None
     try:
-        papers, scored = run_papers(today, cfg, src, authors, seen, gem, summ)
+        if only is not None and "papers" not in only:
+            papers, scored = [], []
+        else:
+            papers, scored = run_papers(today, cfg, src, authors, seen, gem, summ)
     except Exception as e:  # noqa: BLE001  論文タブが失敗してもほかのタブは作る
         print(f"  論文タブ: 失敗 {e}")
         status["papers"] = f"失敗: {e}"
@@ -230,6 +236,8 @@ def main(argv=None):
     tabs = {"papers": [slim(p) for p in papers]}
     extra_papers = []
     for name, tc in (src.get("news_tabs") or {}).items():
+        if only is not None and name not in only:
+            continue
         try:
             shown, sc, sp = run_news_tab(name, tc, today, seen, gem, summ, status, papers)
         except Exception as e:  # noqa: BLE001  1つのタブの失敗で全体を止めない
@@ -256,6 +264,12 @@ def main(argv=None):
         "highlights": [x["id"] for x in hl],
         "tabs": tabs,
     }
+    if args.out:  # テスト: 書き出すだけで保存しない
+        import json
+        with open(args.out, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=1)
+        print(f"■ テスト結果: {args.out}（data/ は更新していません）")
+        return 0
     for p in scored:  # 採点済みは表示しなかったものも既出扱い（翌日に再採点しない）
         seen.add(p, d)
     save_daily(d, payload, today, cfg["retention"]["news_days"])

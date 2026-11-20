@@ -49,13 +49,21 @@ def fetch_feed(feed: dict, today: datetime, since: str, status: dict) -> list[di
         title = strip_tags(e.get("title", ""))
         if not url or not title:
             continue
+        venue = feed["name"]
+        if feed.get("google_news"):
+            # Google ニュースの検索結果: 実際の媒体名を使い、タイトル末尾の「 - 媒体名」を除く
+            src = (e.get("source") or {}).get("title") or ""
+            if src and title.endswith(" - " + src):
+                title = title[: -len(src) - 3].strip()
+            if feed.get("use_source_name", True) and src:
+                venue = src
         date = _date(e, today.tzinfo) or today_s  # 日付のないフィード（Nikkei Asia など）は取得日
         if date < since:
             continue
         out.append({
             "kind": "news", "id": url_id(url), "url": url, "title": title,
             "abstract": "" if feed.get("headline_only") else _text(e),
-            "venue": feed["name"], "lang": feed.get("lang", "en"), "date": min(date, today_s),
+            "venue": venue, "lang": feed.get("lang", "en"), "date": min(date, today_s),
             "label": feed.get("label", ""), "headline_only": bool(feed.get("headline_only")),
             "section": feed.get("section"), "pinned": bool(feed.get("pinned")),
             "authors": [], "source": "rss",

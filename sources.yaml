@@ -57,6 +57,9 @@ papers:
 #   ・NHK の RSS は 2026-08-08 で更新が止まり、新サイト(news.web.nhk)は認証が必要で取得不可 → 見送り
 #   ・LSE International Inequalities Institute のブログは自動取得を拒否(403) → 見送り
 #   ・Brookings の RSS は中身が空 → 見送り
+#   ・The Browser の RSS は 2021 年で配信終了 → 見送り
+#   ・ロシア・中国（2026-11 確認）: Caixin（拒否）・澎湃・聯合早報（RSSなし）・Re: Russia（RSSが空）は
+#     Google ニュースのサイト指定検索で代替。新華社も日付付きで取れる Google ニュース経由にした
 #   ・日経の公式な日本語 RSS は見つからず → Nikkei Asia（英語・公式）と、
 #     日経の見出しを配信している非公式サービス（assets.wor.jp）を併用
 
@@ -101,8 +104,9 @@ news_tabs:
     feeds:
       - {name: 日本経済新聞, url: "https://assets.wor.jp/rss/rdf/nikkei/news.rdf", lang: ja, label: 有料・見出しのみ, headline_only: true}
       - {name: Nikkei Asia, url: "https://asia.nikkei.com/rss/feed/nar", lang: en, label: 有料・見出しのみ, headline_only: true}
-      # NHK の代わり（未確認：初回の自動実行で取得できるか確認する）
+      # NHK の代わり
       - {name: Yahoo!ニュース 主要, url: "https://news.yahoo.co.jp/rss/topics/top-picks.xml", lang: ja}
+      - {name: Yahoo!ニュース 経済, url: "https://news.yahoo.co.jp/rss/topics/business.xml", lang: ja}
     show: 10
     summarize: 10
 
@@ -123,6 +127,47 @@ news_tabs:
       - {name: Noema, url: "https://www.noemamag.com/feed/", lang: en}
       - {name: Works in Progress, url: "https://www.worksinprogress.news/feed", lang: en}
       - {name: Monocle, url: "https://monocle.com/feed/", lang: en}
-      - {name: The Browser, url: "https://thebrowser.com/feed/", lang: en}
     show: 10
     summarize: 10
+
+  ruscn:
+    reader: 読者はロシア極東・中国東北部（特にハルビン、アムール川流域、サハ共和国）の動向を追っている日本の研究者です。ロシアの地名・人名はカタカナ、中国の地名・人名は日本で通常使う漢字表記にしてください。
+    interest: |
+      ロシアと中国の重要な動き。とくに次の地域に関する記事を最も高く評価する:
+        ・ハルビン、黒龍江省、黒河（中国東北部）
+        ・アムール川流域（アムール州、ブラゴヴェシチェンスク、ハバロフスク地方）
+        ・サハ共和国（ヤクーチア、ヤクーツク）
+      国境を越えた中露の経済・交通・資源・人の往来、極東開発、少数民族、環境・気候も高く評価する。
+      それ以外は、国全体の政治・経済・社会の大きなニュースを中位に評価する。
+      スポーツの試合結果、芸能、事件事故の細かい続報、地域の小さな行事は低く評価する。
+      同じ出来事を扱う記事が複数ある場合は、1つだけ高く評価する。
+    tags: [ハルビン・黒龍江, アムール流域, サハ共和国, 中露関係, ロシア, 中国, 経済・資源, 社会・民族, 環境, その他]
+    lookback_days: 1
+    min_score: 6
+    max_per_source: 3
+    show: 12
+    summarize: 12
+    # label はカードに付く媒体の種類。Google ニュース経由は RSS がない媒体の代替
+    feeds:
+      # ロシア
+      - {name: Meduza, url: "https://meduza.io/rss/all", lang: ru, label: 独立系（国外拠点）, max_items: 40}
+      - {name: The Bell, url: "https://thebell.io/feed", lang: ru, label: 独立系, max_items: 30}
+      - {name: "Re: Russia", url: "https://news.google.com/rss/search?q=site%3Are-russia.net%20when%3A7d&hl=ru&gl=RU&ceid=RU:ru", lang: ru, label: 独立系（分析）, google_news: true, use_source_name: false, lookback_days: 7}
+      - {name: Коммерсантъ, url: "https://www.kommersant.ru/RSS/news.xml", lang: ru, label: 民間大手, max_items: 80}
+      - {name: РБК, url: "https://rssexport.rbc.ru/rbcnews/news/30/full.rss", lang: ru, label: 民間大手, max_items: 40}
+      - {name: ТАСС, url: "https://tass.ru/rss/v2.xml", lang: ru, label: 国営, max_items: 60}
+      - {name: Якутия.Инфо, url: "https://ysia.ru/feed/", lang: ru, label: 地元メディア（サハ）, max_items: 30}
+      - {name: DVhab.ru, url: "https://www.dvnovosti.ru/rss/", lang: ru, label: 地元メディア（ハバロフスク）, max_items: 40}
+      - {name: 検索「ヤクーチア」, url: "https://news.google.com/rss/search?q=%D0%AF%D0%BA%D1%83%D1%82%D0%B8%D1%8F%20when%3A1d&hl=ru&gl=RU&ceid=RU:ru", lang: ru, label: 地域検索, google_news: true, max_items: 30}
+      - {name: 検索「アムール州」, url: "https://news.google.com/rss/search?q=%D0%90%D0%BC%D1%83%D1%80%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%20when%3A1d&hl=ru&gl=RU&ceid=RU:ru", lang: ru, label: 地域検索, google_news: true, max_items: 30}
+      - {name: 検索「ハバロフスク・ブラゴヴェシチェンスク」, url: "https://news.google.com/rss/search?q=%D0%A5%D0%B0%D0%B1%D0%B0%D1%80%D0%BE%D0%B2%D1%81%D0%BA%20OR%20%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D0%B2%D0%B5%D1%89%D0%B5%D0%BD%D1%81%D0%BA%20when%3A1d&hl=ru&gl=RU&ceid=RU:ru", lang: ru, label: 地域検索, google_news: true, max_items: 25}
+      # 中国
+      - {name: 財新 Caixin, url: "https://news.google.com/rss/search?q=site%3Acaixin.com%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans", lang: zh, label: 民間・経済, google_news: true, use_source_name: false, max_items: 30}
+      - {name: 澎湃新聞, url: "https://news.google.com/rss/search?q=site%3Athepaper.cn%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans", lang: zh, label: 国有系, google_news: true, use_source_name: false, max_items: 30}
+      - {name: BBC中文, url: "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml", lang: zh, label: 英国公共放送, max_items: 40}
+      - {name: 聯合早報, url: "https://news.google.com/rss/search?q=site%3Azaobao.com.sg%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans", lang: zh, label: シンガポール紙, google_news: true, use_source_name: false, max_items: 30}
+      - {name: Sixth Tone, url: "https://www.sixthtone.com/rss", lang: en, label: 国有系（英語）, max_items: 30}
+      - {name: 新華社, url: "https://news.google.com/rss/search?q=site%3Anews.cn%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans", lang: zh, label: 国営, google_news: true, use_source_name: false, max_items: 30}
+      - {name: 検索「哈尔滨」, url: "https://news.google.com/rss/search?q=%E5%93%88%E5%B0%94%E6%BB%A8%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans", lang: zh, label: 地域検索, google_news: true, max_items: 30}
+      - {name: 検索「黑河」, url: "https://news.google.com/rss/search?q=%E9%BB%91%E6%B2%B3%20when%3A2d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans", lang: zh, label: 地域検索, google_news: true, max_items: 20}
+      - {name: 検索「黑龙江」, url: "https://news.google.com/rss/search?q=%E9%BB%91%E9%BE%99%E6%B1%9F%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans", lang: zh, label: 地域検索, google_news: true, max_items: 30}

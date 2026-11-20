@@ -5,7 +5,7 @@ name: check-feeds
 on:
   push:
     branches: [main]
-    paths: [tools/feeds_to_check.txt]
+    paths: [tools/feeds_to_check.txt, tools/test_tabs.txt]
   workflow_dispatch:
 
 permissions:
@@ -14,14 +14,22 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: pip install requests feedparser
+      - run: pip install -r requirements.txt
       - run: python tools/check_feeds.py tools/feeds_to_check.txt > /tmp/result.txt; cat /tmp/result.txt
+      # tools/test_tabs.txt にタブ名があれば、そのタブだけ軽量モデルで試しに作る（data/ は更新しない）
+      - name: Test tabs (light model, no save)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+        run: |
+          TABS=$(grep -v '^#' tools/test_tabs.txt 2>/dev/null | tr -d ' \n' || true)
+          if [ -n "$TABS" ]; then python -m feed.run --light --only "$TABS" --out /tmp/test_tabs.json > /tmp/test_tabs.log 2>&1 || true; tail -50 /tmp/test_tabs.log; fi
       - name: Save result to feed-check branch
         run: |
           git config user.name "github-actions[bot]"
@@ -29,6 +37,7 @@ jobs:
           git checkout --orphan feed-check
           git rm -rfq .
           cp /tmp/result.txt result.txt
-          git add result.txt
+          cp /tmp/test_tabs.json /tmp/test_tabs.log . 2>/dev/null || true
+          git add result.txt test_tabs.json test_tabs.log 2>/dev/null || git add result.txt
           git commit -qm "feed check $(date -u +%FT%TZ)"
           git push -f origin feed-check

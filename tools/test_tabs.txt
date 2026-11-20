@@ -1,0 +1,2 @@
+# ここに書いたタブを check-feeds で試しに作る（カンマ区切り）
+ruscn,japan,signals
