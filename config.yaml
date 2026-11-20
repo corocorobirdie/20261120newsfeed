@@ -33,7 +33,7 @@ papers:
 # アドレス（https://claude.ai/project/… ）を書く。
 # どちらの場合も、質問文はクリップボードにもコピーされる（入力されていなければ貼り付け）。
 ask_claude:
-  url: ""
+  url: "https://claude.ai/project/01a1f878-bad5-71bf-8bad-166d348dfda2"
 
 highlights: 5                 # 今日のハイライト件数
 
