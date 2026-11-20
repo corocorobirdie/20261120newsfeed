@@ -1,0 +1,22 @@
+# 2回目: Google ニュース経由の代替
+OK 200 n=55  Fri, 20 Nov 2026 05:16:00 https://news.google.com/rss/search?q=site%3Acaixin.com%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+      final=https://news.google.com/rss/search?q=site%3Acaixin.com%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+      feed="site:caixin.com when:1d" - Google 新闻 | first=【股市直播】沪指3500点保卫战打响 全球股市重挫是为何？ - 财新数据
+OK 200 n=32  Thu, 19 Nov 2026 10:39:00 https://news.google.com/rss/search?q=site%3Acaixinglobal.com%20when%3A2d&hl=en-US&gl=US&ceid=US:en
+      final=https://news.google.com/rss/search?q=site%3Acaixinglobal.com%20when%3A2d&hl=en-US&gl=US&ceid=US:en
+      feed="site:caixinglobal.com when:2d" - Google News | first=Analysis: Nvidia CEO’s Exit, U.S. Chip Rules Leave China’s T
+OK 200 n=1   Fri, 13 Nov 2026 13:11:54 https://news.google.com/rss/search?q=site%3Are-russia.net%20when%3A7d&hl=ru&gl=RU&ceid=RU:ru
+      final=https://news.google.com/rss/search?q=site%3Are-russia.net%20when%3A7d&hl=ru&gl=RU&ceid=RU:ru
+      feed="site:re-russia.net when:7d" - Google Новости | first=Спираль снижения: ухудшение финансового положения предприяти
+OK 200 n=9   Thu, 19 Nov 2026 01:10:48 https://news.google.com/rss/search?q=%E9%BB%91%E6%B2%B3%20when%3A2d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+      final=https://news.google.com/rss/search?q=%E9%BB%91%E6%B2%B3%20when%3A2d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+      feed="黑河 when:2d" - Google 新闻 | first=黑河220名师生玩转STEM“蚂蚁雄兵”挑战赛 - h.xinhuaxmt.com
+OK 200 n=51  Fri, 20 Nov 2026 09:00:00 https://news.google.com/rss/search?q=%E9%BB%91%E9%BE%99%E6%B1%9F%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+      final=https://news.google.com/rss/search?q=%E9%BB%91%E9%BE%99%E6%B1%9F%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:
+      feed="黑龙江 when:1d" - Google 新闻 | first=民生百事通｜医保钱包跨省共济热点问题解答 - 黑龙江省人民政府
+OK 200 n=100 Fri, 20 Nov 2026 05:21:22 https://news.google.com/rss/search?q=%D0%A5%D0%B0%D0%B1%D0%B0%D1%80%D0%BE%D0%B2%D1%81%D0%BA%20OR%20%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D0%B2%D0%B5%D1%89%D0%B5%D0%BD%D1%81%D0%BA%20when%3A1d&hl=ru&gl=RU&ceid=RU:ru
+      final=https://news.google.com/rss/search?q=%D0%A5%D0%B0%D0%B1%D0%B0%D1%80%D0%BE%D0%B2%D1%81%D0%BA%20OR%20%
+      feed="Хабаровск OR Благовещенск when:1d" - Google Новос | first=В селе Аян Хабаровского края расширили канал спутниковой свя
+OK 200 n=100 Fri, 20 Nov 2026 08:22:52 https://news.google.com/rss/search?q=site%3Azaobao.com.sg%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+      final=https://news.google.com/rss/search?q=site%3Azaobao.com.sg%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+      feed="site:zaobao.com.sg when:1d" - Google 新闻 | first=国际新闻 | 联合早报 - 享誉新加坡与国际的新闻媒体 - 联合早报

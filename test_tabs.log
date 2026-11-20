@@ -1,0 +1,25 @@
+■ ruscn の取得
+  Meduza: 30
+  The Bell: 12
+  Re: Russia: 1
+  Коммерсантъ: 80
+  РБК: 取得失敗 HTTPSConnectionPool(host='rssexport.rbc.ru', port=443): Read timed out.
+  ТАСС: 60
+  Якутия.Инфо: 20
+  DVhab.ru: 40
+  検索「ヤクーチア」: 30
+  検索「アムール州」: 30
+  検索「ハバロフスク・ブラゴヴェシチェンスク」: 25
+  財新 Caixin: 30
+  澎湃新聞: 30
+  BBC中文: 13
+  聯合早報: 30
+  Sixth Tone: 30
+  新華社: 30
+  検索「哈尔滨」: 30
+  検索「黑河」: 9
+  検索「黑龙江」: 30
+  記事 170 件、論文 0 件を採点
+■ ruscn の日本語要約
+  表示 12 件
+■ テスト結果: /tmp/test_tabs.json（data/ は更新していません）
