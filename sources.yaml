@@ -51,6 +51,7 @@ papers:
 #   pinned: true なら採点に関係なく先頭に表示（Lobsterr など）
 #   section: タブ内の欄（不平等タブ用）
 # lookback_days: 何日前までの記事を対象にするか / show: 1日に表示する最大件数
+# max_per_source: 1つの媒体から表示する最大件数（省略時は制限なし）
 # summarize: 日本語要約を付ける件数 / min_score: これ未満は表示しない
 # 2026-11 の確認結果:
 #   ・NHK の RSS は 2026-08-08 で更新が止まり、新サイト(news.web.nhk)は認証が必要で取得不可 → 見送り
@@ -69,7 +70,7 @@ news_tabs:
       不平等や貧困と関係の薄いマクロ経済・金融・地政学の記事は低く評価する。
     tags: [不平等, 貧困, 再分配・税, 機会の平等, 測定・データ, 労働・賃金, 世界の動向, その他]
     lookback_days: 3
-    min_score: 6
+    min_score: 7
     # (a) 実証・政策系の論文（Crossref）。論文タブの「不平等・貧困の測定」タグの論文もここに表示する
     journals:
       - {name: Social Indicators Research,   issn: 0303-8300}
@@ -96,6 +97,7 @@ news_tabs:
     tags: [政治, 経済, 国際, 社会, 科学・技術, 教育・研究, その他]
     lookback_days: 1
     min_score: 5
+    max_per_source: 4           # 1つの媒体から表示する最大件数（媒体の偏りを防ぐ）
     feeds:
       - {name: 日本経済新聞, url: "https://assets.wor.jp/rss/rdf/nikkei/news.rdf", lang: ja, label: 有料・見出しのみ, headline_only: true}
       - {name: Nikkei Asia, url: "https://asia.nikkei.com/rss/feed/nar", lang: en, label: 有料・見出しのみ, headline_only: true}
@@ -113,6 +115,7 @@ news_tabs:
     tags: [カルチャー, テクノロジー, ビジネス, 社会, 都市・暮らし, 科学, アイデア, その他]
     lookback_days: 3
     min_score: 6
+    max_per_source: 4
     feeds:
       - {name: Lobsterr Letter, url: "https://lobsterr.substack.com/feed", lang: ja, pinned: true, lookback_days: 8}
       - {name: Rest of World, url: "https://restofworld.org/feed/latest/", lang: en}

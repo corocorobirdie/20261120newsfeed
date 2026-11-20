@@ -104,6 +104,14 @@ def run_news_tab(name: str, tc: dict, today: datetime, seen: Seen, gem: Gemini, 
     pinned = [it for it in items if it.get("pinned")]
     rest = sorted((it for it in items if not it.get("pinned") and it["score"] >= minimum),
                   key=lambda x: (-x["score"], x["date"]), reverse=False)
+    cap = tc.get("max_per_source")
+    if cap:  # 媒体の偏りを防ぐ
+        per, capped = {}, []
+        for it in rest:
+            per[it["venue"]] = per.get(it["venue"], 0) + 1
+            if per[it["venue"]] <= cap:
+                capped.append(it)
+        rest = capped
     shown = pinned + rest[: tc.get("show", 10)]
     shown_papers = sorted((p for p in jpapers if p["score"] >= minimum), key=lambda x: -x["score"])[: tc.get("papers_show", 10)]
 
