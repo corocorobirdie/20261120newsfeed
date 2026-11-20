@@ -125,6 +125,7 @@ function card(it) {
   const tags = node.querySelector(".tags");
   for (const t of it.tags || []) tags.append(el("span", null, t));
   node.querySelector(".open").href = it.url;
+  node.querySelector(".ask").href = askClaudeUrl(it);
 
   const btn = node.querySelector(".toggle-orig");
   const orig = node.querySelector(".orig");
@@ -137,6 +138,20 @@ function card(it) {
     btn.textContent = orig.hidden ? "原文を表示" : "原文を隠す";
   });
   return node;
+}
+
+// Claude を開いて、この記事についての質問を入力済みにする
+function askClaudeUrl(it) {
+  const lines = [
+    "次の論文について、日本語で解説してください。主な結果、使われている公理や手法、先行研究との関係、意義と限界を教えてください。",
+    "",
+    `タイトル: ${it.title}`,
+  ];
+  if (it.authors && it.authors.length) lines.push(`著者: ${it.authors.slice(0, 10).join(", ")}`);
+  if (it.venue) lines.push(`掲載先: ${it.venue}（${it.date || ""}）`);
+  lines.push(`リンク: ${it.url}`);
+  if (it.abstract) lines.push("", "要旨:", it.abstract.slice(0, 2500));
+  return "https://claude.ai/new?q=" + encodeURIComponent(lines.join("\n"));
 }
 
 function render() {
