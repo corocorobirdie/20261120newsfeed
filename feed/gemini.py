@@ -40,6 +40,7 @@ class Gemini:
     def _next_model(self, why: str) -> bool:
         """今のモデルが使えないとき、設定の候補リストの次のモデルに切り替える。"""
         print(f"  Gemini: {self.model} が使えません（{why}）")
+        self.errors.append(f"{self.model}: {why}")
         if self._queue:
             self.model = self._queue.pop(0)
             print(f"  Gemini: {self.model} に切り替え")

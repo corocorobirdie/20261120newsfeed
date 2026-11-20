@@ -99,7 +99,11 @@ def run_papers(today: datetime, cfg: dict, src: dict, authors: dict, seen: Seen,
 
     if gem.enabled:
         print("■ 日本語要約")
-        gem.summarize(shown[: pc["summarize_top"]], "paper")
+        top = shown[: pc["summarize_top"]]
+        gem.summarize(top, "paper")
+        retry = [p for p in top if not p.get("summary_ja")]
+        if retry:  # 抜けた記事だけもう一度（失敗したら要約なしで表示）
+            gem.summarize(retry, "paper")
 
     for p in shown:
         p["tab"] = "papers"
@@ -134,7 +138,7 @@ def main(argv=None):
         "generated_at": today.now(today.tzinfo).isoformat(timespec="minutes"),
         "model": gem.model if gem.enabled else None,
         "gemini_calls": gem.calls,
-        "notes": gem.errors[:5],
+        "notes": gem.errors[:10],
         "highlights": [x["id"] for x in hl],
         "tabs": tabs,
     }
