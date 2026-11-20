@@ -17,6 +17,7 @@ const store = {
 };
 
 let index = { dates: [] };
+let siteConfig = { ask_claude_url: "" };
 let day = null;
 let currentTab = store.get("tab", "papers");
 
@@ -125,7 +126,12 @@ function card(it) {
   const tags = node.querySelector(".tags");
   for (const t of it.tags || []) tags.append(el("span", null, t));
   node.querySelector(".open").href = it.url;
-  node.querySelector(".ask").href = askClaudeUrl(it);
+  const ask = node.querySelector(".ask");
+  ask.href = askClaudeUrl(it);
+  ask.addEventListener("click", () => {
+    // 飛び先で入力されなかったときのために、質問文をクリップボードにもコピー
+    try { navigator.clipboard && navigator.clipboard.writeText(askPrompt(it)).catch(() => {}); } catch { /* 無視 */ }
+  });
 
   const btn = node.querySelector(".toggle-orig");
   const orig = node.querySelector(".orig");
@@ -142,6 +148,11 @@ function card(it) {
 
 // Claude を開いて、この記事についての質問を入力済みにする
 function askClaudeUrl(it) {
+  const base = siteConfig.ask_claude_url || "https://claude.ai/new";
+  return base + (base.includes("?") ? "&" : "?") + "q=" + encodeURIComponent(askPrompt(it));
+}
+
+function askPrompt(it) {
   const lines = [
     "次の論文について、日本語で解説してください。主な結果、使われている公理や手法、先行研究との関係、意義と限界を教えてください。",
     "",
@@ -151,7 +162,7 @@ function askClaudeUrl(it) {
   if (it.venue) lines.push(`掲載先: ${it.venue}（${it.date || ""}）`);
   lines.push(`リンク: ${it.url}`);
   if (it.abstract) lines.push("", "要旨:", it.abstract.slice(0, 2500));
-  return "https://claude.ai/new?q=" + encodeURIComponent(lines.join("\n"));
+  return lines.join("\n");
 }
 
 function render() {
@@ -173,6 +184,7 @@ $("#next").addEventListener("click", () => { const i = index.dates.indexOf(day.d
 
 (async () => {
   try {
+    try { siteConfig = { ...siteConfig, ...(await getJSON("site-config.json")) }; } catch { /* なくても動く */ }
     index = await getJSON("data/index.json");
     if (!index.latest) throw new Error("no data");
     await loadDay(index.latest);
