@@ -63,7 +63,11 @@ def fetch_arxiv(cfg: dict, today: datetime, lookback: int) -> list[dict]:
     kws = [k.lower() for k in cfg.get("arxiv_keywords", [])]
     out = []
     for spec in cfg.get("arxiv", []):
-        items = _arxiv_query(f"cat:{spec['category']}", 200)
+        try:
+            items = _arxiv_query(f"cat:{spec['category']}", 200)
+        except Exception as e:  # noqa: BLE001  1つの情報源の失敗で全体を止めない
+            print(f"  arXiv {spec['category']}: 取得失敗 {e}")
+            continue
         items = [p for p in items if p["date"] >= since]
         if spec.get("keyword_filter"):
             items = [p for p in items if any(k in (p["title"] + " " + p["abstract"]).lower() for k in kws)]

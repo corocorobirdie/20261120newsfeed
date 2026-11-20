@@ -212,7 +212,12 @@ def main(argv=None):
     summ = Gemini(gcfg, "summary_models")   # 要約（質が大事）: 上位モデル
     status: dict = {}
 
-    papers, scored = run_papers(today, cfg, src, authors, seen, gem, summ)
+    try:
+        papers, scored = run_papers(today, cfg, src, authors, seen, gem, summ)
+    except Exception as e:  # noqa: BLE001  論文タブが失敗してもほかのタブは作る
+        print(f"  論文タブ: 失敗 {e}")
+        status["papers"] = f"失敗: {e}"
+        papers, scored = [], []
     slim = lambda x: x if "ref" in x else {k: x.get(k) for k in SITE_FIELDS}  # noqa: E731
     tabs = {"papers": [slim(p) for p in papers]}
     extra_papers = []
