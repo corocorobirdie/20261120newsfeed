@@ -52,12 +52,12 @@ A:
   - {name: Kalle Mikkola,          openalex: [A5087205067], fields: [20, 12, 33, 26], check: "Aalto University の数学者のプロフィール（McCarthy–Mikkola–Thomas の共著者）。本業の制御理論の論文を除くため分野を限定"}
   - {name: Teruji Thomas,          openalex: [], name_search: "Teruji Thomas", check: "OpenAlex で著者IDが付いていないため名前検索で代替（Oxford, Global Priorities Institute）"}
   - {name: Matthew D. Adler,       openalex: [A5104059738]}
-  - {name: Ole F. Norheim,         openalex: [A5067044128], check: "論文数が非常に多い（約460本、多くは保健医療）。毎日の表示が多すぎる場合はグループBへの移動を検討"}
 
 B:
   - {name: Joseph E. Stiglitz,     openalex: [A5074218217]}
   - {name: Eric Maskin,            openalex: [A5110532426]}
   - {name: Paola Giuliano,         openalex: [A5044204764]}
+  - {name: Ole F. Norheim,         openalex: [A5067044128]}  # 論文の多くが保健医療のためAから移動
 
 C:
   - {name: Udo Ebert,              openalex: [A5010627811]}
