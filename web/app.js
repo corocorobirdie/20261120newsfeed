@@ -21,6 +21,7 @@ let siteConfig = { ask_claude_url: "", ask_claude_tabs: {} };
 const SECTION_LABELS = { papers: "論文（実証・政策）", articles: "記事・コラム" };
 let day = null;
 let currentTab = store.get("tab", "papers");
+const filter = { q: "", tag: "" };  // 絞り込み（現在のタブ内）
 
 // ---------------------------------------------------------------- テーマ
 function applyTheme(t) {
@@ -42,7 +43,12 @@ async function getJSON(url) {
 }
 
 async function loadDay(date) {
-  day = await getJSON(`data/daily/${date}.json`);
+  try {
+    day = await getJSON(`data/daily/${date}.json`);
+  } catch (e) {
+    $("#meta").textContent = navigator.onLine ? "この日のデータを読み込めませんでした" : "オフラインです。この日はまだ読み込んだことがないため表示できません";
+    return;
+  }
   const i = index.dates.indexOf(date);
   $("#date").textContent = fmtDate(date);
   $("#next").disabled = i <= 0;
@@ -73,7 +79,7 @@ function renderTabs() {
     b.setAttribute("role", "tab");
     b.setAttribute("aria-selected", String(t === currentTab));
     b.append(el("span", "count", String(day.tabs[t].length)));
-    b.addEventListener("click", () => { currentTab = t; store.set("tab", t); render(); window.scrollTo({ top: 0 }); });
+    b.addEventListener("click", () => { currentTab = t; filter.tag = ""; store.set("tab", t); render(); window.scrollTo({ top: 0 }); });
     nav.append(b);
   }
 }
@@ -83,7 +89,7 @@ function renderHighlights() {
   const byId = new Map(all.map((x) => [x.id, x]));
   const items = (day.highlights || []).map((id) => byId.get(id)).filter(Boolean);
   const box = $("#highlights");
-  box.hidden = items.length === 0;
+  box.hidden = items.length === 0 || !!(filter.q || filter.tag);  // 絞り込み中は隠す
   const ol = $("#hl-list");
   ol.replaceChildren();
   for (const it of items) {
@@ -128,7 +134,12 @@ function card(it) {
   node.querySelector(".byline").textContent = authors.slice(0, 6).join(", ") + (authors.length > 6 ? ` ほか${authors.length - 6}名` : "");
   node.querySelector(".src").textContent = [it.venue, (it.lang || "").toUpperCase(), it.date].filter(Boolean).join(" · ");
   const tags = node.querySelector(".tags");
-  for (const t of it.tags || []) tags.append(el("span", null, t));
+  for (const t of it.tags || []) {
+    const b = el("button", t === filter.tag ? "on" : null, t);
+    b.type = "button";
+    b.addEventListener("click", () => setTag(t === filter.tag ? "" : t));
+    tags.append(b);
+  }
   node.querySelector(".open").href = it.url;
   const ask = node.querySelector(".ask");
   ask.href = askClaudeUrl(it);
@@ -180,10 +191,60 @@ function resolve(lst) {
   return out.sort((a, b) => (order.indexOf(a._section) + 1 || 99) - (order.indexOf(b._section) + 1 || 99));
 }
 
+// ---------------------------------------------------------------- 絞り込み
+function norm(s) { return (s || "").normalize("NFKC").toLowerCase(); }
+
+function matches(it) {
+  if (filter.tag && !(it.tags || []).includes(filter.tag)) return false;
+  if (!filter.q) return true;
+  const hay = norm([it.title, it.title_ja, (it.summary_ja || []).join(" "), it.reason_ja, (it.authors || []).join(" "),
+    it.venue, it.abstract, (it.tags || []).join(" ")].join(" "));
+  return norm(filter.q).split(/\s+/).filter(Boolean).every((w) => hay.includes(w));
+}
+
+function renderFilters(total, shown) {
+  const box = $("#active-filters");
+  box.replaceChildren();
+  const on = filter.q || filter.tag;
+  if (filter.tag) {
+    const chip = el("button", "chip on", `#${filter.tag} ×`);
+    chip.addEventListener("click", () => setTag(""));
+    box.append(chip);
+  }
+  if (on) {
+    box.append(el("span", "count-note", `${shown} / ${total} 件`));
+    const clear = el("button", "chip", "解除");
+    clear.addEventListener("click", () => { filter.q = ""; $("#q").value = ""; setTag(""); });
+    box.append(clear);
+  }
+  if (filter.tag) showFilterbar(true);
+}
+
+function setTag(t) { filter.tag = t; render(); if (t) window.scrollTo({ top: 0 }); }
+
+function showFilterbar(show) {
+  $("#filterbar").hidden = !show;
+  $("#search-toggle").setAttribute("aria-expanded", String(show));
+}
+
+$("#search-toggle").addEventListener("click", () => {
+  const show = $("#filterbar").hidden;
+  showFilterbar(show);
+  if (show) $("#q").focus();
+  else if (filter.q || filter.tag) { filter.q = ""; $("#q").value = ""; filter.tag = ""; render(); }
+});
+let qTimer;
+$("#q").addEventListener("input", (e) => {
+  clearTimeout(qTimer);
+  qTimer = setTimeout(() => { filter.q = e.target.value.trim(); render(); }, 150);
+});
+
 function render() {
   renderTabs();
   renderHighlights();
-  const items = resolve(day.tabs[currentTab] || []);
+  const all = resolve(day.tabs[currentTab] || []);
+  const items = all.filter(matches);
+  renderFilters(all.length, items.length);
   const list = $("#list");
   const nodes = [];
   let lastSection;
@@ -195,16 +256,24 @@ function render() {
     nodes.push(card(it));
   }
   list.replaceChildren(...nodes);
-  if (!items.length) list.append(el("p", "empty", "この日の新着はありません"));
+  if (!items.length) list.append(el("p", "empty", all.length ? "条件に合う記事はありません" : "この日の新着はありません"));
   const notes = [];
   if (day.generated_at) notes.push(`更新 ${day.generated_at.slice(11, 16)}`);
   if (!day.model) notes.push("要約なし（Gemini未設定）");
+  if (!navigator.onLine) notes.push("オフライン（保存済みの内容を表示）");
   $("#meta").textContent = notes.join(" · ");
 }
 
 // ---------------------------------------------------------------- 起動
 $("#prev").addEventListener("click", () => { const i = index.dates.indexOf(day.date); if (i < index.dates.length - 1) loadDay(index.dates[i + 1]); });
 $("#next").addEventListener("click", () => { const i = index.dates.indexOf(day.date); if (i > 0) loadDay(index.dates[i - 1]); });
+
+// ホーム画面に追加したとき・オフラインで読めるようにする
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
+window.addEventListener("online", () => day && render());
+window.addEventListener("offline", () => day && render());
 
 (async () => {
   try {

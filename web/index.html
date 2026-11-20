@@ -7,6 +7,12 @@
 <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#16181c" media="(prefers-color-scheme: dark)">
 <title>Morning Feed</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Morning Feed">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,9 +24,14 @@
       <span id="date">—</span>
       <button id="next" aria-label="次の日">›</button>
     </div>
+    <button id="search-toggle" class="icon" aria-label="検索・絞り込み" aria-expanded="false">⌕</button>
     <button id="theme" class="icon" aria-label="表示モード切替">◐</button>
   </div>
   <nav id="tabs" class="tabs" role="tablist"></nav>
+  <div id="filterbar" class="filterbar" hidden>
+    <input id="q" type="search" placeholder="キーワードで絞り込み" autocomplete="off" enterkeyhint="search">
+    <div id="active-filters" class="active-filters"></div>
+  </div>
 </header>
 
 <main>
