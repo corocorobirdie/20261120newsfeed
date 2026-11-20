@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 22 * * *"   # 毎朝 7:00 JST（GitHub の混雑で数十分遅れることがあります）
   workflow_dispatch:       # Actions 画面から手動実行もできる
+    inputs:
+      site_only:
+        description: "サイトだけ作り直す（論文の取得・Gemini は使わない）"
+        type: boolean
+        default: false
 
 permissions:
   contents: write   # data/ をコミットして残すため
@@ -29,12 +34,18 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Fetch, score, summarize
+        if: ${{ !inputs.site_only }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
         run: python -m feed.run
 
+      - name: Build site only
+        if: ${{ inputs.site_only }}
+        run: python -m feed.build
+
       - name: Commit data
+        if: ${{ !inputs.site_only }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
