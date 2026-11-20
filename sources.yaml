@@ -1,0 +1,45 @@
+# 情報源の一覧。行を追加・削除すれば反映されます。
+#
+# ジャーナルの取得方法:
+#   Springer と Cambridge は自動取得（RSS）を拒否するため、全誌を Crossref API
+#   （DOI登録情報。即日反映・無料・キー不要）で ISSN を指定して取得しています。
+#   要旨が Crossref にない場合は OpenAlex から補完します。
+
+papers:
+  interest: |
+    社会選択理論・意思決定理論の理論研究に関心がある研究者。
+    特に: social choice, preference aggregation, Arrow's theorem, welfare economics,
+    fairness, decision theory, expected utility, ambiguity / uncertainty, rationality,
+    population ethics, axiomatization, inequality measurement, poverty measurement,
+    polarization measurement。
+    キーワードに完全一致しなくても意味が近ければ高く評価する
+    （例：公理的特徴づけ、社会厚生関数、選好の集計、不完備選好、非期待効用、世代間衡平）。
+    応用ミクロ、マクロ、実証、産業組織、金融などの論文は低く評価する。
+
+  tags: [社会選択, 意思決定, 不平等・貧困の測定, 厚生経済学, 公理化, 人口倫理, 投票, 公正・配分, ゲーム理論, メカニズムデザイン, その他]
+
+  arxiv:
+    - category: econ.TH
+      keyword_filter: false     # econ.TH は全件を採点に回す
+    - category: cs.GT
+      keyword_filter: true      # cs.GT は本数が多いので、キーワードで事前に絞る
+  arxiv_keywords: [social choice, voting, vote, preference, aggregation, arrow, welfare, fair, envy, axiom, characteriz, rational, utility, ambiguity, uncertainty, inequality, poverty, polarization, apportionment, dictator, impossibility, rank, ethic, justice, egalitarian, utilitarian]
+
+  journals:
+    # 専門誌
+    - {name: Social Choice and Welfare,          issn: 0176-1714, openalex: S107325288, group: 専門誌}
+    - {name: Theory and Decision,                issn: 0040-5833, openalex: S134979503, group: 専門誌}
+    - {name: Economics & Philosophy,             issn: 0266-2671, openalex: S128223704, group: 専門誌}
+    - {name: Mathematical Social Sciences,       issn: 0165-4896, openalex: S149064342, group: 専門誌}
+    - {name: Journal of Public Economic Theory,  issn: 1097-3923, openalex: S184446198, group: 専門誌}
+    # 理論系
+    - {name: Journal of Economic Theory,         issn: 0022-0531, openalex: S149131268, group: 理論系}
+    - {name: Games and Economic Behavior,        issn: 0899-8256, openalex: S94044085,  group: 理論系}
+    - {name: Journal of Mathematical Economics,  issn: 0304-4068, openalex: S202934171, group: 理論系}
+    - {name: Economic Theory,                    issn: 0938-2259, openalex: S579031,    group: 理論系}
+    - {name: Theoretical Economics,              issn: 1933-6837, openalex: S10997704,  group: 理論系}
+
+  # タイトルがこれに一致するものは論文ではないので除外
+  exclude_title_patterns: ["^correction", "^erratum", "^corrigendum", "cover and front matter", "cover and back matter", "^editorial", "^issue information", "^front matter", "^back matter", "^retraction", "^publisher correction", "^call for papers", "^acknowledg"]
+
+# タブ2〜5の情報源は段階3・4で追加します

@@ -1,0 +1,34 @@
+# 全体設定（自由に変更してOK）
+
+timezone: Asia/Tokyo
+
+gemini:
+  # 使うモデルを上から順に試す（使えない・応答しない・1日の枠切れなら次へ）。
+  # 2026-11 時点で確認: gemini-2.5-flash は新規ユーザー向けに提供終了、
+  # gemini-3.8-flash は応答が返らず、gemini-3-flash-preview は大量の採点でタイムアウト。
+  # 最新のモデル名は AI Studio（aistudio.google.com）で確認して書き換えてください。
+  models:
+    - gemini-3.5-flash
+    - gemini-3-flash-preview
+    - gemini-3.1-flash-lite
+  timeout_sec: 150
+  score_batch_size: 20        # 採点は20件ずつまとめて1回で送る
+  summary_batch_size: 5       # 要約は5件ずつまとめて1回で送る
+  min_interval_sec: 7         # 呼び出し間隔（無料枠の毎分上限対策）
+  max_retries: 4
+  temperature: 0.2
+
+papers:
+  lookback_days: 3            # arXiv / ジャーナルの新着を何日さかのぼるか
+  author_lookback_days: 30    # 著者別新着（OpenAlex）の範囲
+  group_c_weekday: 0          # グループC（新着まれ）を取得する曜日 0=月曜
+  min_score: 5                # これ未満は表示しない（グループAは例外）
+  group_b_min_score: 6        # グループBの表示基準（加点後）
+  group_b_bonus: 2            # グループB著者の加点
+  summarize_top: 15           # 日本語要約を付ける件数
+  max_display: 40             # 1日に表示する最大件数
+
+highlights: 5                 # 今日のハイライト件数
+
+retention:
+  news_days: 60               # ニュースは60日分だけ残す（論文は papers.jsonl に全件残る）

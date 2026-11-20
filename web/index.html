@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16181c" media="(prefers-color-scheme: dark)">
+<title>Morning Feed</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <h1>Morning Feed</h1>
+    <div class="datenav">
+      <button id="prev" aria-label="前の日">‹</button>
+      <span id="date">—</span>
+      <button id="next" aria-label="次の日">›</button>
+    </div>
+    <button id="theme" class="icon" aria-label="表示モード切替">◐</button>
+  </div>
+  <nav id="tabs" class="tabs" role="tablist"></nav>
+</header>
+
+<main>
+  <section id="highlights" class="highlights" hidden>
+    <h2>今日のハイライト</h2>
+    <ol id="hl-list"></ol>
+  </section>
+  <div id="meta" class="meta"></div>
+  <div id="list" class="list"></div>
+</main>
+
+<template id="card-tpl">
+  <article class="card">
+    <div class="badges"></div>
+    <h3 class="title-ja"><a target="_blank" rel="noopener"></a></h3>
+    <ul class="summary"></ul>
+    <p class="reason"></p>
+    <p class="orig-title"></p>
+    <p class="byline"></p>
+    <p class="src"></p>
+    <div class="tags"></div>
+    <div class="actions">
+      <button class="toggle-orig" type="button">原文を表示</button>
+      <a class="open" target="_blank" rel="noopener">開く ↗</a>
+    </div>
+    <div class="orig" hidden></div>
+  </article>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>

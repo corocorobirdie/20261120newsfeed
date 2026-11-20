@@ -1,0 +1,1132 @@
+{
+ "date": "2026-11-20",
+ "generated_at": "2026-11-20T17:05+09:00",
+ "model": "gemini-3.5-flash",
+ "gemini_calls": 7,
+ "notes": [],
+ "highlights": [
+  "doi:10.1007/s41412-026-00161-8",
+  "doi:10.1017/s0953820826100478",
+  "doi:10.1007/s00199-026-01759-4",
+  "arxiv:2611.25748",
+  "doi:10.1016/j.jet.2026.106271"
+ ],
+ "tabs": {
+  "papers": [
+   {
+    "id": "doi:10.1007/s41412-026-00161-8",
+    "title": "Collective Responsibility and Individual Compensation",
+    "title_ja": "集団責任と個人への補償",
+    "summary_ja": [
+     "個人や集団の責任外の環境、集団責任要因、個人責任要因の3特性が結果に影響する社会での分配的正義を分析する。",
+     "グループ間配分決定後にグループ内分配を行う、集団条件付平等と集団平等等価という2つの割当規則を提案する。",
+     "フルバエの自然な報酬と補償の原理を集団責任の設定へ拡張し、提案する割当規則の公理的特徴付けを与える。"
+    ],
+    "reason_ja": "責任主義的正義論を集団責任へ拡張する公理的アプローチを学べるため。",
+    "authors": [
+     "Susumu Cato"
+    ],
+    "venue": "Homo Oeconomicus",
+    "date": "2026-10-22",
+    "url": "https://doi.org/10.1007/s41412-026-00161-8",
+    "doi": "10.1007/s41412-026-00161-8",
+    "arxiv_id": null,
+    "abstract": "This paper analyzes distributive justice in the presence of collective responsibility. We consider a society partitioned into groups, where three types of characteristics affect individual outcomes: circumstances for which neither individuals nor groups are responsible, collective responsible factors for which groups, but not individuals, bear responsibility, and personal responsible factors for which individuals are responsible. We propose two allocation rules: (i) group conditional equality and (ii) group egalitarian equivalence. Both solutions use a two-step procedure in which inter-group resource allocation is determined, and intra-group distribution second. This approach respects both individual agency within groups and collective responsibility across groups. We examine the basic properties of these allocation rules and offer axiomatic characterizations of them. For the characterizations, we extend the classical principles of natural reward and compensation developed by Marc Fleurbaey to the collective responsibility setting.",
+    "tags": [
+     "公正・配分",
+     "公理化",
+     "厚生経済学"
+    ],
+    "score": 10,
+    "author_group": "A",
+    "author_hits": [
+     "Susumu Cato"
+    ],
+    "lang": "en",
+    "source": "openalex"
+   },
+   {
+    "id": "doi:10.1017/s0953820826100478",
+    "title": "Periodic Equity Prioritarianism",
+    "title_ja": "期間的公平優先主義",
+    "summary_ja": [
+     "個人が時期ごとに異なる厚生水準を持つ状況での優先主義（prioritarianism）の評価方法について考察する。",
+     "平等分配等価額（equally distributed equivalents）の概念に着想を得た「期間的公平優先主義」を導入する。",
+     "本手法がタイムスライス型や生涯型の優先主義が抱える評価上の問題を回避できることを示す。"
+    ],
+    "reason_ja": "時点間の厚生評価に関する優先主義の新たな枠組みを把握できるため。",
+    "authors": [
+     "Susumu Cato",
+     "Anders Herlitz"
+    ],
+    "venue": "Utilitas",
+    "date": "2026-10-26",
+    "url": "https://doi.org/10.1017/s0953820826100478",
+    "doi": "10.1017/s0953820826100478",
+    "arxiv_id": null,
+    "abstract": "Abstract This paper engages with the question of how to understand prioritarianism when people are differently well off at different times. In this context, it introduces a new version of prioritarianism, periodic equity prioritarianism , which is inspired by how focusing on equally distributed equivalents can dissolve tensions in social evaluations that involve risk. The paper shows that periodic equity prioritarianism avoids both certain problems that timeslice prioritarianism faces and some problems that lifetime prioritarianism faces.",
+    "tags": [
+     "人口倫理",
+     "厚生経済学",
+     "公理化"
+    ],
+    "score": 10,
+    "author_group": "A",
+    "author_hits": [
+     "Susumu Cato"
+    ],
+    "lang": "en",
+    "source": "openalex"
+   },
+   {
+    "id": "doi:10.1007/s00199-026-01759-4",
+    "title": "Bimodal spread majorization: bridging inequality, bipolarization, and polarization in income tax policy",
+    "title_ja": "双峰的拡大メジャライゼーション：所得税政策における不平等・二極化・極化の橋渡し",
+    "summary_ja": [
+     "【タイトルからの推測】メジャライゼーションの概念を双峰的拡大へと拡張する理論的分析と考えられる。",
+     "【タイトルからの推測】所得税政策における不平等、二極化、極化といった尺度間の関係を議論していると推測される。",
+     "【タイトルからの推測】税制設計を通じた所得分配評価手法の統一的な枠組みを提示していると思われる。"
+    ],
+    "reason_ja": "所得税政策とメジャライゼーション理論の接点を学べる可能性があるため。",
+    "authors": [
+     "Oriol Carbonell-Nicolau",
+     "Humberto Llavador"
+    ],
+    "venue": "Economic Theory",
+    "date": "2026-11-19",
+    "url": "https://doi.org/10.1007/s00199-026-01759-4",
+    "doi": "10.1007/s00199-026-01759-4",
+    "arxiv_id": null,
+    "abstract": "",
+    "tags": [
+     "不平等・貧困の測定",
+     "厚生経済学"
+    ],
+    "score": 10,
+    "author_group": "A",
+    "author_hits": [
+     "Oriol Carbonell-Nicolau"
+    ],
+    "lang": "en",
+    "source": "journal"
+   },
+   {
+    "id": "doi:10.1016/j.jet.2026.106271",
+    "title": "Poverty-reducing taxation with endogenous income",
+    "title_ja": "内生的所得を伴う貧困削減課税",
+    "summary_ja": [
+     "【タイトルからの推測】労働供給等の経済行動により所得が内生的に決まるモデルを扱っていると推測される。",
+     "【タイトルからの推測】内生的所得を考慮した上で貧困を削減するための最適な課税理論を分析していると見られる。",
+     "【タイトルからの推測】意思決定行動を踏まえた規範的課税政策の設計原理を論じていると考えられる。"
+    ],
+    "reason_ja": "内生的所得形成のもとでの貧困削減と税制設計の理論を知るため。",
+    "authors": [
+     "Oriol Carbonell‐Nicolau"
+    ],
+    "venue": "Journal of Economic Theory",
+    "date": "2026-10-21",
+    "url": "https://doi.org/10.1016/j.jet.2026.106271",
+    "doi": "10.1016/j.jet.2026.106271",
+    "arxiv_id": null,
+    "abstract": "",
+    "tags": [
+     "不平等・貧困の測定",
+     "厚生経済学"
+    ],
+    "score": 9,
+    "author_group": "A",
+    "author_hits": [
+     "Oriol Carbonell-Nicolau"
+    ],
+    "lang": "en",
+    "source": "openalex"
+   },
+   {
+    "id": "arxiv:2611.13469",
+    "title": "Obvious Group Manipulations and Top Trading Cycles",
+    "title_ja": "明白な集団操作とTop Trading Cyclesメカニズム",
+    "summary_ja": [
+     "既存の非明白な操作可能性より強く集団戦略強靭性より弱い「明白な集団操作可能性」の集団版を導入する。",
+     "シャプレイ＝スカーフ住宅市場モデルを対象に、提案した新条件の影響を詳しく分析する。",
+     "新条件を用いることで、Top Trading Cycles（TTC）メカニズムの新たな公理的特徴付けを与える。"
+    ],
+    "reason_ja": "TTCメカニズムの耐戦略性と公理的特徴付けの最新進展を理解できるため。",
+    "authors": [
+     "Ryoga Doi",
+     "Kazumasa Ikeda",
+     "Kensei Nakamura"
+    ],
+    "venue": "arXiv",
+    "date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.13469",
+    "doi": null,
+    "arxiv_id": "2611.13469",
+    "abstract": "We introduce a group version of non-obvious manipulability, which is stronger than the original definition by Troyan and Morrill (2020) and weaker than group strategy-proofness, and study its implications in Shapley-Scarf housing markets. We provide several characterizations of the Top Trading Cycles mechanism using the new condition.",
+    "tags": [
+     "メカニズムデザイン",
+     "社会選択"
+    ],
+    "score": 9,
+    "author_group": "A",
+    "author_hits": [
+     "Kensei Nakamura"
+    ],
+    "lang": "en",
+    "source": "openalex"
+   },
+   {
+    "id": "doi:10.1016/j.econlet.2026.113309",
+    "title": "On dynamic income taxation and absolute inequality",
+    "title_ja": "動的所得課税と絶対的不平等について",
+    "summary_ja": [
+     "本論文は動的所得課税と絶対的不平等（absolute inequality）の関係を分析した研究であると推測される。",
+     "動的な意思決定枠組みにおける最適課税モデルや不平等尺度の役割が議論されている可能性がある。",
+     "詳細な結果は要旨からは不明であるが、所得再分配に関する厚生理論的帰結を扱っていると思われる。"
+    ],
+    "reason_ja": "動的所得再分配と絶対的不平等概念の関係に関心のある研究者に適しているため。",
+    "authors": [
+     "Oriol Carbonell‐Nicolau"
+    ],
+    "venue": "Economics Letters",
+    "date": "2026-10-27",
+    "url": "https://doi.org/10.1016/j.econlet.2026.113309",
+    "doi": "10.1016/j.econlet.2026.113309",
+    "arxiv_id": null,
+    "abstract": "",
+    "tags": [
+     "不平等・貧困の測定",
+     "厚生経済学"
+    ],
+    "score": 8,
+    "author_group": "A",
+    "author_hits": [
+     "Oriol Carbonell-Nicolau"
+    ],
+    "lang": "en",
+    "source": "openalex"
+   },
+   {
+    "id": "doi:10.3758/s13423-026-03038-8",
+    "title": "Motor precision shapes information seeking in perceptual decisions",
+    "title_ja": "運動精度が知覚的意思決定における情報探索行動を規定する",
+    "summary_ja": [
+     "知覚的意思決定（perceptual decisions）における応答の運動コスト（motor costs）が確信度に与える影響を検証。",
+     "容易な運動応答は確信度（confidence）の低下を招き、正確さを損なわずに情報探索（information-seeking）を促進。",
+     "運動誘発的な確信度の変化が、その後の情報収集行動を調整する機能的役割を果たしていることを示した。"
+    ],
+    "reason_ja": "意思決定における確信度形成と情報収集行動の運動メカニズムに関心がある研究者向け。",
+    "authors": [
+     "Alessandra Loretani",
+     "Claire Bédé",
+     "Thibault Gajdos",
+     "Andrea Desantis"
+    ],
+    "venue": "Psychonomic Bulletin & Review",
+    "date": "2026-11-06",
+    "url": "https://doi.org/10.3758/s13423-026-03038-8",
+    "doi": "10.3758/s13423-026-03038-8",
+    "arxiv_id": null,
+    "abstract": "Adaptive behavior relies heavily on the confidence we have in our decisions. For instance, in the absence of explicit feedback, the confidence associated with a decision determines whether we seek additional evidence or are likely to change our mind. Recent studies suggest that confidence estimation also depends on motor processes involved in implementing perceptual decisions. However, whether motor-induced changes in confidence meaningfully affect behavior, such as by altering information-seeking, remains uncertain. The present study addresses this question. Participants performed a perceptual task requiring discrimination of the orientation of Gabor patches. The motor cost of the perceptual response was manipulated by varying the size of the response circles that participants had to reach to report their judgment. Consistent with previous findings showing that easier motor responses are associated with lower confidence ratings, we found that such responses were also linked to a greater tendency to seek additional evidence compared to more costly responses. Importantly, this increase in information-seeking behavior was not accompanied by any change in perceptual accuracy. These findings support the idea that the motor costs associated with perceptual decisions modulate confidence, and that such motor-induced changes in confidence play a functional role in guiding subsequent behavior.",
+    "tags": [
+     "意思決定"
+    ],
+    "score": 4,
+    "author_group": "A",
+    "author_hits": [
+     "Thibault Gajdos"
+    ],
+    "lang": "en",
+    "source": "openalex"
+   },
+   {
+    "id": "doi:10.21203/rs.3.rs-11473598/v1",
+    "title": "Economic burden of severe non-communicable diseases by level of care to inform priority-setting in Tanzania",
+    "title_ja": "タンザニアでの優先順位設定に資する医療レベル別の重症非感染性疾患の経済的負担",
+    "summary_ja": [
+     "タンザニアの医療機関で重症非感染性疾患患者の費用をボトムアップ法と人的資本法（human capital approach）で算出。",
+     "患者1人あたりの年間平均コストは255ドルで、交通費等の直接非医療費と間接費が負担の大部分を占めた。",
+     "低所得層の負担割合は三次病院で高く、優先順位設定（priority-setting）や医療の公平性向上への課題が示された。"
+    ],
+    "reason_ja": "発展途上国における医療優先順位設定と経済的負担の公平性分析に関心がある研究者向け。",
+    "authors": [
+     "Ritha A. Willilo",
+     "Ole Frithjof Norheim",
+     "Mary Theodory Mayige",
+     "Melf-Jakob Kühl",
+     "Alemayehu Hailu"
+    ],
+    "venue": "Research Square",
+    "date": "2026-11-09",
+    "url": "https://doi.org/10.21203/rs.3.rs-11473598/v1",
+    "doi": "10.21203/rs.3.rs-11473598/v1",
+    "arxiv_id": null,
+    "abstract": "Abstract Background Noncommunicable diseases (NCDs) account for nearly half of all deaths in Tanzania. To improve access to care for severe NCDs, Tanzania has introduced the PEN-Plus model at primary hospitals. However, evidence on the patient-level economic burden of severe NCD care across diseases and levels of care remains limited. This study estimated patient-level costs for rheumatic heart disease, sickle cell disease, type 1 diabetes mellitus, and type 2 diabetes mellitus and identified key drivers of cost variation. Methods A cross-sectional, prevalence-based cost-of-illness study was conducted among patients receiving outpatient care for type 1 diabetes, type 2 diabetes, rheumatic heart disease, and sickle cell disease at primary and tertiary hospitals in Tanzania. A bottom-up costing approach was used to estimate direct and indirect costs of outpatient care from the patients' perspective. Indirect costs were valued using the human capital approach. Socioeconomic inequality was assessed using concentration indices and generalised linear models with a log link; key drivers of cost variation were identified. Results We included 1,037 participants. The mean annual outpatient cost per patient was USD 255 (95% CI: 242–270). Direct non-medical and indirect costs accounted for most of the economic burden, with transport as the largest cost component (USD 87 per year). Costs varied by disease and level of care. Patients with sickle cell disease incurred the highest direct costs (USD 238 per year). For rheumatic heart disease, mean drug costs increased from USD 3 at primary hospitals to USD 65 per year at tertiary hospitals. Costs were lower at primary hospitals (CR 0.80; 95% CI: 0.72–0.90) and increased with distance travelled. Socioeconomic inequality was minimal at primary hospitals. In contrast, low-income groups had a statistically significantly higher share of patient costs among patients with type 2 diabetes and sickle cell disease attending tertiary hospitals. Conclusion The economic burden of severe NCD care in Tanzania is driven as much by access barriers as by medical costs. Expanding PEN-Plus, reducing transport-related costs, and aligning insurance benefits with long-term care needs could improve financial protection and equity.",
+    "tags": [
+     "その他"
+    ],
+    "score": 1,
+    "author_group": "A",
+    "author_hits": [
+     "Ole F. Norheim"
+    ],
+    "lang": "en",
+    "source": "openalex"
+   },
+   {
+    "id": "arxiv:2611.25748",
+    "title": "A Simple Proof of Koray's Theorem",
+    "title_ja": "コレイの定理の簡潔な証明",
+    "summary_ja": [
+     "コレイ（Koray, 2000）の定理（中立・満場一致な社会選択関数の普遍的自己選択性と独裁性の同値性）の簡潔な証明を提示。",
+     "従来の証明はアローの不可能性定理（Arrow's impossibility theorem）等に依存していた。",
+     "本稿は巡回選好プロファイル（cyclic preference profile）を直接構築することで簡単な自己完結的証明を与えた。"
+    ],
+    "reason_ja": "社会選択理論における自己選択性や不可能性定理の証明技法に関心を持つ研究者に最適。",
+    "authors": [
+     "Héctor Hermida-Rivera"
+    ],
+    "venue": "arXiv (econ.TH)",
+    "date": "2026-11-19",
+    "url": "https://arxiv.org/abs/2611.25748",
+    "doi": null,
+    "arxiv_id": "2611.25748",
+    "abstract": "In this note, I provide a direct and self-contained proof of Koray's (2000) theorem, by which a neutral and unanimous social choice function is universally self-selective if and only if it is dictatorial. Koray's (2000) original proof relies on results by Sen (1970) and Houthakker (1950) to construct a social welfare function for each alternative set. He then shows that these functions are Paretian and independent of irrelevant alternatives, allowing him to apply Arrow's (1950, 1951) impossibility theorem. Instead, I construct a cyclic preference profile and show that the voter who ranks the chosen alternative first is the dictator on every finite nonempty alternative set.",
+    "tags": [
+     "社会選択",
+     "公理化"
+    ],
+    "score": 10,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.19021",
+    "title": "Aggregating Rankings of Coalitions to Rank Individuals",
+    "title_ja": "個人の順位付けのための提携順位の集約",
+    "summary_ja": [
+     "提携パフォーマンスの順位プロファイルを集約して個人の順位を決定する順序的枠組みを提案。",
+     "提携順位の拡張に伴うプロファイル間公理を導入し、公理間の矛盾を示す不可能性定理（impossibility theorem）を導出。",
+     "センのパレート拡張ルールに依拠し、社会順位理論（social ranking theory）の新規解PELを公理化した。"
+    ],
+    "reason_ja": "協力ゲーム理論とアロー型集約理論を融合した社会順位理論の拡張に関心がある研究者向け。",
+    "authors": [
+     "Takahiro Suzuki"
+    ],
+    "venue": "arXiv (econ.TH)",
+    "date": "2026-11-13",
+    "url": "https://arxiv.org/abs/2611.19021",
+    "doi": null,
+    "arxiv_id": "2611.19021",
+    "abstract": "We develop an ordinal framework for aggregating a profile of rankings of coalitional performances to determine the ranking of individuals. From university ratings to the assessment of team-sports players, we often evaluate individuals based on their coalitional performances. Although such evaluation has been addressed by cooperative game theory, it is only recently that its ordinal counterpart, social ranking theory (Moretti, 2015), has emerged. As most of the literature considers a single coalitional ranking (which corresponds to a real-valued characteristic function), we extend the model to allow a profile of coalitional rankings (which corresponds to a multidimensional characteristic function). We tackle the aggregation problem by introducing three families of inter-profile axioms, each representing how the rankings should interact or contribute to the output. After revealing fundamental impossibilities concerning the reconciliation of different families, we characterize a new solution, Pareto-extension Lex-cel (PEL), via some weaker versions of the inter-profile axioms. PEL extends Lex-cel, which is a central solution in social ranking theory, by analogy with Sen's Pareto extension rule. Our results develop the connection between classical Arrovian aggregation, cooperative game theory, and social ranking theory.",
+    "tags": [
+     "社会選択",
+     "公理化",
+     "公正・配分"
+    ],
+    "score": 9,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.18282",
+    "title": "Safe manipulation of tops-only voting rules",
+    "title_ja": "Tops-only投票ルールにおける安全な操作可能性",
+    "summary_ja": [
+     "リスク回避的投票者による「安全な操作」に対するTops-only投票ルールの耐性を評価した論文。",
+     "操作に必要な他者の投票観察数の最小値（RAT度）を定義し、一般的な上限がceil(n/2)であることを証明。",
+     "一般化メディアンルール等のRAT度を特定し、奇数人ではメディアンルールが上限を達成することを示した。"
+    ],
+    "reason_ja": "リスク回避的な戦略操作への耐性を測る度合いや境界条件に関心がある研究者におすすめ。",
+    "authors": [
+     "Toshiya Yoshimura"
+    ],
+    "venue": "arXiv (econ.TH)",
+    "date": "2026-11-13",
+    "url": "https://arxiv.org/abs/2611.18282",
+    "doi": null,
+    "arxiv_id": "2611.18282",
+    "abstract": "We study tops-only voting rules on the domain of all preferences with a unique top, focusing on manipulation by risk-avoiding voters. Following Hartman et al.(2025), we measure resistance to manipulation by the RAT-degree: the minimum number of other voters' reports that a voter needs to observe for a ``safe'' manipulation to become possible. Given the observed reports, such a manipulation weakly improves on truthful reporting under every completion of the unobserved reports and strictly improves on it under at least one completion. For any finite set of at least three alternatives, we show that anonymity, unanimity, and winner monotonicity imply an upper bound of $\\lceil n/2\\rceil$ on the RAT-degree, where $n$ is the number of voters. We provide exact characterizations of the RAT-degree for anonymous generalized median voter schemes and voting by quotas, without imposing single-peakedness or separability on preferences. For odd $n$, the median voter rule and objectwise majority rule uniquely maximize the RAT-degree within their respective classes and attain the general upper bound.",
+    "tags": [
+     "社会選択",
+     "投票",
+     "公理化"
+    ],
+    "score": 9,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.19353",
+    "title": "Veto Proportionality in Multiwinner Voting with Ranked Preferences",
+    "title_ja": "順位付き選好を持つ多勝者投票における拒否の比例性",
+    "summary_ja": [
+     "多勝者投票において望ましくない候補の排除に着目し「拒否の比例性（PMVC）」を提案した論文。",
+     "包含的・排除的公平性を結ぶ双対性枠組みを構築し、STVがPMVCの双対公理を満たすこと等を示した。",
+     "PMVCを満たすルールの順次構造による特徴付けや、委員会がPMVCに属するかの判定のcoNP完全性を証明。"
+    ],
+    "reason_ja": "多勝者投票における比例的公平性の新公理や拒否コアに関心のある研究者におすすめ。",
+    "authors": [
+     "Haris Aziz",
+     "Yuhang Guo",
+     "Patrick Lederer"
+    ],
+    "venue": "arXiv (cs.GT)",
+    "date": "2026-11-14",
+    "url": "https://arxiv.org/abs/2611.19353",
+    "doi": null,
+    "arxiv_id": "2611.19353",
+    "abstract": "Proportional representation in committee voting with ranked preferences requires voter groups to influence the selected committee in proportion to their size. Existing axioms, such as proportionality for solid coalitions (PSC), demand that like-minded groups of voters are entitled to elect a fair number of candidates to the committee. However, in applications where voters are collectively affected by the entire committee, it may be equally important that no group is confronted with a disproportionate number of candidates that it regards as undesirable. Motivated by this, we initiate the study of veto proportionality in committee elections with ranked preferences. Our central notion, the proportional multiwinner veto core (PMVC), generalizes Moulin's proportional singlewinner veto core to multiwinner elections by allowing groups of voters to partially veto sets of candidates. We analyze how the PMVC relates to existing fairness notions and design rules that are guaranteed to select committees from the PMVC. Specifically, we first introduce a duality framework that connects inclusion- and exclusion-based fairness notions and show, e.g., that the dual axiom of the PMVC strengthens PSC. We further show that STV satisfies the dual axiom of the PMVC, which also implies the existence of committees in the PMVC. Subject to a strengthening of committee monotonicity, we characterize the rules that always return committees in the PMVC as sequential adaptations of singlewinner voting rules that always select from the proportional singlewinner veto core. By our duality framework, this also gives rise to a new class of rules that satisfy PSC. We further prove that the dual axiom of the PMVC and RankPJR+ are jointly satisfiable, thereby pushing the frontier of fairness guarantees that can always be attained. Finally, we show that deciding whether a given committee belongs to the PMVC is coNP-complete.",
+    "tags": [
+     "社会選択",
+     "投票",
+     "公理化"
+    ],
+    "score": 9,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.22119",
+    "title": "An axiomatic foundation for optimized certainty equivalents",
+    "title_ja": "最適化確実性等価の公理的基礎",
+    "summary_ja": [
+     "リスク管理で重要な最適化確実性等価（OCE）の経済的公理化を初めて達成した論文。",
+     "新公理「公平なコイン補償」等を提案し、OCEやExpected Shortfall等の特徴付けを与えた。",
+     "さらに新公理「等平均ランダム化」を導入することで、平均・分散基準の公理的導出にも成功した。"
+    ],
+    "reason_ja": "リスク尺度や意思決定理論における確実性等価の公理的導出に関心がある研究者におすすめ。",
+    "authors": [
+     "Christopher Blier-Wong",
+     "Jean-Gabriel Lauzier",
+     "Zachary Van Oosten"
+    ],
+    "venue": "arXiv (q-fin.RM)",
+    "date": "2026-11-17",
+    "url": "https://arxiv.org/abs/2611.22119",
+    "doi": null,
+    "arxiv_id": "2611.22119",
+    "abstract": "Optimized Certainty Equivalents (OCEs) are an important class of risk measures for optimization and risk management that includes the Mean--Variance criterion, Expected Shortfall, the Entropic Risk Measure, and expectation. Despite their importance, economic axioms have not characterized OCEs. We propose a new axiom called Fair-Coin Compensation, which characterizes OCEs together with Strong Risk Aversion and Normalization. We interpret Fair-Coin Compensation through the fair assignment of two losses by a coin toss: transfers between two participants can remove the additional risk created by the random assignment. Adding further axioms yields sharper characterizations. Monotonicity yields standard OCEs; Positive Homogeneity, together with Prudence, yields Expected Shortfall; and Fair-Coin Independence yields the Entropic Risk Measure. We also axiomatize the Mean--Variance criterion using our novel axiom of Equal-Mean Randomization, which states that random assignment of two losses with the same expected value does not produce a risk measure above the average of their risk measures.",
+    "tags": [
+     "意思決定",
+     "公理化"
+    ],
+    "score": 9,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "doi:10.1016/j.mathsocsci.2026.102590",
+    "title": "Biseparable representations of the Certainty Equivalents",
+    "title_ja": "確実性等価の双分離型表現",
+    "summary_ja": [
+     "（推測）要旨未記載のためタイトルからの推測だが、確実性等価の双分離型表現を分析した論文と思われる。",
+     "（推測）意思決定理論におけるリスク下の選好や評価尺度の数学的構造を扱っていると推測される。",
+     "（推測）確実性等価表現の公理的・関数的性質の解明を目指していると考えられる。"
+    ],
+    "reason_ja": "確実性等価の関数表現や意思決定理論における選好表現に関心のある研究者におすすめ。",
+    "authors": [
+     "Jacek Chudziak",
+     "Michał Lewandowski"
+    ],
+    "venue": "Mathematical Social Sciences",
+    "date": "2026-11-18",
+    "url": "https://doi.org/10.1016/j.mathsocsci.2026.102590",
+    "doi": "10.1016/j.mathsocsci.2026.102590",
+    "arxiv_id": null,
+    "abstract": "",
+    "tags": [
+     "意思決定",
+     "公理化"
+    ],
+    "score": 9,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "journal"
+   },
+   {
+    "id": "arxiv:2611.26224",
+    "title": "Obvious group manipulations in voting",
+    "title_ja": "投票における明白な集団操作",
+    "summary_ja": [
+     "集団の選択肢集合のみから識別可能な「明白な集団操作」の理論的分析を行った論文。",
+     "Tops-onlyルールでは明白な集団操作不能（NOMG）を満たすのは独裁的ルールのみと証明。",
+     "多数決基準を満たすルールにおけるNOMGの不可能性や、例外的な設定でのボルダ実行可能性等を解明。"
+    ],
+    "reason_ja": "明白な戦略操作可能性の集団拡張や各種投票ルールの理論的限界に関心のある研究者におすすめ。",
+    "authors": [
+     "R. Pablo Arribillaga",
+     "Agustín G. Bonifacio",
+     "Federico Fioravanti"
+    ],
+    "venue": "arXiv (econ.TH)",
+    "date": "2026-11-19",
+    "url": "https://arxiv.org/abs/2611.26224",
+    "doi": null,
+    "arxiv_id": "2611.26224",
+    "abstract": "We study obvious group manipulation in voting and characterize it as manipulation identifiable from a coalition's option sets alone. Our analysis focuses on two overlapping classes: tops-only rules and rules satisfying the majority criterion, including all Condorcet-consistent rules. On the universal domain with at least three alternatives, a tops-only rule is not obviously manipulable by groups (NOMG) if and only if it is dictatorial. For rules satisfying the majority criterion, NOMG is impossible when $n,m\\geq3$, except with four voters and three alternatives. We quantify the coalition sizes behind these restrictions, obtaining sharp bounds for efficient tops-only rules and an exact threshold for majority-criterion rules with odd electorates. In the exceptional configuration, we characterize an interval of NOMG scoring rules containing Borda, which is also Condorcet consistent there. We further characterize NOMG with two alternatives and apply our tops-only characterization to generalized median voter schemes and voting by committees.",
+    "tags": [
+     "社会選択",
+     "投票"
+    ],
+    "score": 9,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.25677",
+    "title": "Proportional Representation for Almost-Solid Coalitions and the Proportional Veto Core for Rankings",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Evi Micha",
+     "Fatih Erdem Kizilkaya"
+    ],
+    "venue": "arXiv (cs.GT)",
+    "date": "2026-11-19",
+    "url": "https://arxiv.org/abs/2611.25677",
+    "doi": null,
+    "arxiv_id": "2611.25677",
+    "abstract": "A proportional ranking should give groups of voters representation commensurate with their size at every prefix. Proportionality for solid coalitions (PSC) provides this guarantee to groups whose members rank the same set of candidates above all others. How much representation should a group receive when a few outside candidates disrupt that agreement? We extend the proportional veto core to rankings through candidatewise and setwise guarantees. We show that setwise veto protection is equivalent to robust Rank-PSC under reversal of both the voters' preferences and the collective ranking. Robust Rank-PSC extends representation guarantees to almost-solid coalitions at every prefix. Each distinct outside candidate that disrupts a coalition's agreement reduces its guaranteed representation by at most one, and this bound is tight. Using reverse-sequential variants of Ordered Phragmén and STV, we construct rankings satisfying robust Rank-PSC$+$ in polynomial time. This stronger axiom preserves the guarantee after deleting any suffix of the collective ranking and restricting voters' preferences to the remaining candidates. Verifying robust Rank-PSC is coNP-complete, whereas verifying robust Rank-PSC$+$ takes polynomial time. We also introduce Rank-Aligned PJR$+$, which requires the first $r$ candidates of the collective ranking to satisfy PJR$+$ when each voter approves their top $r$ candidates. We give a polynomial-time algorithm that meets this requirement simultaneously for every $r$. For fixed-size committees, the Expanding Approvals Rule guarantees Rank-PJR$+$ but can violate robust PSC regardless of how ties are broken or payments are assigned. We give a modification that satisfies both guarantees for any prescribed committee size.",
+    "tags": [
+     "社会選択",
+     "投票",
+     "公理化"
+    ],
+    "score": 9,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.17701",
+    "title": "Truthful compromise and insurance on a sphere",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Siwei Chen",
+     "Pengbo Wang"
+    ],
+    "venue": "arXiv (econ.TH)",
+    "date": "2026-11-13",
+    "url": "https://arxiv.org/abs/2611.17701",
+    "doi": null,
+    "arxiv_id": "2611.17701",
+    "abstract": "Can public choice without transfers insure conflicting interests when action intensity is fixed? We require truthful reporting for every increasing-concave evaluation of alignment with private ideals. On a sphere, efficiency at profiles with at most three ideal directions forces fixed-weight random dictatorship; weaker tests suffice in two and three dimensions. From four dimensions, binary efficiency permits committees to insure members by placing outcome risk orthogonally to their reports. We identify restrictions shared by all mechanisms with these incentives and binary efficiency: binary winning probabilities determine mean outcomes at every profile and individual alignment distributions at planar three-camp profiles. When these probabilities depend only on camp size, complete insurance at balanced equilateral disagreement requires dimension proportional to population. In contrast, committees reduce each participant's welfare loss relative to certain zero alignment to any prescribed positive fraction of the equal-weight random-dictatorship loss in a population-independent dimension.",
+    "tags": [
+     "社会選択",
+     "メカニズムデザイン",
+     "公理化"
+    ],
+    "score": 8,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.20209",
+    "title": "Knowing Less After a Diagnostic Test: Dilation in Clinical Decision-Making",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Filip Obradović",
+     "Gabriel Ziegler"
+    ],
+    "venue": "arXiv (econ.TH)",
+    "date": "2026-11-15",
+    "url": "https://arxiv.org/abs/2611.20209",
+    "doi": null,
+    "arxiv_id": "2611.20209",
+    "abstract": "Dilation (Seidenfeld and Wasserman 1993) occurs when conditioning on new information \\textit{only} increases uncertainty regardless of what the information reveals. Often viewed as an undesirable feature of models of ambiguity, dilation has sparked sustained debate about belief updating. This paper shows that following established clinical guidance can induce dilation, even for diagnostic tests that meet conventional performance benchmarks. We characterize when a test is dilation-inducing and show that a ubiquitous feature of performance studies -- evaluating tests against an imperfect reference -- creates scope for dilation. To facilitate detection before clinical use and inform regulatory standards, we develop a finite-sample valid hypothesis test of the null that a diagnostic test is dilation-inducing in this context. Applying the method to an influential study that preceded and contributed to the clinical adoption of chest CT screening for COVID-19, we find that the data are consistent with dilation.",
+    "tags": [
+     "意思決定"
+    ],
+    "score": 8,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "doi:10.1016/j.mathsocsci.2026.102592",
+    "title": "Nash implementation of dynamic matching rules",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Luosai Zhang"
+    ],
+    "venue": "Mathematical Social Sciences",
+    "date": "2026-11-19",
+    "url": "https://doi.org/10.1016/j.mathsocsci.2026.102592",
+    "doi": "10.1016/j.mathsocsci.2026.102592",
+    "arxiv_id": null,
+    "abstract": "",
+    "tags": [
+     "メカニズムデザイン",
+     "社会選択"
+    ],
+    "score": 8,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "journal"
+   },
+   {
+    "id": "doi:10.1016/j.jet.2026.106276",
+    "title": "Shill-proof rules in object allocation problems with money",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Hiroki Shinozaki"
+    ],
+    "venue": "Journal of Economic Theory",
+    "date": "2026-11-19",
+    "url": "https://doi.org/10.1016/j.jet.2026.106276",
+    "doi": "10.1016/j.jet.2026.106276",
+    "arxiv_id": null,
+    "abstract": "We consider the object allocation problem with money. The seller owns multiple units of an object and is solely interested in her revenue from an allocation. Each buyer can receive at most one unit of the object and has preferences over pairs consisting of consumption of the object and payments, which are not necessarily quasi-linear. We study the seller's incentives to increase her revenue by introducing false-name buyers, a practice commonly referred to as shill bidding. An (allocation) rule is shill-proof if the seller cannot increase the revenue by introducing false-name buyers. A rule is a price-based weak priority rule if there is a profile of prices such that buyers who are willing to receive the object at their own prices do so in descending order of price. We establish that a rule is revenue undominated among the class of rules satisfying shill-proofness, strategy-proofness, and non-imposition if and only if it is a price-based weak priority rule. Our result provides justification for the use of posted-price rules—widely adopted by online marketplaces, and internet auctions as ``buy-it-now'' auctions—over auction-type rules in terms of shill-proofness.",
+    "tags": [
+     "メカニズムデザイン",
+     "公正・配分"
+    ],
+    "score": 8,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "journal"
+   },
+   {
+    "id": "arxiv:2611.26247",
+    "title": "An Enforcement Foundation for Constrained Equal Awards",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Sinan Ertemel"
+    ],
+    "venue": "arXiv (econ.TH)",
+    "date": "2026-11-19",
+    "url": "https://arxiv.org/abs/2611.26247",
+    "doi": null,
+    "arxiv_id": "2611.26247",
+    "abstract": "Standard claims problems take claims as given. We ask how rule selection changes when a certified claim can be augmented by a privately known component that is costly to verify. In a binary environment, equal treatment of equals, claim boundedness, and efficiency impose a sharp lower bound on the gain from exaggeration and hence on the expected auditing needed for truthful reporting to be weakly dominant. The constrained equal awards (CEA) rule attains this bound at every report profile through a correlated audit policy. Conversely, every profilewise audit-minimal rule is CEA. The pointwise result also makes CEA the unique admissible rule that minimizes expected verification cost under every prior over true claims.",
+    "tags": [
+     "公正・配分",
+     "公理化"
+    ],
+    "score": 8,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.25368",
+    "title": "Cognitive Constraints and Misspecification Concern",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Drew Fudenberg",
+     "Florian Mudekereza"
+    ],
+    "venue": "arXiv (econ.TH)",
+    "date": "2026-11-19",
+    "url": "https://arxiv.org/abs/2611.25368",
+    "doi": null,
+    "arxiv_id": "2611.25368",
+    "abstract": "We study repeated decision problems in which an agent has cognitive constraints and is concerned that her models might be misspecified. She first uses data to weight candidate models, subject to a cognitive-capacity constraint on the complexity she can process, and then she evaluates choices according to how well they perform under those models. More data need not overcome limited capacity: a statistically inferior but simpler model can remain relevant in the long run. When the constraint binds, evidence that favors models in proportion to their complexity can leave current behavior unchanged while still affecting later responses to data. This constraint eliminates cycles between risky and safe actions when simple models favor safety, and relaxing it can make risky play more attractive initially yet less frequent in the long run. It can also sustain misspecified model classes by suppressing choices that would reveal their errors.",
+    "tags": [
+     "意思決定"
+    ],
+    "score": 8,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.25709",
+    "title": "Distortion in Online Voting",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "MohammadHossein Ghasemi",
+     "Masoud Seddighin",
+     "Saeed Seddighin"
+    ],
+    "venue": "arXiv (cs.GT)",
+    "date": "2026-11-19",
+    "url": "https://arxiv.org/abs/2611.25709",
+    "doi": null,
+    "arxiv_id": "2611.25709",
+    "abstract": "We initiate the study of distortion in online voting, a framework that bridges computational social choice and online algorithms. In contrast to the classical offline setting, where the full election instance is known in advance, we consider a dynamic environment where a fixed set of voters is present from the beginning, but alternatives arrive sequentially over time. Upon each arrival, a mechanism must immediately and irrevocably decide whether to retain the currently selected candidate or switch to the newly arriving one, operating solely on the partial ordinal rankings induced by the underlying cardinal preferences. We provide upper and lower bounds for deterministic and randomized mechanisms under two standard cardinal preference frameworks. Utilitarian framework: For deterministic mechanisms under adversarial arrival order, we establish an $Ω(mn)$ lower bound and give an matching online algorithm with distortion at most $\\frac{2}{3}m(n+\\frac{1}{4})$. For randomized rules, we introduce regularity, which allows any regular, order-independent offline randomized rule to be converted into an online rule with the same expected distortion. The Harmonic voting rule satisfies this property, yielding online distortion $O(\\sqrt{m\\log m})$. Metric framework: For deterministic mechanisms, maintaining an alternative within a $\\varphi$-weighted uncovered set guarantees distortion $2+\\sqrt{5}$. We show that matching-based offline rules achieving distortion $3$ cannot be directly implemented online. We establish a lower bound of $\\sqrt{13}$, even with three alternatives, and a matching upper bound for three alternatives and any number of voters. For randomized mechanisms, regularity gives an online distortion of $3-\\frac{2}{n}$ via Random Dictatorship.",
+    "tags": [
+     "社会選択",
+     "投票"
+    ],
+    "score": 8,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "doi:10.1016/j.geb.2026.104080",
+    "title": "Orchestrating the Distributive Process: Baron and Ferejohn Meet Tullock",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Qiang Fu",
+     "Zenan Wu",
+     "Yuxuan Zhu"
+    ],
+    "venue": "Games and Economic Behavior",
+    "date": "2026-11-13",
+    "url": "https://doi.org/10.1016/j.geb.2026.104080",
+    "doi": "10.1016/j.geb.2026.104080",
+    "arxiv_id": null,
+    "abstract": "",
+    "tags": [
+     "社会選択",
+     "投票",
+     "ゲーム理論"
+    ],
+    "score": 7,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "journal"
+   },
+   {
+    "id": "doi:10.1016/j.geb.2026.104084",
+    "title": "Multidimensional mechanism design and robust revenue maximization in multi-object auctions",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Hiroyuki Adachi"
+    ],
+    "venue": "Games and Economic Behavior",
+    "date": "2026-11-13",
+    "url": "https://doi.org/10.1016/j.geb.2026.104084",
+    "doi": "10.1016/j.geb.2026.104084",
+    "arxiv_id": null,
+    "abstract": "",
+    "tags": [
+     "メカニズムデザイン"
+    ],
+    "score": 7,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "journal"
+   },
+   {
+    "id": "doi:10.1016/j.geb.2026.104081",
+    "title": "Strong Nash equilibria of core-selecting double auctions",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Shuntaro Kawachi"
+    ],
+    "venue": "Games and Economic Behavior",
+    "date": "2026-11-13",
+    "url": "https://doi.org/10.1016/j.geb.2026.104081",
+    "doi": "10.1016/j.geb.2026.104081",
+    "arxiv_id": null,
+    "abstract": "We study core-selecting auctions for double auctions that incorporate package bidding. Unlike in one-sided core-selecting auctions, the core may be empty in more general double auction settings, and truncation strategies need not be amongst a bidder’s best responses. Nevertheless, we establish the existence of a core-selecting auction in which every imputation in the core with respect to true preferences corresponds to a strong Nash equilibrium. Specifically, for any core imputation, there exists a profile of truncation strategies that constitutes a strong Nash equilibrium and induces precisely that imputation.",
+    "tags": [
+     "ゲーム理論",
+     "メカニズムデザイン"
+    ],
+    "score": 7,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "journal"
+   },
+   {
+    "id": "arxiv:2611.18468",
+    "title": "Disenfranchisement in Spatial Voting Games",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Vincent Lageschulte",
+     "Joel Nishimura"
+    ],
+    "venue": "arXiv (cs.GT)",
+    "date": "2026-11-13",
+    "url": "https://arxiv.org/abs/2611.18468",
+    "doi": null,
+    "arxiv_id": "2611.18468",
+    "abstract": "The questions of voting rights, group membership, and the boundaries of acceptable discourse all involve a recursive, self-stability issue, wherein the voters, group members, and acceptable commentators are often the ultimate arbiters of their own rules for inclusion and exclusion. In order to understand how ideological or issue diversity may impact the stability of such inclusion and exclusion, we introduce franchise elections, where voting members of a group vote to change the electorate. In particular, when agents are positioned inside an ideological or issue space, a social choice function that aggregates agent viewpoints induces a preference for agents over group composition, where agents prefer groups that improve the social choice function outcome for them. We demonstrate that when ideological space is two-dimensional, these franchise elections can generate complex behavior and that this complexity exists for any social choice function. Using the Yolk social choice function from voting theory, we illustrate that franchise elections can predict that agents attempting to introduce a new ideological axis perpendicular to an existing left-right spectrum risk disenfranchisement unless they ally with either side of the spectrum, and that franchise elections can cycle with any period.",
+    "tags": [
+     "社会選択",
+     "投票"
+    ],
+    "score": 7,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.19417",
+    "title": "Are Revealed Preferences All You Need for AI Alignment?",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Joshua S. Gans",
+     "Richard T. Holden"
+    ],
+    "venue": "arXiv (econ.TH)",
+    "date": "2026-11-14",
+    "url": "https://arxiv.org/abs/2611.19417",
+    "doi": null,
+    "arxiv_id": "2611.19417",
+    "abstract": "AI agents learn what principals want from what principals choose. We offer a criterion for when a principal's decisions, at every belief an AI might hold, are all the AI needs. For acting, they are. Cautious actions, such as deferring to a person, typically divide the principal's actions into blocks, and for choosing costless evidence, decisions are enough exactly when the same evidence is best in every block. Otherwise, the AI acts as its principal would yet can gather the wrong evidence, and greater capability can turn that error into incorrect actions. Choices between two mistakes reveal what decisions miss.",
+    "tags": [
+     "意思決定",
+     "公理化"
+    ],
+    "score": 7,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.20890",
+    "title": "Nearly Settling the Complexity of Connected $\\varepsilon$-Envy-Free Cake Cutting",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Simon Mackenzie",
+     "Mashbat Suzuki"
+    ],
+    "venue": "arXiv (cs.GT)",
+    "date": "2026-11-16",
+    "url": "https://arxiv.org/abs/2611.20890",
+    "doi": null,
+    "arxiv_id": "2611.20890",
+    "abstract": "Envy-free cake cutting has been one of the central problems in fair division. In cake cutting, agents' preferences over the cake are accessed through Robertson--Webb (RW) queries. For three or more agents, no algorithm that makes finitely many RW queries can always find a contiguous, exactly envy-free allocation. For contiguous $\\varepsilon$-envy-free allocations, however, Hollender and Rubinstein~(JACM, 2025) showed that $\\poly(\\log(1/\\varepsilon))$ RW queries suffice for four agents, leaving open whether such a bound is possible for five or more agents. In this paper, we establish a striking change in query complexity: $\\poly(\\log(1/\\varepsilon))$ RW queries suffice for up to five agents, whereas $(1/\\varepsilon)^{Ω(1)}$ queries are necessary for seven or more agents, even when valuations are additive. Thus, we resolve the five-agent case and, more broadly, determine whether polylogarithmic query complexity is possible for every number of agents except six. We also explore the computational complexity of finding contiguous $\\varepsilon$-envy-free allocations. When monotone Lipschitz valuations are given by polynomial-time evaluation procedures (e.g., arithmetic circuits and efficiently computable Turing machines), we show that an $\\varepsilon$-envy-free division can be computed in polynomial time for five agents. In contrast, even for additive valuations, finding an $\\varepsilon$-envy-free division is UEOPL-hard for every fixed number of agents $n\\ge7$ and PPAD-complete for every fixed $n\\ge13$.",
+    "tags": [
+     "公正・配分"
+    ],
+    "score": 7,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.22892",
+    "title": "Weighted Proportional Toll Sharing on General Highway Networks",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Erfang Shan",
+     "Yan Chu"
+    ],
+    "venue": "arXiv (econ.TH)",
+    "date": "2026-11-17",
+    "url": "https://arxiv.org/abs/2611.22892",
+    "doi": null,
+    "arxiv_id": "2611.22892",
+    "abstract": "We extend the Segments Equal Sharing (SES) method of \\citet{wu2024} from line highways to general highway networks, including networks with cycles. The input is an exogenously specified profile of route flows. We introduce the Weighted Proportional Sharing (WPS) method, which distributes each route's mileage revenue in proportion to weighted segment lengths and its fixed-surcharge revenue in proportion to positive segment surcharges. Route SES is recovered under homogeneous weights within each revenue component. We show that WPS is the sum of two weighted Shapley allocations and that the underlying route games extend the dividend and Shapley representation of linear SES. Two axiomatic characterizations identify WPS. The first uses additivity and proportional treatment of segments used on every positive-revenue route. The second combines sub-highway efficiency and weighted average balanced contributions under a route cancellation rule. We also extend Segments Proportional Sharing to general networks, identify it with the $τ$ value of the corresponding route game, and characterize it axiomatically. For Segments Compensated Sharing we characterize a weighted average tree allocation by consistency across rooted branch settlements and averaging under a specified root lottery. A cyclic example shows that different route splits can change the allocation even when origin--destination volumes and aggregate toll revenue are held fixed.",
+    "tags": [
+     "公正・配分",
+     "公理化"
+    ],
+    "score": 7,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.22116",
+    "title": "Reserve Systems in Dynamic Settings: Account Design and Inherited Rights",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Tayfun Sönmez",
+     "M. Utku Ünver"
+    ],
+    "venue": "arXiv (econ.TH)",
+    "date": "2026-11-17",
+    "url": "https://arxiv.org/abs/2611.22116",
+    "doi": null,
+    "arxiv_id": "2611.22116",
+    "abstract": "Research on reserve systems mainly considers static settings, formulating and studying choice rules for a given allocation problem. Dynamic settings are different in that the problem is not given. Over time, more positions become available, and each time the institution must build the current problem from its past. We distinguish the ledger, which stores information about earlier allocations, the account, which transforms these data into the current problem, and the choice rule, which selects an outcome for that problem. The same choice rule can implement very different policies under different accounts. If each new batch is assigned while holding earlier recipients and their categories fixed, then as batches shrink, over-and-above, the most generous reserve policy we study, can select nearly the same recipients as minimum guarantee, the most conservative one. Cumulative implementation uses a different account, which reconsiders the categories of earlier recipients, and prevents this compression. We characterize it by resource-release invariance. With arrivals or changes in priorities, the ordinary choice rule might reject an earlier recipient whose appointment has to be honored. We introduce and characterize retain, reassign, and boost (RRB) choice rules, under which every incumbent retains her appointment and can have her category changed. Combining RRB with individual-proposing deferred acceptance gives a strategy-proof mechanism under which each incumbent keeps her appointment or receives one she prefers. Applications include waiting lists in school and university admissions, public recruitment, and court-ordered corrections.",
+    "tags": [
+     "メカニズムデザイン",
+     "公正・配分"
+    ],
+    "score": 7,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.23782",
+    "title": "Temporal Fair Division: Simultaneous Guarantees for Goods and Chores",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Tianqi Chen"
+    ],
+    "venue": "arXiv (cs.GT)",
+    "date": "2026-11-18",
+    "url": "https://arxiv.org/abs/2611.23782",
+    "doi": null,
+    "arxiv_id": "2611.23782",
+    "abstract": "We study temporal fair division of indivisible items in both the goods and chores settings, with $n \\ge 2$ agents and nonnegative additive values or costs. Items arrive one at a time and must be assigned immediately and irrevocably. The arrival order and all agents' values or costs are known in advance, and the cumulative allocation must satisfy the fairness requirements after each arrival. For goods, we give a polynomial-time algorithm that simultaneously achieves exact temporal proportionality up to one item (TPROP1), a $1/n$ approximation to temporal maximin share (TMMS), and a $1/(n-1)$ approximation to temporal envy-freeness up to one item (TEF1). The TMMS factor is optimal. For chores, we give a polynomial-time algorithm that simultaneously achieves exact TPROP1 and a $2-1/n$ approximation to TMMS. Classical scheduling lower bounds based on fixed sequences carry over to chores TMMS, establishing the optimality of this factor for $n=2,3$. For every $n \\ge 2$, we further show that $2-1/n$ is the optimal TMMS factor subject to exact TPROP1. For every fixed $n \\ge 3$ and every finite $β\\ge 1$, we construct an instance of chores admitting no $β$-TEF1 allocation.",
+    "tags": [
+     "公正・配分"
+    ],
+    "score": 7,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.25892",
+    "title": "Closing Gaps in Temporal Fair Division for Chores",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Nicholas Teh"
+    ],
+    "venue": "arXiv (cs.GT)",
+    "date": "2026-11-19",
+    "url": "https://arxiv.org/abs/2611.25892",
+    "doi": null,
+    "arxiv_id": "2611.25892",
+    "abstract": "We study the fair division of indivisible chores that must be assigned in a prescribed order. The complete instance is known in advance, but assignments cannot be changed. Temporal envy-freeness up to one chore (TEF1) requires envy-freeness up to one chore after every arrival. For goods, TEF1 allocations need not exist, and deciding whether one exists is NP-hard. For chores, Elkind et al. (AAMAS 2025) showed that TEF1 allocations exist for two agents, but left open whether they always exist, conjecturing that they do not, and whether deciding their existence is hard. We resolve both questions, confirming the conjecture in a strong form: for every $n\\ge3$ and every finite factor, some $n$-agent instance admits no allocation satisfying TEF1 even up to that factor. This holds even when all agents have the same multiset of individual chore costs, with nine chores sufficing for three agents. Deciding TEF1 existence is NP-complete for every fixed $n\\ge3$, even when all costs lie within a factor $1+2^{-m}$ of one another, where $m$ is the number of chores. Instances without TEF1 allocations exist arbitrarily close to the uniform cost matrix with $O(n\\log n)$ chores, and just nineteen for three agents. We then relate fairness to social cost. Even when a TEF1 allocation is supplied, minimizing social cost subject to TEF1 admits no polynomial-time approximation within any factor polynomial in the number of chores unless P$=$NP, already for three agents with strictly positive normalized costs. In contrast, for every fixed number of agents, we give an FPTAS for the optimal temporal EF1 factor, the smallest factor up to which TEF1 can be satisfied, whose output has social cost no larger than that of the cheapest allocation attaining this factor. Thus a slight relaxation of fairness permits a social-cost guarantee that, unless P$=$NP, no polynomial-time algorithm can provide under exact TEF1.",
+    "tags": [
+     "公正・配分",
+     "社会選択"
+    ],
+    "score": 7,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "doi:10.1016/j.jet.2026.106275",
+    "title": "Signaling in repeated delegation",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Parimal Bag",
+     "Wing Suen"
+    ],
+    "venue": "Journal of Economic Theory",
+    "date": "2026-11-13",
+    "url": "https://doi.org/10.1016/j.jet.2026.106275",
+    "doi": "10.1016/j.jet.2026.106275",
+    "arxiv_id": null,
+    "abstract": "",
+    "tags": [
+     "ゲーム理論",
+     "意思決定"
+    ],
+    "score": 6,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "journal"
+   },
+   {
+    "id": "arxiv:2611.17692",
+    "title": "Random Utility Models in the Consumption-Budget Setting: Vertex and Network-Flow Characterizations",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Haoge Chang",
+     "Kota Saito",
+     "Mingxi Zhu"
+    ],
+    "venue": "arXiv (econ.EM)",
+    "date": "2026-11-13",
+    "url": "https://arxiv.org/abs/2611.17692",
+    "doi": null,
+    "arxiv_id": "2611.17692",
+    "abstract": "This note supplements our paper \\textit{Alternative Computational Formulations for Testing Discrete-Choice Random Utility Models: Half-Space and Network-Flow Formulations} and serves two purposes: 1. We clarify the conceptual distinctions between two classes of random utility models (RUM): those in the consumption-budget setting \\citep{kitamura2019nonparametric} (hereafter KS) and those in the finite-alternative setting (e.g., Chapter~7 of \\cite{chambers2016revealed}). In particular, we show (Theorem 1) that each rational type, as defined in KS, can be obtained as a coordinate projection of the deterministic choice vector induced by a strict preference ranking that satisfies what we call a patch-monotonicity condition. 2. We generalize the network-flow characterization for finite-alternative RUM in \\cite{fiorini2004short} to the consumption-budget setting (Theorem 2). Specifically, we show that a vector of choice probabilities in the consumption-budget setting is rationalizable in the KS sense if and only if it is the image of a unit flow on a multi-arc powerset digraph under a fixed linear map. The key distinction is that our digraph allows multiple arcs between the same pair of nodes, whereas the digraph in Fiorini has at most one arc between any pair of nodes.",
+    "tags": [
+     "意思決定",
+     "公理化"
+    ],
+    "score": 6,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.21113",
+    "title": "Intransigence or compromise: concatenated opinion dynamics with voting feedback",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Lingfei Wang",
+     "Johan Swartling Sennhed",
+     "David Ohlin",
+     "Emma Tegling"
+    ],
+    "venue": "arXiv (physics.soc-ph)",
+    "date": "2026-11-16",
+    "url": "https://arxiv.org/abs/2611.21113",
+    "doi": null,
+    "arxiv_id": "2611.21113",
+    "abstract": "In this paper, we study opinion evolution in a sequence of Friedkin-Johnsen (FJ) models, concatenated so that the final opinions of each model serve as the initial opinions of the next. Each FJ model is followed by a vote, and each agent becomes partially or fully stubborn in the next model, depending on how close its opinion is to the voting result. With the state-dependent switching of stubbornness, the dynamics are not guaranteed to be contractive. We show that, over any fixed strongly connected network, the opinions always converge. A sufficient condition on the initial opinions is proposed, under which consensus is reached exponentially fast. For the complete graph, we further show that, if the agents' stubbornness levels do not differ too much, an agent that is partially stubborn in one FJ model can never become fully stubborn in a subsequent one: once it has started compromising, it keeps doing so.",
+    "tags": [
+     "社会選択",
+     "投票"
+    ],
+    "score": 6,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.21803",
+    "title": "Mechanism Design and Active Systems Theory: 60 Years of Parallel Development",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Dmitry A. Novikov"
+    ],
+    "venue": "arXiv (eess.SY)",
+    "date": "2026-11-16",
+    "url": "https://arxiv.org/abs/2611.21803",
+    "doi": null,
+    "arxiv_id": "2611.21803",
+    "abstract": "The survey compares two research traditions within the mathematical theory of designing the rules of interaction (mechanisms) for purposeful participants: mechanism design, together with contract theory and implementation theory, and the theory of active systems created by V.N. Burkov and developed into the theory of control in organizations (TCO) by D.A. Novikov's school; the main results of Yu.B. Germeier's school and of the domestic schools adjacent to active systems theory (AST) are covered as well. The problem statements and principal results of 2006-2026 are presented: for mechanism design (MD) - robust and dynamic mechanism design, multidimensional screening, information design, simplicity of mechanisms and credibility of the designer, market design, algorithmic and learning-based design, mechanisms for AI agents, and robust, relational, dynamic and algorithmic contracts; for AST and TCO - a general typology of control, strategy-proof and incentive-compatible planning mechanisms, decomposition of the agents' game, systems with distributed control and coalitional interaction, reflexive games and informational control, control of staff and structure, dynamic active systems, and project management. A correspondence between the classical results is established (the fair play principle and the revelation principle, the serial resource allocation mechanism and the uniform rule, active expertise mechanisms and generalized median schemes, quasi-compensatory incentive schemes and contracts under observable actions), and priorities are delineated by uniform rules; the areas where the two traditions diverge are identified, as are the dimensions of the problem (staff, structure, institutions, awareness, agents' beliefs) covered only by TCO.",
+    "tags": [
+     "メカニズムデザイン",
+     "社会選択"
+    ],
+    "score": 6,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.21387",
+    "title": "A Polynomial-Time Algorithm for Constant-Factor EFX Allocations of Chores",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Aniket Murhekar"
+    ],
+    "venue": "arXiv (cs.GT)",
+    "date": "2026-11-16",
+    "url": "https://arxiv.org/abs/2611.21387",
+    "doi": null,
+    "arxiv_id": "2611.21387",
+    "abstract": "We study the fair division of indivisible chores among agents with additive disutilities, focusing on the central fairness notion of envy-freeness up to any chore (EFX), and its multiplicative approximations. Although the existence of constant-factor approximations to EFX are known, computing such an allocation in polynomial time remained open. We resolve this question by giving an algorithm that, for every $\\varepsilon\\in(0,1)$, computes a $(3+\\varepsilon)$-EFX allocation in time polynomial in the input length and $1/\\varepsilon$. Our result relies on two algorithmic contributions. First, we give a fully polynomial-time approximation scheme (FPTAS) for earning-restricted (ER) equilibria with equal earning requirements and arbitrary feasible chore earning limits. We develop a new nonconvex program with chore payouts and money-flow variables, and prove that every local maximum yields an exact ER equilibrium. We then give a mirror-ascent algorithm for this program and prove that it converges to an approximate ER equilibrium in polynomial time. Second, we give a new procedure that converts the approximate equilibrium into a $(3+\\varepsilon)$-EFX-friendly allocation, a suitable starting point for the chore-swap framework of Garg and Murhekar (2026). The procedure uses a flexible price threshold to choose swap chores and their recipients together, overcoming a factor-four bottleneck in the earlier approaches while accommodating approximate earnings. We expect these ideas to be useful more broadly in fair division, including for goods and other fairness notions.",
+    "tags": [
+     "公正・配分"
+    ],
+    "score": 6,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.23614",
+    "title": "Expanding and Evaluating the Applicability of Safe Pareto Improvements",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Nathaniel Sauerberg",
+     "Caspar Oesterheld"
+    ],
+    "venue": "arXiv (cs.GT)",
+    "date": "2026-11-17",
+    "url": "https://arxiv.org/abs/2611.23614",
+    "doi": null,
+    "arxiv_id": "2611.23614",
+    "abstract": "Even when players can make credible joint commitments in games, disagreement about the game's default outcome (e.g., about equilibrium selection) can prevent them from agreeing on any particular payoff profile. We study safe Pareto improvements (SPIs): commitments that sidestep this obstacle by inducing a new game that is isomorphic to the original (after iteratively removing strictly dominated actions) but entrywise Pareto better. We do so by constructing token games: cheap-talk games rendered meaningful by commitments to take payoff-relevant actions (in prior work, strategies in the original game) as a function of the token outcome. Since these token games preserve the original game's strategic structure, players should expect them to be played isomorphically and hence agree that they Pareto improve on the original. In this work, we study token game SPIs under three additional commitment abilities: (1) burning utility, (2) transferring utility between players, and (3) transferring utility with an outside party conditional on the token outcome (e.g., via insurance-like contracts). We characterize when SPIs exist in each case and give efficient algorithms for optimizing over them. Finally, we propose evaluating SPI frameworks by how often they enable SPIs in randomly generated games. In such experiments, our methods substantially outperform prior work.",
+    "tags": [
+     "ゲーム理論",
+     "厚生経済学"
+    ],
+    "score": 6,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   },
+   {
+    "id": "arxiv:2611.22376",
+    "title": "Computing EF1 Allocations with Few Value Queries",
+    "title_ja": null,
+    "summary_ja": null,
+    "reason_ja": null,
+    "authors": [
+     "Max Dupré la Tour",
+     "Ayumi Igarashi"
+    ],
+    "venue": "arXiv (cs.GT)",
+    "date": "2026-11-17",
+    "url": "https://arxiv.org/abs/2611.22376",
+    "doi": null,
+    "arxiv_id": "2611.22376",
+    "abstract": "We give a deterministic polynomial-time algorithm that allocates $m$ indivisible goods among $n$ agents with nonnegative additive valuations using $O(n^5\\log^2 m)$ value queries and guarantees envy-freeness up to one good (EF1). Concurrent work of Lin, Liu, Tao, and Zhou achieves $O(n^8\\log m)$ comparison queries, attaining the optimal $O(\\log m)$ dependence on $m$ for fixed $n$. Each comparison query can be simulated using two value queries, so their bound also holds for value queries. Our contributions are a much simpler algorithm and proofs, and polynomial-time computation.",
+    "tags": [
+     "公正・配分"
+    ],
+    "score": 6,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "arXiv"
+   }
+  ]
+ }
+}

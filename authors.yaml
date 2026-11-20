@@ -1,0 +1,66 @@
+# 注目著者リスト
+#
+# openalex: OpenAlex の著者ID（同姓同名の取り違えを防ぐため、名前ではなくIDで登録）。
+#           OpenAlex 側で1人が複数のプロフィールに分かれている場合は複数書く。
+#           IDは https://openalex.org/authors/A5004468202 のように開くと確認できます。
+# name_search: OpenAlex で著者IDが付いていない人向け。名前で検索する（fields で分野を絞る）。
+# fields: OpenAlex の分野IDで絞り込む（20=経済学, 12=人文学(哲学を含む), 33=社会科学）。
+#         別人の論文が混ざったプロフィール向け。
+# arxiv: arXiv の著者検索に使う名前（econ / cs.GT / math などのカテゴリに限定して検索）。
+# check: 自動特定に不安がある項目（ユーザーに確認したいもの）。
+#
+# グループ A: 必ず表示（★付き） / B: 関連度で絞る（加点あり） / C: 新着まれ（週1回取得）
+
+A:
+  - {name: Kohei Kamaga,           openalex: [A5016760240]}
+  - {name: Satoshi Nakada,         openalex: [A5067036382, A5133686860], check: "経済学の Satoshi Nakada のプロフィールが2つに分かれていたので両方登録（東京理科大）"}
+  - {name: Norihito Sakamoto,      openalex: [A5047406904]}
+  - {name: Walter Bossert,         openalex: [A5004468202]}
+  - {name: Susumu Cato,            openalex: [A5041596202]}
+  - {name: Yves Sprumont,          openalex: [A5087933968]}
+  - {name: John A. Weymark,        openalex: [A5038865453]}
+  - {name: Fabio Maccheroni,       openalex: [A5080830918]}
+  - {name: Massimo Marinacci,      openalex: [A5005839139]}
+  - {name: Rolf Aaberge,           openalex: [A5084873234]}
+  - {name: Claudio Zoli,           openalex: [A5020433622]}
+  - {name: Leandro Nascimento,     openalex: [A5040730228], check: "名前検索では見つからず、代表論文 'The ex ante aggregation of opinions under uncertainty'(TE 2012) から特定（現所属: Universidade de Brasília）"}
+  - {name: Gil Riella,             openalex: [A5064304319]}
+  - {name: James E. Foster,        openalex: [A5109150561, A5060498974], check: "不平等・貧困分野の2プロフィール（Vanderbilt / 'James Foster'）を両方登録"}
+  - {name: Valentino Dardanoni,    openalex: [A5032592807]}
+  - {name: Oriol Carbonell-Nicolau, openalex: [A5007235465], arxiv: "Carbonell-Nicolau"}
+  - {name: Frank Cowell,           openalex: [A5008408942, A5003468436], check: "'Frank Cowell' と 'F.A. Cowell'（ともにLSE）を両方登録"}
+  - {name: Dino Borie,             openalex: [A5019838193]}
+  - {name: Shiri Alon,             openalex: [A5052830090]}
+  - {name: Ehud Lehrer,            openalex: [A5035394711]}
+  - {name: Efe A. Ok,              openalex: [A5056974504], arxiv: "Efe Ok"}
+  - {name: Özgür Evren,            openalex: [A5015981112], arxiv: "Ozgur Evren"}
+  - {name: Juan Dubra,             openalex: [A5003697609]}
+  - {name: Tsogbadral Galaabaatar, openalex: [A5034521932]}
+  - {name: Edi Karni,              openalex: [A5065318536]}
+  - {name: Marc Fleurbaey,         openalex: [A5055344713]}
+  - {name: Stéphane Zuber,         openalex: [A5057587793], arxiv: "Stephane Zuber"}
+  - {name: Eric Danan,             openalex: [A5019034252]}
+  - {name: Thibault Gajdos,        openalex: [A5003628088]}
+  - {name: Brian Hill,             openalex: [], name_search: "Brian Hill", fields: [20], check: "OpenAlex では Brian Hill (HEC Paris/CNRS) の論文に著者IDが付いていないため、経済学分野に限った名前検索で代替。別人（スポーツ経済学など）が混ざる可能性があるので、この人だけは関連度4点以上で表示"}
+  - {name: Jean-Marc Tallon,       openalex: [A5023176740]}
+  - {name: Marcus Pivato,          openalex: [A5006314894]}
+  - {name: Kensei Nakamura,        openalex: [A5057279010]}
+  - {name: Hun Chung,              openalex: [A5012892467], check: "所属が Emory University と表示されるプロフィール（政治哲学・社会選択）。早稲田の Hun Chung と同一人物か要確認"}
+  - {name: Kaname Miyagishima,     openalex: [A5042316063]}
+  - {name: Koichi Tadenuma,        openalex: [A5033834312]}
+  - {name: David McCarthy,         openalex: [A5053914570], fields: [20, 12, 33], check: "代表論文（McCarthy–Mikkola–Thomas, 2019）から特定したが、OpenAlex のプロフィールに医学系の別人の論文が混ざっているため、経済学・人文学・社会科学に限定"}
+  - {name: Kalle Mikkola,          openalex: [A5087205067], fields: [20, 12, 33, 26], check: "Aalto University の数学者のプロフィール（McCarthy–Mikkola–Thomas の共著者）。本業の制御理論の論文を除くため分野を限定"}
+  - {name: Teruji Thomas,          openalex: [], name_search: "Teruji Thomas", check: "OpenAlex で著者IDが付いていないため名前検索で代替（Oxford, Global Priorities Institute）"}
+  - {name: Matthew D. Adler,       openalex: [A5104059738]}
+  - {name: Ole F. Norheim,         openalex: [A5067044128], check: "論文数が非常に多い（約460本、多くは保健医療）。毎日の表示が多すぎる場合はグループBへの移動を検討"}
+
+B:
+  - {name: Joseph E. Stiglitz,     openalex: [A5074218217]}
+  - {name: Eric Maskin,            openalex: [A5110532426]}
+  - {name: Paola Giuliano,         openalex: [A5044204764]}
+
+C:
+  - {name: Udo Ebert,              openalex: [A5010627811]}
+  - {name: Michael Rothschild,     openalex: [A5049457406]}
+  - {name: Menahem Yaari,          openalex: [A5023456383]}
+  - {name: Tony Shorrocks,         openalex: [A5059778363], check: "'Anthony F. Shorrocks'（LSE）として登録"}
