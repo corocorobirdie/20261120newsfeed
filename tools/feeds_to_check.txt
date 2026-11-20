@@ -1,39 +1,8 @@
-# 段階3で未確認だったもの
-https://news.yahoo.co.jp/rss/topics/top-picks.xml
-https://news.yahoo.co.jp/rss/topics/domestic.xml
-https://news.yahoo.co.jp/rss/topics/business.xml
-https://www.worksinprogress.news/feed
-https://thebrowser.com/feed/
-# ロシア
-https://meduza.io/rss/all
-https://meduza.io/rss2/all
-https://thebell.io/feed
-https://www.kommersant.ru/RSS/news.xml
-https://www.kommersant.ru/rss/regions/far_east.xml
-https://rssexport.rbc.ru/rbcnews/news/30/full.rss
-https://tass.ru/rss/v2.xml
-https://re-russia.net/feed/
-https://re-russia.net/en/feed/
-# 中国
-https://www.caixinglobal.com/rss/
-https://gateway.caixin.com/api/data/rss/
-https://www.thepaper.cn/rss
-https://feeds.bbci.co.uk/zhongwen/simp/rss.xml
-https://www.zaobao.com.sg/rss/realtime/china
-https://www.zaobao.com.sg/realtime/china/feed
-https://www.sixthtone.com/rss
-https://www.sixthtone.com/feed
-http://www.news.cn/politics/news_politics.xml
-http://www.xinhuanet.com/english/rss/chinarss.xml
-# Google ニュースのキーワード・サイト検索（RSS のない媒体や地域ニュースの代替）
-https://news.google.com/rss/search?q=%D0%AF%D0%BA%D1%83%D1%82%D0%B8%D1%8F+when:2d&hl=ru&gl=RU&ceid=RU:ru
-https://news.google.com/rss/search?q=%D0%90%D0%BC%D1%83%D1%80%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C+when:2d&hl=ru&gl=RU&ceid=RU:ru
-https://news.google.com/rss/search?q=%E5%93%88%E5%B0%94%E6%BB%A8+when:2d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
-https://news.google.com/rss/search?q=site:thepaper.cn+when:1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
-https://news.google.com/rss/search?q=site:zaobao.com.sg+%E4%B8%AD%E5%9B%BD+when:1d&hl=zh-CN&gl=SG&ceid=SG:zh-Hans
-https://news.google.com/rss/search?q=site:news.cn+when:1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
-# 極東・ハルビンの地元メディア候補
-https://ysia.ru/feed/
-https://news.ykt.ru/rss
-https://www.amur.info/rss/
-https://www.dvnovosti.ru/rss/
+# 2回目: Google ニュース経由の代替
+https://news.google.com/rss/search?q=site%3Acaixin.com%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+https://news.google.com/rss/search?q=site%3Acaixinglobal.com%20when%3A2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site%3Are-russia.net%20when%3A7d&hl=ru&gl=RU&ceid=RU:ru
+https://news.google.com/rss/search?q=%E9%BB%91%E6%B2%B3%20when%3A2d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+https://news.google.com/rss/search?q=%E9%BB%91%E9%BE%99%E6%B1%9F%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+https://news.google.com/rss/search?q=%D0%A5%D0%B0%D0%B1%D0%B0%D1%80%D0%BE%D0%B2%D1%81%D0%BA%20OR%20%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D0%B2%D0%B5%D1%89%D0%B5%D0%BD%D1%81%D0%BA%20when%3A1d&hl=ru&gl=RU&ceid=RU:ru
+https://news.google.com/rss/search?q=site%3Azaobao.com.sg%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
