@@ -79,6 +79,10 @@ main { max-width: 760px; margin: 0 auto; padding: 12px 16px calc(40px + env(safe
 .badge { padding: 1px 8px; border-radius: 999px; background: var(--chip); color: var(--muted); }
 .badge.star { background: var(--star-soft); color: var(--star); font-weight: 600; }
 .badge.score { font-variant-numeric: tabular-nums; }
+.badge.pin { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.badge.label { border: 1px solid var(--line); background: transparent; }
+.section-title { font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: .05em; margin: 10px 2px -2px; }
+.section-title:first-child { margin-top: 0; }
 .title-ja { font-size: 17px; line-height: 1.45; margin: 2px 0 6px; }
 .title-ja a { color: var(--text); text-decoration: none; }
 .title-ja a:hover { text-decoration: underline; }

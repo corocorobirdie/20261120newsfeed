@@ -17,7 +17,8 @@ const store = {
 };
 
 let index = { dates: [] };
-let siteConfig = { ask_claude_url: "" };
+let siteConfig = { ask_claude_url: "", ask_claude_tabs: {} };
+const SECTION_LABELS = { papers: "論文（実証・政策）", articles: "記事・コラム" };
 let day = null;
 let currentTab = store.get("tab", "papers");
 
@@ -104,14 +105,17 @@ function jumpTo(it) {
 
 function card(it) {
   const node = $("#card-tpl").content.firstElementChild.cloneNode(true);
-  node.id = "c-" + it.id;
+  node.id = "c-" + it.id + (it._ref ? "-ref" : "");
   const star = it.author_group === "A";
   if (star) node.classList.add("starred");
 
   const badges = node.querySelector(".badges");
   if (star) badges.append(el("span", "badge star", "★ " + (it.author_hits || []).join(", ")));
   else if (it.author_hits && it.author_hits.length) badges.append(el("span", "badge", "著者: " + it.author_hits.join(", ")));
-  if (it.score != null) badges.append(el("span", "badge score", `関連度 ${it.score}`));
+  if (it.pinned) badges.append(el("span", "badge pin", "新しい号"));
+  if (it.label) badges.append(el("span", "badge label", it.label));
+  if (it._ref) badges.append(el("span", "badge", "論文タブから"));
+  if (it.score != null && !it.pinned) badges.append(el("span", "badge score", `関連度 ${it.score}`));
 
   const a = node.querySelector(".title-ja a");
   a.textContent = it.title_ja || it.title;
@@ -138,7 +142,7 @@ function card(it) {
   if (!it.abstract) btn.remove();
   btn.addEventListener("click", () => {
     if (!orig.childElementCount) {
-      orig.append(el("span", "label", "原文（要旨）"), el("div", null, it.abstract));
+      orig.append(el("span", "label", it.kind === "news" ? "原文（本文の冒頭）" : "原文（要旨）"), el("div", null, it.abstract));
     }
     orig.hidden = !orig.hidden;
     btn.textContent = orig.hidden ? "原文を表示" : "原文を隠す";
@@ -148,29 +152,49 @@ function card(it) {
 
 // Claude を開いて、この記事についての質問を入力済みにする
 function askClaudeUrl(it) {
-  const base = siteConfig.ask_claude_url || "https://claude.ai/new";
+  const base = (siteConfig.ask_claude_tabs || {})[it.tab] || siteConfig.ask_claude_url || "https://claude.ai/new";
   return base + (base.includes("?") ? "&" : "?") + "q=" + encodeURIComponent(askPrompt(it));
 }
 
 function askPrompt(it) {
   const lines = [
-    "次の論文について、日本語で解説してください。主な結果、使われている公理や手法、先行研究との関係、意義と限界を教えてください。",
+    it.kind === "news"
+      ? "次の記事について、日本語で解説してください。背景、要点、論点、今後の見通しを教えてください。"
+      : "次の論文について、日本語で解説してください。主な結果、使われている公理や手法、先行研究との関係、意義と限界を教えてください。",
     "",
     `タイトル: ${it.title}`,
   ];
   if (it.authors && it.authors.length) lines.push(`著者: ${it.authors.slice(0, 10).join(", ")}`);
   if (it.venue) lines.push(`掲載先: ${it.venue}（${it.date || ""}）`);
   lines.push(`リンク: ${it.url}`);
-  if (it.abstract) lines.push("", "要旨:", it.abstract.slice(0, 2500));
+  if (it.abstract) lines.push("", it.kind === "news" ? "本文の冒頭:" : "要旨:", it.abstract.slice(0, 2500));
   return lines.join("\n");
+}
+
+// 他のタブの記事への参照（{ref: id}）を実体に置き換える。欄（section）ごとにまとめる
+function resolve(lst) {
+  const byId = new Map(Object.values(day.tabs).flat().filter((x) => !x.ref).map((x) => [x.id, x]));
+  const out = lst.map((x) => (x.ref ? (byId.has(x.ref) ? { ...byId.get(x.ref), _section: x.section, _ref: true } : null) : { ...x, _section: x.section }))
+    .filter(Boolean);
+  const order = Object.keys(SECTION_LABELS);
+  return out.sort((a, b) => (order.indexOf(a._section) + 1 || 99) - (order.indexOf(b._section) + 1 || 99));
 }
 
 function render() {
   renderTabs();
   renderHighlights();
-  const items = day.tabs[currentTab] || [];
+  const items = resolve(day.tabs[currentTab] || []);
   const list = $("#list");
-  list.replaceChildren(...items.map(card));
+  const nodes = [];
+  let lastSection;
+  for (const it of items) {
+    if (it._section && it._section !== lastSection && SECTION_LABELS[it._section]) {
+      nodes.push(el("h2", "section-title", SECTION_LABELS[it._section]));
+      lastSection = it._section;
+    }
+    nodes.push(card(it));
+  }
+  list.replaceChildren(...nodes);
   if (!items.length) list.append(el("p", "empty", "この日の新着はありません"));
   const notes = [];
   if (day.generated_at) notes.push(`更新 ${day.generated_at.slice(11, 16)}`);

@@ -18,10 +18,10 @@ API = "https://generativelanguage.googleapis.com/v1beta/openai"
 
 
 class Gemini:
-    def __init__(self, cfg: dict):
+    def __init__(self, cfg: dict, models_key: str = "models"):
         self.cfg = cfg
         self.key = os.environ.get("GEMINI_API_KEY", "").strip()
-        models = cfg.get("models") or [cfg.get("model", "gemini-flash-latest")]
+        models = cfg.get(models_key) or cfg.get("models") or ["gemini-flash-latest"]
         self.model, self._queue = models[0], list(models[1:])
         self.dead = False
         self._last = 0.0
@@ -116,8 +116,8 @@ class Gemini:
         return None
 
     # ------------------------------------------------------------ 採点
-    def score(self, items: list[dict], interest: str, tags: list[str]) -> None:
-        """items に score(1-10) と tags を付ける。20件ずつまとめて1回で送る。"""
+    def score(self, items: list[dict], interest: str, tags: list[str], what: str = "論文") -> None:
+        """items に score(1-10) と tags を付ける。score_batch_size 件ずつまとめて1回で送る。"""
         n = self.cfg.get("score_batch_size", 20)
         schema = {"type": "array", "items": {"type": "object", "properties": {
             "i": {"type": "integer"}, "score": {"type": "integer"},
@@ -128,14 +128,14 @@ class Gemini:
             lines = []
             for i, it in enumerate(batch):
                 ab = (it.get("abstract") or "")[:900]
-                lines.append(f"[{i}] {it['title']}\n  掲載: {it.get('venue','')}\n  要旨: {ab or '（なし）'}")
+                lines.append(f"[{i}] {it['title']}\n  掲載: {it.get('venue','')}\n  内容: {ab or '（なし）'}")
             prompt = (
-                "あなたは研究者向けの論文推薦アシスタントです。読者の関心は次の通り:\n"
+                f"あなたは個人向けの{what}推薦アシスタントです。読者の関心と選ぶ基準は次の通り:\n"
                 f"{interest}\n"
-                "以下の各論文について、読者にとっての関連度を1〜10の整数で採点し、"
+                f"以下の各{what}について、読者にとっての関連度を1〜10の整数で採点し、"
                 f"該当するタグを次の中から1〜3個選んでください: {', '.join(tags)}。\n"
-                "10=まさに専門の中心、7=強く関連、5=周辺的に関連、3以下=ほぼ無関係。\n"
-                "出力は各論文の番号 i、score、tags の配列。\n\n" + "\n\n".join(lines))
+                "10=まさに関心の中心、7=強く関連、5=周辺的に関連、3以下=ほぼ無関係。\n"
+                "出力は各項目の番号 i、score、tags の配列。\n\n" + "\n\n".join(lines))
             res = self.generate_json(prompt, schema)
             for r in res or []:
                 if isinstance(r, dict) and 0 <= r.get("i", -1) < len(batch):
@@ -143,7 +143,8 @@ class Gemini:
                     batch[r["i"]]["tags"] = [t for t in r.get("tags", []) if t in tags][:3]
 
     # ------------------------------------------------------------ 要約
-    def summarize(self, items: list[dict], kind: str = "paper") -> None:
+    def summarize(self, items: list[dict], kind: str = "paper",
+                  reader: str = "読者は社会選択理論・意思決定理論の研究者です。") -> None:
         """日本語タイトル＋3行要約＋おすすめ理由1行。失敗した記事は要約なしのまま。"""
         n = self.cfg.get("summary_batch_size", 5)
         schema = {"type": "array", "items": {"type": "object", "properties": {
@@ -165,7 +166,8 @@ class Gemini:
                 f"- summary_ja: {what}の内容を3行（3つの文字列、各60字程度まで）で要約。"
                 "専門用語は日本の研究者が使う訳語を使い、必要なら英語を括弧で添える\n"
                 "- reason_ja: この読者におすすめする理由を1行（40字程度）\n"
-                "読者は社会選択理論・意思決定理論の研究者です。誇張せず、要旨に書かれていないことは書かないこと。\n\n"
+                "原文が日本語の場合、title_ja は原題をそのまま使う。\n"
+                f"{reader}誇張せず、与えられた本文・要旨に書かれていないことは書かないこと。\n\n"
                 + "\n\n".join(lines))
             res = self.generate_json(prompt, schema)
             for r in res or []:

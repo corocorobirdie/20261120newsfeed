@@ -7,12 +7,18 @@ gemini:
   # 2026-11 時点で確認: gemini-2.5-flash は新規ユーザー向けに提供終了、
   # gemini-3.8-flash は応答が返らず、gemini-3-flash-preview は大量の採点でタイムアウト。
   # 最新のモデル名は AI Studio（aistudio.google.com）で確認して書き換えてください。
-  models:
+  # 採点は件数が多いので軽いモデル、要約は質が大事なので上位モデルを先に使う
+  # （上位モデルは1日の無料枠が小さいため）
+  score_models:
+    - gemini-3.1-flash-lite
+    - gemini-3-flash-preview
+    - gemini-3.5-flash
+  summary_models:
     - gemini-3.5-flash
     - gemini-3-flash-preview
     - gemini-3.1-flash-lite
   timeout_sec: 150
-  score_batch_size: 20        # 採点は20件ずつまとめて1回で送る
+  score_batch_size: 30        # 採点は30件ずつまとめて1回で送る
   summary_batch_size: 8       # 要約は8件ずつまとめて1回で送る
   min_interval_sec: 7         # 呼び出し間隔（無料枠の毎分上限対策）
   max_retries: 4
@@ -29,11 +35,14 @@ papers:
   max_display: 40             # 1日に表示する最大件数
 
 # 「Claudeに聞く」ボタンの飛び先。
-# 空なら新しいチャット。プロジェクトに飛ばすなら、そのプロジェクトを開いたときの
-# アドレス（https://claude.ai/project/… ）を書く。
+# url が既定、tabs でタブごとに変えられる。空なら新しいチャット。
+# プロジェクトに飛ばすなら、そのプロジェクトを開いたときのアドレス（https://claude.ai/project/… ）を書く。
 # どちらの場合も、質問文はクリップボードにもコピーされる（入力されていなければ貼り付け）。
 ask_claude:
-  url: "https://claude.ai/project/01a1f878-bad5-71bf-8bad-166d348dfda2"
+  url: "https://claude.ai/project/01a1f89a-cdbd-70d7-b2a6-f59a93d681b3"     # 既定（時事・兆し・今後のタブ）
+  tabs:
+    papers: "https://claude.ai/project/01a1f878-bad5-71bf-8bad-166d348dfda2"      # newsfeed_QA
+    inequality: "https://claude.ai/project/01a1f878-bad5-71bf-8bad-166d348dfda2"  # newsfeed_QA
 
 highlights: 5                 # 今日のハイライト件数
 

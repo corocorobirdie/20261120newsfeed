@@ -139,7 +139,7 @@ GitHub Pages で公開（PWA対応：ホーム画面に追加できる）
 しっかり読む論文を、できるだけ少ない操作で Drive の決まったフォルダに入れ、iPad の GoodNotes や PC で開けるようにする。実装は段階3のあと。
 
 - PDF の保存先：Drive 直下の `03_temp`（GoodNotes で開く予定のものを入れる作業用フォルダ）
-- 記録の保存先：Drive 直下の `references.bib`（`03_temp` は読み終わると整理するため、記録は別の場所に置く。場所は設定で変更可）
+- 記録の保存先：Drive 直下の `01_res/references.bib`（`03_temp` は読み終わると整理するため、記録は別の場所に置く。場所は設定で変更可）
 
 ### 保存ルート
 - **ルートA（どの端末でも）**：カードの「Driveに保存」→ Google Apps Script（自分の Google アカウントで動く）が PDF を取得して Drive の指定フォルダに保存。対象は arXiv とオープンアクセス版がある論文（OpenAlex の無料版 PDF）。
@@ -155,7 +155,7 @@ GitHub Pages で公開（PWA対応：ホーム画面に追加できる）
 - 例：`Wang,Tsui2000_PolarizationOrderingsandNewClassesofPolarizationIndices.pdf`
 
 ### 記録
-- 1つの大きな `references.bib`（Drive 直下）に、保存のたびに BibTeX で1件追記する（論文ごとにファイルは作らない）
+- 1つの大きな `references.bib`（`01_res` フォルダ）に、保存のたびに BibTeX で1件追記する（論文ごとにファイルは作らない）
 - 同じ論文（同じ DOI / arXiv ID）を再度保存したときは追記しない
 - 書誌情報は Crossref の正式なデータ（DOI）から作る。arXiv は `eprint` / `archivePrefix = {arXiv}` を付ける
 - PDF のファイル名（`file`）と保存日も記録する

@@ -18,7 +18,8 @@ def build_site():
     shutil.copy(DATA / "index.json", out / "data" / "index.json")
     (out / ".nojekyll").touch()
     cfg = load_yaml("config.yaml")
-    site = {"ask_claude_url": (cfg.get("ask_claude") or {}).get("url") or ""}
+    ac = cfg.get("ask_claude") or {}
+    site = {"ask_claude_url": ac.get("url") or "", "ask_claude_tabs": ac.get("tabs") or {}}
     (out / "site-config.json").write_text(json.dumps(site, ensure_ascii=False), encoding="utf-8")
     print(f"■ サイト生成: {out}")
 
