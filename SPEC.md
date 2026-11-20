@@ -131,3 +131,28 @@ GitHub Pages で公開（PWA対応：ホーム画面に追加できる）
 2. Google AI Studio（aistudio.google.com）で Gemini の APIキーを作る
 3. GitHub のリポジトリ設定 → Secrets に `GEMINI_API_KEY` を登録
 4. GitHub Pages を有効にする
+
+---
+
+## 追加仕様（案）：論文を Google Drive に保存
+
+しっかり読む論文を、できるだけ少ない操作で Drive の決まったフォルダに入れ、iPad の GoodNotes や PC で開けるようにする。実装は段階3のあと。
+
+### 保存ルート
+- **ルートA（どの端末でも）**：カードの「Driveに保存」→ Google Apps Script（自分の Google アカウントで動く）が PDF を取得して Drive の指定フォルダに保存。対象は arXiv とオープンアクセス版がある論文（OpenAlex の無料版 PDF）。
+- **ルートB（iPad・ショートカットアプリ）**：カードのボタンまたは共有メニューから「論文を保存」ショートカットを実行し、PDF のダウンロード → Drive に保存 → `references.bib` に追記 → GoodNotes で開く、までを一括で行う。GoodNotes まで自動で開けない場合は、Drive に保存してフォルダを開くまでにする。
+- **有料ジャーナル**：カードの「大学経由で開く」（大学の EZproxy の入口 + `https://doi.org/<DOI>`）で出版社ページを開き、PDF を表示して共有 →「論文を保存」。ショートカットが PDF の1ページ目から DOI を読み取り、書誌情報を取得する。DOI が見つからない場合は DOI かタイトルを入力して検索。フィード外の論文（Scholar で見つけた基本文献など）も同じ方法で保存できる。
+- 大学の EZproxy の入口アドレスは所属がわかるため、リポジトリやサイトのコードには書かない。サイトの設定画面で入力し、端末の localStorage にだけ保存する。
+
+### ファイル名
+`著者姓1,著者姓2,著者姓3年号_論文タイトル.pdf`
+- 著者は姓のみ。3人までは全員、4人以上は `第一著者姓,etal`
+- タイトルは原文の大文字・小文字のまま、スペースを削除
+- ファイル名に使えない記号（`: / \ ? * " < > |` など）は削除
+- 例：`Wang,Tsui2000_PolarizationOrderingsandNewClassesofPolarizationIndices.pdf`
+
+### 記録
+- PDF と同じ Drive フォルダの `references.bib` に、保存のたびに BibTeX で1件追記する
+- 書誌情報は Crossref の正式なデータ（DOI）から作る。arXiv は `eprint` / `archivePrefix = {arXiv}` を付ける
+- PDF のファイル名（`file`）と保存日も記録する
+- 将来の過去論文データベースで「読んだ論文」として `papers.jsonl` と DOI / arXiv ID でつなげられるようにする
