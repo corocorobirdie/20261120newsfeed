@@ -1,8 +1,13 @@
 name: daily-feed
 
 on:
+  # GitHub の定時実行は混雑時に遅れたり飛ばされたりするため、混みにくい半端な時刻にし、
+  # 予備の時刻にも起動する（その日の分がすでにできていれば何もしない）
   schedule:
-    - cron: "0 22 * * *"   # 毎朝 7:00 JST（GitHub の混雑で数十分遅れることがあります）
+    - cron: "47 21 * * *"  # 6:47 JST
+    - cron: "37 22 * * *"  # 7:37 JST（予備）
+    - cron: "37 23 * * *"  # 8:37 JST（予備）
+    - cron: "7 1 * * *"    # 10:07 JST（予備）
   workflow_dispatch:       # Actions 画面から手動実行もできる
     inputs:
       site_only:
@@ -20,7 +25,27 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # 予備の時刻の起動では、その日の分がすでにあれば以降を飛ばす（手動実行は常に実行）
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      done: ${{ steps.check.outputs.done }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: data/index.json
+      - id: check
+        run: |
+          today=$(TZ=Asia/Tokyo date +%F)
+          if [ "${{ github.event_name }}" = "schedule" ] && grep -q "\"latest\": \"$today\"" data/index.json 2>/dev/null; then
+            echo "done=true" >> "$GITHUB_OUTPUT"; echo "今日($today)の分は作成済みのため何もしない"
+          else
+            echo "done=false" >> "$GITHUB_OUTPUT"
+          fi
+
   build:
+    needs: gate
+    if: needs.gate.outputs.done != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
