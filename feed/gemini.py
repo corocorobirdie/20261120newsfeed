@@ -90,15 +90,21 @@ class Gemini:
                 return None
             if r.status_code in (429, 500, 503):
                 # 制限エラー: 指示された時間（なければ段階的に）待ってやり直す
-                if r.status_code == 429 and re.search(r"PerDay|per day", r.text, re.I):
-                    if self._next_model("1日の無料枠を使い切り"):  # モデルごとに枠が別なので次へ
-                        attempt = 0
-                        continue
-                    return None
+                # 429 には毎分の上限と1日の上限がある。エラー本文には両方の上限名が並ぶことがあるため、
+                # 実際に超えた上限（quotaId）と、指示された待ち時間で判断する。
                 delay = 20 * attempt
                 m = re.search(r'retry in ([\d.]+)s|"retryDelay":\s*"(\d+)', r.text)
                 if m:
                     delay = int(float(m.group(1) or m.group(2))) + 2
+                daily = (r.status_code == 429 and re.search(r'"quotaId":\s*"[^"]*PerDay', r.text)
+                         and not re.search(r'"quotaId":\s*"[^"]*PerMinute', r.text) and (not m or delay > 300))
+                if r.status_code == 429 and attempt == 1:
+                    self.errors.append(f"{self.model} 429: " + re.sub(r"\s+", " ", r.text)[:400])  # 原因の記録用
+                if daily:
+                    if self._next_model("1日の無料枠を使い切り"):  # モデルごとに枠が別なので次へ
+                        attempt = 0
+                        continue
+                    return None
                 print(f"  Gemini: {r.status_code}、{min(delay, 120)}秒待って再試行")
                 time.sleep(min(delay, 120))
                 continue

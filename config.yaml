@@ -20,7 +20,7 @@ gemini:
   timeout_sec: 150
   score_batch_size: 30        # 採点は30件ずつまとめて1回で送る
   summary_batch_size: 8       # 要約は8件ずつまとめて1回で送る
-  min_interval_sec: 7         # 呼び出し間隔（無料枠の毎分上限対策）
+  min_interval_sec: 13        # 呼び出し間隔（無料枠の毎分上限対策。上位モデルは毎分5回程度のことがある）
   max_retries: 4
   temperature: 0.2
 

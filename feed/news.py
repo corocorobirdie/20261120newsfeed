@@ -9,6 +9,8 @@ import feedparser
 
 from .common import UA, http_get, strip_tags, url_id
 
+BROWSER_UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15"
+
 
 def _date(e, tz) -> str:
     for k in ("published_parsed", "updated_parsed"):
@@ -35,8 +37,12 @@ def _clean_url(u: str) -> str:
 
 def fetch_feed(feed: dict, today: datetime, since: str, status: dict) -> list[dict]:
     """feed: {name, url, lang, label, headline_only, section, max_items}"""
+    accept = "application/rss+xml, application/atom+xml, application/xml, text/xml, */*"
     try:
-        r = http_get(feed["url"], headers={"User-Agent": UA, "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*"}, tries=2)
+        try:
+            r = http_get(feed["url"], headers={"User-Agent": UA, "Accept": accept}, tries=2)
+        except Exception:  # noqa: BLE001  一部のサイト（Substack など）は時々拒否するので、ブラウザ風にもう一度
+            r = http_get(feed["url"], headers={"User-Agent": BROWSER_UA, "Accept": accept, "Accept-Language": "en,ja;q=0.8"}, tries=2)
         parsed = feedparser.parse(r.content)
     except Exception as e:  # noqa: BLE001
         status[feed["name"]] = f"取得失敗: {str(e)[:80]}"
