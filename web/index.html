@@ -41,7 +41,21 @@
   </section>
   <div id="meta" class="meta"></div>
   <div id="list" class="list"></div>
+  <footer class="foot"><button id="open-settings" type="button">設定</button></footer>
 </main>
+
+<dialog id="settings">
+  <form method="dialog">
+    <h2>設定</h2>
+    <label for="proxy">大学経由で開くための入口アドレス</label>
+    <input id="proxy" type="url" inputmode="url" autocomplete="off" placeholder="https://〇〇.idm.oclc.org/login?url=">
+    <p class="hint">設定すると、論文の「開く」が大学のプロキシ経由になります（DOI のある論文のみ）。このアドレスはこの端末の中だけに保存され、どこにも送信・公開されません。空にすると解除。</p>
+    <div class="dialog-actions">
+      <button value="cancel" type="submit" class="secondary">閉じる</button>
+      <button value="save" type="submit" id="save-settings">保存</button>
+    </div>
+  </form>
+</dialog>
 
 <template id="card-tpl">
   <article class="card">

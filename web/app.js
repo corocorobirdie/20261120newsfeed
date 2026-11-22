@@ -167,7 +167,10 @@ function card(it) {
     b.addEventListener("click", () => setTag(t === filter.tag ? "" : t));
     tags.append(b);
   }
-  node.querySelector(".open").href = it.url;
+  const open = node.querySelector(".open");
+  const via = viaProxy(it);
+  open.href = via || it.url;
+  if (via) open.textContent = "大学経由で開く ↗";
   const ask = node.querySelector(".ask");
   ask.href = askClaudeUrl(it);
   ask.addEventListener("click", () => {
@@ -313,6 +316,27 @@ if ("serviceWorker" in navigator) {
 }
 window.addEventListener("online", () => day && render());
 window.addEventListener("offline", () => day && render());
+
+// ---------------------------------------------------------------- 設定（端末の中だけに保存）
+// 大学の EZproxy の入口アドレス。所属がわかるため、コードやリポジトリには書かない。
+function proxyPrefix() { return store.get("proxy_prefix", ""); }
+
+function viaProxy(it) {
+  const p = proxyPrefix();
+  if (!p || !it.doi || it.kind === "news" || /^10\.48550\//.test(it.doi)) return null;  // arXiv・記事は直接
+  return p + "https://doi.org/" + encodeURI(it.doi);
+}
+
+$("#open-settings").addEventListener("click", () => {
+  $("#proxy").value = proxyPrefix();
+  $("#settings").showModal();
+});
+$("#settings").addEventListener("close", () => {
+  if ($("#settings").returnValue !== "save") return;
+  const v = $("#proxy").value.trim();
+  store.set("proxy_prefix", v);
+  if (day) render();
+});
 
 (async () => {
   try {

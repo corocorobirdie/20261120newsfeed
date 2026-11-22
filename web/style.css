@@ -119,3 +119,21 @@ main { max-width: 760px; margin: 0 auto; padding: 12px 16px calc(40px + env(safe
 .chip.on { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 .count-note { color: var(--muted); }
 #search-toggle[aria-expanded="true"] { background: var(--chip); }
+
+.foot { text-align: center; margin-top: 28px; }
+.foot button { border: 0; background: none; color: var(--muted); font-size: 13px; cursor: pointer; text-decoration: underline; }
+dialog#settings {
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--text);
+  width: min(520px, calc(100% - 32px)); padding: 18px 18px 14px;
+}
+dialog#settings::backdrop { background: rgb(0 0 0 / .35); }
+dialog#settings h2 { font-size: 16px; margin: 0 0 12px; }
+dialog#settings label { font-size: 14px; font-weight: 600; display: block; margin-bottom: 6px; }
+dialog#settings input {
+  width: 100%; font: inherit; font-size: 16px; padding: 8px 10px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--bg); color: var(--text);
+}
+dialog#settings .hint { font-size: 12.5px; color: var(--muted); margin: 8px 0 14px; line-height: 1.55; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: 10px; }
+.dialog-actions button { font: inherit; font-size: 14px; padding: 6px 16px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: var(--bg); cursor: pointer; }
+.dialog-actions button.secondary { background: transparent; color: var(--accent); }
