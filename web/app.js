@@ -9,6 +9,26 @@ const TAB_LABELS = {
   ruscn: "ロシア・中国",
 };
 const TAB_ORDER = Object.keys(TAB_LABELS);
+const SAVED = "saved";  // 保存済みタブ
+
+// ---------------------------------------------------------------- しおり（保存）
+// いまは端末の中（localStorage）に保存。記事の中身ごと持つので、日次データが消えても読める。
+// 将来 Apps Script で全端末同期にするときは、この bookmarks の読み書きを差し替える。
+const bookmarks = {
+  all() { return store.get("bookmarks", {}); },
+  has(id) { return id in this.all(); },
+  toggle(it) {
+    const b = this.all();
+    if (b[it.id]) delete b[it.id];
+    else {
+      const { _section, _ref, ...item } = it;
+      b[it.id] = { ...item, saved_at: new Date().toISOString() };
+    }
+    store.set("bookmarks", b);
+    return !!b[it.id];
+  },
+  list() { return Object.values(this.all()).sort((a, b) => (a.saved_at < b.saved_at ? 1 : -1)); },
+};
 
 const $ = (s) => document.querySelector(s);
 const store = {
@@ -53,7 +73,7 @@ async function loadDay(date) {
   $("#date").textContent = fmtDate(date);
   $("#next").disabled = i <= 0;
   $("#prev").disabled = i < 0 || i >= index.dates.length - 1;
-  if (!day.tabs[currentTab]) currentTab = TAB_ORDER.find((t) => day.tabs[t]) || "papers";
+  if (currentTab !== SAVED && !day.tabs[currentTab]) currentTab = TAB_ORDER.find((t) => day.tabs[t]) || "papers";
   render();
 }
 
@@ -82,6 +102,12 @@ function renderTabs() {
     b.addEventListener("click", () => { currentTab = t; filter.tag = ""; store.set("tab", t); render(); window.scrollTo({ top: 0 }); });
     nav.append(b);
   }
+  const s = el("button", null, "🔖 保存済み");
+  s.setAttribute("role", "tab");
+  s.setAttribute("aria-selected", String(currentTab === SAVED));
+  s.append(el("span", "count", String(bookmarks.list().length)));
+  s.addEventListener("click", () => { currentTab = SAVED; filter.tag = ""; store.set("tab", SAVED); render(); window.scrollTo({ top: 0 }); });
+  nav.append(s);
 }
 
 function renderHighlights() {
@@ -89,7 +115,7 @@ function renderHighlights() {
   const byId = new Map(all.map((x) => [x.id, x]));
   const items = (day.highlights || []).map((id) => byId.get(id)).filter(Boolean);
   const box = $("#highlights");
-  box.hidden = items.length === 0 || !!(filter.q || filter.tag);  // 絞り込み中は隠す
+  box.hidden = items.length === 0 || !!(filter.q || filter.tag) || currentTab === SAVED;  // 絞り込み中・保存済みタブでは隠す
   const ol = $("#hl-list");
   ol.replaceChildren();
   for (const it of items) {
@@ -132,7 +158,8 @@ function card(it) {
   node.querySelector(".orig-title").textContent = it.title_ja ? it.title : "";
   const authors = it.authors || [];
   node.querySelector(".byline").textContent = authors.slice(0, 6).join(", ") + (authors.length > 6 ? ` ほか${authors.length - 6}名` : "");
-  node.querySelector(".src").textContent = [it.venue, (it.lang || "").toUpperCase(), it.date].filter(Boolean).join(" · ");
+  node.querySelector(".src").textContent = [it.venue, (it.lang || "").toUpperCase(), it.date,
+    it.saved_at ? `保存 ${it.saved_at.slice(5, 10).replace("-", "/")}` : ""].filter(Boolean).join(" · ");
   const tags = node.querySelector(".tags");
   for (const t of it.tags || []) {
     const b = el("button", t === filter.tag ? "on" : null, t);
@@ -146,6 +173,16 @@ function card(it) {
   ask.addEventListener("click", () => {
     // 飛び先で入力されなかったときのために、質問文をクリップボードにもコピー
     try { navigator.clipboard && navigator.clipboard.writeText(askPrompt(it)).catch(() => {}); } catch { /* 無視 */ }
+  });
+
+  const bm = node.querySelector(".bookmark");
+  const setBm = (on) => { bm.setAttribute("aria-pressed", String(on)); bm.setAttribute("aria-label", on ? "保存を解除" : "保存"); };
+  setBm(bookmarks.has(it.id));
+  bm.addEventListener("click", () => {
+    const on = bookmarks.toggle(it);
+    setBm(on);
+    renderTabs();  // 件数を更新
+    if (currentTab === SAVED && !on) render();
   });
 
   const btn = node.querySelector(".toggle-orig");
@@ -242,7 +279,8 @@ $("#q").addEventListener("input", (e) => {
 function render() {
   renderTabs();
   renderHighlights();
-  const all = resolve(day.tabs[currentTab] || []);
+  const saved = currentTab === SAVED;
+  const all = saved ? bookmarks.list() : resolve(day.tabs[currentTab] || []);
   const items = all.filter(matches);
   renderFilters(all.length, items.length);
   const list = $("#list");
@@ -256,7 +294,8 @@ function render() {
     nodes.push(card(it));
   }
   list.replaceChildren(...nodes);
-  if (!items.length) list.append(el("p", "empty", all.length ? "条件に合う記事はありません" : "この日の新着はありません"));
+  if (!items.length) list.append(el("p", "empty", all.length ? "条件に合う記事はありません"
+    : saved ? "保存した記事はまだありません。カードの 🔖 で保存できます" : "この日の新着はありません"));
   const notes = [];
   if (day.generated_at) notes.push(`更新 ${day.generated_at.slice(11, 16)}`);
   if (!day.model) notes.push("要約なし（Gemini未設定）");
