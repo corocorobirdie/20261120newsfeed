@@ -134,19 +134,21 @@ def run_news_tab(name: str, tc: dict, today: datetime, seen: Seen, gem: Gemini, 
     return result, items + jpapers, shown_papers
 
 
-def run_papers(today: datetime, cfg: dict, src: dict, authors: dict, seen: Seen, gem: Gemini, summ: Gemini):
+def run_papers(today: datetime, cfg: dict, src: dict, authors: dict, seen: Seen, gem: Gemini, summ: Gemini,
+               status: dict | None = None):
+    status = status if status is not None else {}
     pc = cfg["papers"]
     ps = src["papers"]
     print("■ 論文の取得")
     first_run = seen.empty
     lb = pc["lookback_days"] + (4 if first_run else 0)
     items = []
-    items += P.fetch_arxiv(ps, today, lb)
-    items += P.fetch_crossref_journals(ps["journals"], today, lb)
+    items += P.fetch_arxiv(ps, today, lb, status)
+    items += P.fetch_crossref_journals(ps["journals"], today, lb, status)
     weekly_c = today.weekday() == pc.get("group_c_weekday", 0) or first_run
     tracked = authors.get("A", []) + authors.get("B", []) + (authors.get("C", []) if weekly_c else [])
-    items += P.fetch_openalex_authors(tracked, today, pc["author_lookback_days"])
-    items += P.fetch_arxiv_authors(tracked, today, max(lb, 7))
+    items += P.fetch_openalex_authors(tracked, today, pc["author_lookback_days"], status)
+    items += P.fetch_arxiv_authors(tracked, today, max(lb, 7), status)
 
     pats = [re.compile(x, re.I) for x in ps.get("exclude_title_patterns", [])]
     items = [p for p in items if p["title"] and not any(r.search(p["title"].strip()) for r in pats)]
@@ -155,6 +157,7 @@ def run_papers(today: datetime, cfg: dict, src: dict, authors: dict, seen: Seen,
     d = today.strftime("%Y-%m-%d")
     items = [p for p in items if not seen.is_old(p, d)]
     print(f"  取得 {n0} 件 → 重複・既出を除いて {len(items)} 件")
+    status["論文（取得→新着）"] = f"{n0}→{len(items)}"
 
     P.enrich_from_openalex(items)
     P.match_authors(items, authors)
@@ -227,7 +230,7 @@ def main(argv=None):
         if only is not None and "papers" not in only:
             papers, scored = [], []
         else:
-            papers, scored = run_papers(today, cfg, src, authors, seen, gem, summ)
+            papers, scored = run_papers(today, cfg, src, authors, seen, gem, summ, status)
     except Exception as e:  # noqa: BLE001  論文タブが失敗してもほかのタブは作る
         print(f"  論文タブ: 失敗 {e}")
         status["papers"] = f"失敗: {e}"

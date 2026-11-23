@@ -58,7 +58,8 @@ def _arxiv_query(q: str, max_results: int = 200) -> list[dict]:
     return out
 
 
-def fetch_arxiv(cfg: dict, today: datetime, lookback: int) -> list[dict]:
+def fetch_arxiv(cfg: dict, today: datetime, lookback: int, status: dict | None = None) -> list[dict]:
+    status = status if status is not None else {}
     since = days_ago(today, lookback)
     kws = [k.lower() for k in cfg.get("arxiv_keywords", [])]
     out = []
@@ -67,7 +68,9 @@ def fetch_arxiv(cfg: dict, today: datetime, lookback: int) -> list[dict]:
             items = _arxiv_query(f"cat:{spec['category']}", 200)
         except Exception as e:  # noqa: BLE001  1つの情報源の失敗で全体を止めない
             print(f"  arXiv {spec['category']}: 取得失敗 {e}")
+            status[f"arXiv {spec['category']}"] = f"取得失敗: {str(e)[:80]}"
             continue
+        status[f"arXiv {spec['category']}（期間内/取得）"] = f"{sum(1 for p in items if p['date'] >= since)}/{len(items)}"
         items = [p for p in items if p["date"] >= since]
         if spec.get("keyword_filter"):
             items = [p for p in items if any(k in (p["title"] + " " + p["abstract"]).lower() for k in kws)]
@@ -79,7 +82,7 @@ def fetch_arxiv(cfg: dict, today: datetime, lookback: int) -> list[dict]:
 ARXIV_AUTHOR_CATS = ("econ.", "cs.GT", "cs.MA", "q-fin.", "physics.soc-ph", "math.", "stat.")
 
 
-def fetch_arxiv_authors(authors: list[dict], today: datetime, lookback: int) -> list[dict]:
+def fetch_arxiv_authors(authors: list[dict], today: datetime, lookback: int, status: dict | None = None) -> list[dict]:
     """arXiv の著者検索。ジャーナル一覧にない論文や査読前の論文を拾う。"""
     start = today.strftime("%Y%m%d")
     since = days_ago(today, lookback).replace("-", "")
@@ -92,15 +95,20 @@ def fetch_arxiv_authors(authors: list[dict], today: datetime, lookback: int) -> 
             items = _arxiv_query(q, 50)
         except Exception as e:  # noqa: BLE001
             print("  arXiv author search failed:", e)
+            if status is not None:
+                status["arXiv 著者検索"] = f"一部失敗: {str(e)[:80]}"
             continue
         out += [p for p in items if any(c.startswith(ARXIV_AUTHOR_CATS) for c in p.get("categories", []))]
     print(f"  arXiv 著者検索: {len(out)}")
+    if status is not None:
+        status.setdefault("arXiv 著者検索", len(out))
     return out
 
 
 # ---------------------------------------------------------------- Crossref
 
-def fetch_crossref_journals(journals: list[dict], today: datetime, lookback: int) -> list[dict]:
+def fetch_crossref_journals(journals: list[dict], today: datetime, lookback: int, status: dict | None = None) -> list[dict]:
+    status = status if status is not None else {}
     since = days_ago(today, lookback)
     out = []
     for j in journals:
@@ -111,8 +119,10 @@ def fetch_crossref_journals(journals: list[dict], today: datetime, lookback: int
                 "select": "DOI,title,abstract,author,created,URL,container-title"})
         except Exception as e:  # noqa: BLE001
             print(f"  Crossref {j['name']}: 失敗 {e}")
+            status[j["name"]] = f"取得失敗: {str(e)[:80]}"
             continue
         items = r.json()["message"]["items"]
+        status[j["name"]] = len(items)
         for it in items:
             title = strip_tags((it.get("title") or [""])[0])
             if not title:
@@ -162,8 +172,9 @@ def _from_openalex(w: dict) -> dict:
 SELECT = "id,doi,title,publication_date,created_date,primary_location,locations,authorships,abstract_inverted_index,ids,type"
 
 
-def fetch_openalex_authors(authors: list[dict], today: datetime, lookback: int) -> list[dict]:
+def fetch_openalex_authors(authors: list[dict], today: datetime, lookback: int, status: dict | None = None) -> list[dict]:
     """著者IDごとの新着。fields 指定のある著者は分野で絞る。"""
+    status = status if status is not None else {}
     since = days_ago(today, lookback)
     stale = days_ago(today, 60)
     out = []
@@ -189,6 +200,7 @@ def fetch_openalex_authors(authors: list[dict], today: datetime, lookback: int) 
                 headers=openalex_headers())
         except Exception as e:  # noqa: BLE001
             print("  OpenAlex 著者検索失敗:", e)
+            status["OpenAlex 著者別"] = f"一部失敗: {str(e)[:80]}"
             continue
         for w in r.json().get("results", []):
             p = _from_openalex(w)
@@ -199,6 +211,7 @@ def fetch_openalex_authors(authors: list[dict], today: datetime, lookback: int) 
                 p["date"] = p.get("created") or p["date"]
             out.append(p)
     print(f"  OpenAlex 著者別: {len(out)}")
+    status.setdefault("OpenAlex 著者別", len(out))
     return out
 
 

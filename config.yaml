@@ -25,7 +25,7 @@ gemini:
   temperature: 0.2
 
 papers:
-  lookback_days: 3            # arXiv / ジャーナルの新着を何日さかのぼるか
+  lookback_days: 7            # arXiv / ジャーナルの新着を何日さかのぼるか（既出は除くので長めでよい。arXiv は公開が投稿より遅れる）
   author_lookback_days: 30    # 著者別新着（OpenAlex）の範囲
   group_c_weekday: 0          # グループC（新着まれ）を取得する曜日 0=月曜
   min_score: 5                # これ未満は表示しない（グループAは例外）
