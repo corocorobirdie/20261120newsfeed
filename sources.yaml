@@ -58,6 +58,8 @@ papers:
 #   ・LSE International Inequalities Institute のブログは自動取得を拒否(403) → 見送り
 #   ・Brookings の RSS は中身が空 → 見送り
 #   ・The Browser の RSS は 2021 年で配信終了 → 見送り
+#   ・Substack（Branko Milanovic, Lobsterr Letter）は GitHub のサーバーからの取得を拒否(403)する。
+#     Google ニュースにも載らないため、Apps Script（Google のサーバー）経由で取る予定
 #   ・ロシア・中国（2026-11 確認）: Caixin（拒否）・澎湃・聯合早報（RSSなし）・Re: Russia（RSSが空）は
 #     Google ニュースのサイト指定検索で代替。新華社も日付付きで取れる Google ニュース経由にした
 #   ・日経の公式な日本語 RSS は見つからず → Nikkei Asia（英語・公式）と、
@@ -156,7 +158,8 @@ news_tabs:
       - {name: The Bell, url: "https://thebell.io/feed", lang: ru, label: 独立系, max_items: 30}
       - {name: "Re: Russia", url: "https://news.google.com/rss/search?q=site%3Are-russia.net%20when%3A7d&hl=ru&gl=RU&ceid=RU:ru", lang: ru, label: 独立系（分析）, google_news: true, use_source_name: false, lookback_days: 7}
       - {name: Коммерсантъ, url: "https://www.kommersant.ru/RSS/news.xml", lang: ru, label: 民間大手, max_items: 80}
-      - {name: РБК, url: "https://rssexport.rbc.ru/rbcnews/news/30/full.rss", lang: ru, label: 民間大手, max_items: 40}
+      # РБК の RSS は GitHub のサーバーからだとタイムアウトが続くため Google ニュース経由
+      - {name: РБК, url: "https://news.google.com/rss/search?q=site%3Arbc.ru%20when%3A1d&hl=ru&gl=RU&ceid=RU:ru", lang: ru, label: 民間大手, google_news: true, use_source_name: false, max_items: 30}
       - {name: ТАСС, url: "https://tass.ru/rss/v2.xml", lang: ru, label: 国営, max_items: 60}
       - {name: Якутия.Инфо, url: "https://ysia.ru/feed/", lang: ru, label: 地元メディア（サハ）, max_items: 30}
       - {name: DVhab.ru, url: "https://www.dvnovosti.ru/rss/", lang: ru, label: 地元メディア（ハバロフスク）, max_items: 40}

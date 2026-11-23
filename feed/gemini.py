@@ -105,6 +105,11 @@ class Gemini:
                         attempt = 0
                         continue
                     return None
+                if r.status_code in (500, 503) and attempt >= 3 and self._queue:
+                    # 混雑（503）が続くときは、別のモデル（枠も混雑も別）に切り替える
+                    self._next_model(f"混雑 HTTP {r.status_code} が続いた")
+                    attempt = 0
+                    continue
                 print(f"  Gemini: {r.status_code}、{min(delay, 120)}秒待って再試行")
                 time.sleep(min(delay, 120))
                 continue
