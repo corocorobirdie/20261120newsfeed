@@ -220,7 +220,7 @@ CARD_SCHEMA = {"type": "array", "items": {"type": "object", "properties": {
     "required": ["i", "title_ja", "aliases", "one_line", "main_result", "setting", "why", "confidence", "authors_fix", "year_fix"]}}
 
 
-def make_cards(items: list[dict], cards: dict, gem: Gemini, limit: int, batch: int) -> int:
+def make_cards(items: list[dict], cards: dict, gem: Gemini, limit: int, batch: int, save=None) -> int:
     todo = [it for it in items if it["id"] not in cards and it.get("title")][:limit]
     made = 0
     for k in range(0, len(todo), batch):
@@ -253,6 +253,10 @@ def make_cards(items: list[dict], cards: dict, gem: Gemini, limit: int, batch: i
                 cards[it["id"]] = {k: r.get(k) for k in ("title_ja", "aliases", "one_line", "main_result", "setting", "why", "confidence", "authors_fix", "year_fix")}
                 cards[it["id"]].update({"ai": True, "model": gem.model, "made": datetime.now().strftime("%Y-%m-%d")})
                 made += 1
+        if save:
+            save()  # 途中で止まっても作った分は残す
+        if gem.dead:
+            break
     return made
 
 
@@ -283,7 +287,7 @@ def run(today: datetime, cfg: dict, card_limit: int | None = None, force: bool =
         gcfg["card_models"] = models or gcfg.get("card_models") or gcfg.get("summary_models")
         gem = Gemini(gcfg, "card_models")
         if gem.enabled:
-            n = make_cards(items, cards, gem, limit, cc.get("card_batch_size", 6))
+            n = make_cards(items, cards, gem, limit, cc.get("card_batch_size", 6), save=lambda: _write(CARDS, cards, indent=1))
             print(f"  カードの下書き {n} 枚を作成（合計 {len(cards)} 枚）")
             if gem.errors:
                 print("  Gemini の警告:", *gem.errors[:5], sep="\n   ")
