@@ -16,6 +16,9 @@ def build_site():
     (out / "data").mkdir()
     shutil.copytree(DATA / "daily", out / "data" / "daily")
     shutil.copy(DATA / "index.json", out / "data" / "index.json")
+    for name in ("canon.json", "canon_cards.json"):  # 文献タブ
+        if (DATA / name).exists():
+            shutil.copy(DATA / name, out / "data" / name)
     (out / ".nojekyll").touch()
     cfg = load_yaml("config.yaml")
     ac = cfg.get("ask_claude") or {}

@@ -17,6 +17,11 @@ gemini:
     - gemini-3.5-flash
     - gemini-3-flash-preview
     - gemini-3.1-flash-lite
+  # 文献タブのカードの下書き（要約と上位モデルの枠を取り合わないよう別の順番）
+  card_models:
+    - gemini-3-flash-preview
+    - gemini-3.5-flash
+    - gemini-3.1-flash-lite
   timeout_sec: 150
   score_batch_size: 30        # 採点は30件ずつまとめて1回で送る
   summary_batch_size: 8       # 要約は8件ずつまとめて1回で送る
@@ -48,3 +53,8 @@ highlights: 5                 # 今日のハイライト件数
 
 retention:
   news_days: 60               # ニュースは60日分だけ残す（論文は papers.jsonl に全件残る）
+
+canon:                        # 文献タブ（前提論文）
+  top: 200                    # 前提論文リストに載せる本数
+  cards_per_day: 16           # 1日に作るカードの下書きの枚数（Gemini の無料枠対策）
+  card_batch_size: 6

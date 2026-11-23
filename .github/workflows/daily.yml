@@ -63,10 +63,17 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
-        run: python -m feed.run
+        run: python -m feed.run --no-build
 
-      - name: Build site only
-        if: ${{ inputs.site_only }}
+      - name: Update canon list and cards (文献タブ)
+        if: ${{ !inputs.site_only }}
+        continue-on-error: true   # 失敗しても毎日のフィードは公開する
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+        run: python -m feed.canon
+
+      - name: Build site
         run: python -m feed.build
 
       - name: Commit data
