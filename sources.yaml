@@ -201,6 +201,7 @@ news_tabs:
     lookback_days: 2
     min_score: 6
     max_per_source: 3
+    max_per_label: {市場: 4}
     show: 15
     summarize: 15
     # 美術館・ギャラリーの公式サイトは RSS がないところが多いので、名前で Google ニュースを検索して拾う

@@ -56,6 +56,26 @@ def summarize_with_retry(summ: Gemini, items: list[dict], kind: str, reader: str
         summ.summarize(retry, kind, **kw)
 
 
+
+_STOP = {"the", "and", "for", "with", "from", "that", "this", "are", "was", "его", "для", "что"}
+
+
+def _tokens(t: str) -> set:
+    """似たタイトルの判定用: 英語・ロシア語などは単語、日本語・中国語は2文字ずつ。"""
+    t = (t or "").lower().replace("’", "'")
+    words = {w.removesuffix("'s") for w in re.findall(r"[a-zа-яё0-9][a-zа-яё0-9'.$]*", t)}
+    words = {w for w in words if len(w) >= 3 and w not in _STOP}
+    cjk = re.sub(r"[^\u3040-\u30ff\u3400-\u9fff]+", " ", t)
+    grams = {seg[k:k + 2] for seg in cjk.split() for k in range(len(seg) - 1)}
+    return words | grams
+
+
+def _similar(a: str, b: str, th: float = 0.6) -> bool:
+    x, y = _tokens(a), _tokens(b)
+    common = len(x & y)
+    return common >= 3 and common / min(len(x), len(y)) >= th
+
+
 def run_news_tab(name: str, tc: dict, today: datetime, seen: Seen, gem: Gemini, summ: Gemini,
                  status: dict, papers_shown: list[dict]):
     """ニュース系タブ1つ分: 取得 → 重複・既出除去 → 採点 → 選択 → 要約。"""
@@ -104,6 +124,21 @@ def run_news_tab(name: str, tc: dict, today: datetime, seen: Seen, gem: Gemini, 
     pinned = [it for it in items if it.get("pinned")]
     rest = sorted((it for it in items if not it.get("pinned") and it["score"] >= minimum),
                   key=lambda x: (-x["score"], x["date"]), reverse=False)
+    # 同じ出来事を別の媒体が報じたもの（タイトルがよく似ている）は、点数の高い1件だけ残す
+    kept = []
+    for it in rest:
+        if not any(_similar(it["title"], k["title"]) for k in kept):
+            kept.append(it)
+    rest = kept
+    label_cap = tc.get("max_per_label") or {}
+    if label_cap:  # 種類ごとの上限（例: 市場の記事ばかりにならないように）
+        per, capped = {}, []
+        for it in rest:
+            lab = it.get("label", "")
+            per[lab] = per.get(lab, 0) + 1
+            if lab not in label_cap or per[lab] <= label_cap[lab]:
+                capped.append(it)
+        rest = capped
     cap = tc.get("max_per_source")
     if cap:  # 媒体の偏りを防ぐ
         per, capped = {}, []
