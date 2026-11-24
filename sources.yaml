@@ -176,3 +176,31 @@ news_tabs:
       - {name: 検索「哈尔滨」, url: "https://news.google.com/rss/search?q=%E5%93%88%E5%B0%94%E6%BB%A8%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans", lang: zh, label: 地域検索, google_news: true, max_items: 30}
       - {name: 検索「黑河」, url: "https://news.google.com/rss/search?q=%E9%BB%91%E6%B2%B3%20when%3A2d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans", lang: zh, label: 地域検索, google_news: true, max_items: 20}
       - {name: 検索「黑龙江」, url: "https://news.google.com/rss/search?q=%E9%BB%91%E9%BE%99%E6%B1%9F%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans", lang: zh, label: 地域検索, google_news: true, max_items: 30}
+
+  art:
+    reader: 読者は現代アートに関心があり、世界の美術界の動き、日本の展覧会、アート市場をまとめて追いたい人です。作家名・作品名・美術館名は日本で通常使う表記にしてください。
+    interest: |
+      現代アートの重要な動きを高く評価する:
+        ・世界の美術界の動向（大型展・ビエンナーレ、美術館の人事や方針、作家の重要な新作や回顧展、議論を呼んだ出来事、
+          制度・政策・労働・返還などの論点、注目すべき批評や論考）
+        ・日本の展覧会・美術館（とくに東京近辺で見に行ける、話題性や質の高い展覧会の開幕・レビュー、国内美術館の動き）
+        ・アート市場（主要オークションの結果と傾向、ギャラリーやアートフェアの動き、市場構造の変化）
+      地方の小さな公募展・市民展・教室の告知、物販・グッズ・イベント告知、PR記事は3点以下にする。
+      同じ出来事を扱う記事が複数ある場合は、1つだけ高く評価する。
+    tags: [世界の動向, 日本の展覧会, 美術館, 市場・オークション, 作家, 批評・論考, 制度・政策, その他]
+    lookback_days: 2
+    min_score: 6
+    max_per_source: 3
+    show: 12
+    summarize: 12
+    feeds:
+      # 世界
+      - {name: The Art Newspaper, url: "https://www.theartnewspaper.com/rss.xml", lang: en, label: 世界, max_items: 40}
+      - {name: ARTnews, url: "https://www.artnews.com/feed/", lang: en, label: 世界}
+      - {name: Artnet News, url: "https://news.artnet.com/feed", lang: en, label: 世界・市場}
+      - {name: Artforum, url: "https://www.artforum.com/feed/", lang: en, label: 世界・批評}
+      - {name: オークション（検索）, url: "https://news.google.com/rss/search?q=%28Christie%27s%20OR%20Sotheby%27s%20OR%20Phillips%29%20auction%20art%20when%3A3d&hl=en-US&gl=US&ceid=US:en", lang: en, label: 市場, google_news: true, lookback_days: 3, max_items: 20}
+      # 日本（美術手帖・Tokyo Art Beat は RSS がないため Google ニュース経由）
+      - {name: 美術手帖, url: "https://news.google.com/rss/search?q=site%3Abijutsutecho.com%20when%3A3d&hl=ja&gl=JP&ceid=JP:ja", lang: ja, label: 日本, google_news: true, use_source_name: false, max_items: 30}
+      - {name: Tokyo Art Beat, url: "https://news.google.com/rss/search?q=site%3Atokyoartbeat.com%20when%3A3d&hl=ja&gl=JP&ceid=JP:ja", lang: ja, label: 日本, google_news: true, use_source_name: false, max_items: 30}
+      - {name: artscape, url: "https://artscape.jp/feed/", lang: ja, label: 日本・批評}

@@ -7,6 +7,7 @@ const TAB_LABELS = {
   japan: "日本の時事",
   signals: "世界の兆し",
   ruscn: "ロシア・中国",
+  art: "アート",
 };
 const TAB_ORDER = Object.keys(TAB_LABELS);
 const SAVED = "saved";  // 保存済みタブ
