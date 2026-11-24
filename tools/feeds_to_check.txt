@@ -1,12 +1,20 @@
-# 3回目: Substack・RBC の代替
-https://branko2f7.substack.com/feed
-https://lobsterr.substack.com/feed
-https://news.google.com/rss/search?q=site%3Abranko2f7.substack.com%20when%3A14d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=site%3Alobsterr.substack.com%20when%3A14d&hl=ja&gl=JP&ceid=JP:ja
-https://news.google.com/rss/search?q=Lobsterr%20Letter%20when%3A14d&hl=ja&gl=JP&ceid=JP:ja
-https://glineq.blogspot.com/feeds/posts/default
-https://rssexport.rbc.ru/rbcnews/news/20/full.rss
-https://news.google.com/rss/search?q=site%3Arbc.ru%20when%3A1d&hl=ru&gl=RU&ceid=RU:ru
-https://export.arxiv.org/api/query?search_query=cat:econ.TH&max_results=5&sortBy=submittedDate&sortOrder=descending
-https://rss.arxiv.org/rss/econ.TH
-https://rss.arxiv.org/rss/cs.GT
+# 4回目: アート
+https://www.artnews.com/feed/
+https://news.artnet.com/feed
+https://www.theartnewspaper.com/rss.xml
+https://hyperallergic.com/feed/
+https://www.e-flux.com/rss/journal/
+https://www.e-flux.com/rss/announcements/
+https://www.frieze.com/feed
+https://www.artforum.com/feed/
+https://www.apollo-magazine.com/feed/
+https://www.artreview.com/feed/
+https://bijutsutecho.com/rss
+https://bijutsutecho.com/magazine/rss
+https://www.tokyoartbeat.com/feed
+https://artscape.jp/rss/
+https://news.google.com/rss/search?q=site%3Abijutsutecho.com%20when%3A3d&hl=ja&gl=JP&ceid=JP:ja
+https://news.google.com/rss/search?q=site%3Atokyoartbeat.com%20when%3A7d&hl=ja&gl=JP&ceid=JP:ja
+https://news.google.com/rss/search?q=site%3Atheartnewspaper.com%20when%3A3d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=%28Christie%27s%20OR%20Sotheby%27s%20OR%20Phillips%29%20auction%20art%20when%3A3d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=%E7%BE%8E%E8%A1%93%E9%A4%A8%20%E5%B1%95%E8%A6%A7%E4%BC%9A%20when%3A2d&hl=ja&gl=JP&ceid=JP:ja
