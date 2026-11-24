@@ -178,29 +178,52 @@ news_tabs:
       - {name: 検索「黑龙江」, url: "https://news.google.com/rss/search?q=%E9%BB%91%E9%BE%99%E6%B1%9F%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans", lang: zh, label: 地域検索, google_news: true, max_items: 30}
 
   art:
-    reader: 読者は現代アートに関心があり、世界の美術界の動き、日本の展覧会、アート市場をまとめて追いたい人です。作家名・作品名・美術館名は日本で通常使う表記にしてください。
+    reader: |
+      読者は東京在住で現代アートをよく見に行く人です。作家やギャラリーについての体系的な知識はまだ少ないため、
+      要約では、出てくる作家の位置づけ（世代・国・系譜や関連する動向・代表作）やギャラリー・美術館の性格を
+      一言補ってください。作家名・作品名・美術館名は日本で通常使う表記にしてください。
     interest: |
-      現代アートの重要な動きを高く評価する:
-        ・世界の美術界の動向（大型展・ビエンナーレ、美術館の人事や方針、作家の重要な新作や回顧展、議論を呼んだ出来事、
-          制度・政策・労働・返還などの論点、注目すべき批評や論考）
-        ・日本の展覧会・美術館（とくに東京近辺で見に行ける、話題性や質の高い展覧会の開幕・レビュー、国内美術館の動き）
-        ・アート市場（主要オークションの結果と傾向、ギャラリーやアートフェアの動き、市場構造の変化）
-      地方の小さな公募展・市民展・教室の告知、物販・グッズ・イベント告知、PR記事は3点以下にする。
+      読者が東京で現代アートを見に行き、知識を広げるのに役立つ記事を高く評価する。
+      最も高く評価する（9〜10点）:
+        ・読者がよく通う場所の展覧会・ニュース: 東京都現代美術館（MOT）、NTTインターコミュニケーション・センター（ICC）、
+          NEORT++、小山登美夫ギャラリー、新宿眼科画廊
+        ・国立西洋美術館・東京都美術館など大きな美術館の注目の企画展（開幕・レビュー）
+      高く評価する（7〜8点）:
+        ・東京で見られる、質の高い・話題の展覧会（ギャラリーの個展も含む）、新しいギャラリーやスペースの紹介
+        ・作家やギャラリーを知るのに役立つ記事（インタビュー、作家論、回顧展、系譜や動向の解説）
+        ・アングラ・サブカルチャー寄りのアート（オルタナティブスペース、自主企画、ZINE、クラブやライブハウスと交わる表現）
+        ・世界の美術界の重要な動き（大型展・ビエンナーレ、美術館の方針、議論を呼んだ出来事、制度・政策、注目の批評）
+        ・アート市場（主要オークションの結果と傾向、ギャラリーの動き・作家の移籍、アートフェア、日本の市場）
+      低く評価する（3点以下）: 東京から遠い地方の小さな公募展・市民展・教室、物販・グッズ・コラボ商品、
+      アートと関係の薄いファッション・映画・音楽のみの記事、PR記事。
       同じ出来事を扱う記事が複数ある場合は、1つだけ高く評価する。
-    tags: [世界の動向, 日本の展覧会, 海外の展覧会, 美術館, 市場・オークション, 作家, 批評・論考, 制度・政策, その他]
+    tags: [行きつけ, 日本の展覧会, 海外の展覧会, 美術館, ギャラリー, 作家, サブカル・アングラ, 市場・オークション, 批評・論考, 制度・政策, その他]
     lookback_days: 2
     min_score: 6
     max_per_source: 3
-    show: 12
-    summarize: 12
+    show: 15
+    summarize: 15
+    # 美術館・ギャラリーの公式サイトは RSS がないところが多いので、名前で Google ニュースを検索して拾う
+    # （NEORT++ はニュースにほぼ出ないため、現状ではこの検索でもまず拾えない）
     feeds:
+      # 行きつけ
+      - {name: 行きつけ（検索）, url: "https://news.google.com/rss/search?q=%28%22%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%8F%BE%E4%BB%A3%E7%BE%8E%E8%A1%93%E9%A4%A8%22%20OR%20%22NTT%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%BB%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%22%20OR%20%22NEORT%22%20OR%20%22%E5%9B%BD%E7%AB%8B%E8%A5%BF%E6%B4%8B%E7%BE%8E%E8%A1%93%E9%A4%A8%22%20OR%20%22%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%BE%8E%E8%A1%93%E9%A4%A8%22%20OR%20%22%E5%B0%8F%E5%B1%B1%E7%99%BB%E7%BE%8E%E5%A4%AB%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC%22%20OR%20%22%E6%96%B0%E5%AE%BF%E7%9C%BC%E7%A7%91%E7%94%BB%E5%BB%8A%22%29%20when%3A7d&hl=ja&gl=JP&ceid=JP:ja", lang: ja, label: 行きつけ, google_news: true, lookback_days: 7, max_items: 40}
+      - {name: 小山登美夫ギャラリー, url: "https://tomiokoyamagallery.com/feed/", lang: ja, label: 行きつけ, lookback_days: 7}
+      # 日本（美術手帖・Tokyo Art Beat・美術展ナビは RSS がないため Google ニュース経由）
+      - {name: 美術手帖, url: "https://news.google.com/rss/search?q=site%3Abijutsutecho.com%20when%3A3d&hl=ja&gl=JP&ceid=JP:ja", lang: ja, label: 日本, google_news: true, use_source_name: false, max_items: 30}
+      - {name: Tokyo Art Beat, url: "https://news.google.com/rss/search?q=site%3Atokyoartbeat.com%20when%3A3d&hl=ja&gl=JP&ceid=JP:ja", lang: ja, label: 日本, google_news: true, use_source_name: false, max_items: 30}
+      - {name: 美術展ナビ, url: "https://news.google.com/rss/search?q=site%3Aartexhibition.jp%20when%3A3d&hl=ja&gl=JP&ceid=JP:ja", lang: ja, label: 日本, google_news: true, use_source_name: false, max_items: 30}
+      - {name: artscape, url: "https://artscape.jp/feed/", lang: ja, label: 日本・批評}
+      - {name: CINRA, url: "https://www.cinra.net/feed", lang: ja, label: カルチャー}
+      - {name: Qetic, url: "https://qetic.jp/feed/", lang: ja, label: カルチャー}
       # 世界
       - {name: The Art Newspaper, url: "https://www.theartnewspaper.com/rss.xml", lang: en, label: 世界, max_items: 40}
       - {name: ARTnews, url: "https://www.artnews.com/feed/", lang: en, label: 世界}
-      - {name: Artnet News, url: "https://news.artnet.com/feed", lang: en, label: 世界・市場}
+      - {name: Artnet News, url: "https://news.artnet.com/feed", lang: en, label: 世界}
       - {name: Artforum, url: "https://www.artforum.com/feed/", lang: en, label: 世界・批評}
+      - {name: Artsy, url: "https://www.artsy.net/rss/news", lang: en, label: 世界・ギャラリー}
+      # 市場
+      - {name: ARTnews Market, url: "https://www.artnews.com/c/art-news/market/feed/", lang: en, label: 市場}
+      - {name: Artnet Market, url: "https://news.artnet.com/market/feed", lang: en, label: 市場}
       - {name: オークション（検索）, url: "https://news.google.com/rss/search?q=%28Christie%27s%20OR%20Sotheby%27s%20OR%20Phillips%29%20auction%20art%20when%3A3d&hl=en-US&gl=US&ceid=US:en", lang: en, label: 市場, google_news: true, lookback_days: 3, max_items: 20}
-      # 日本（美術手帖・Tokyo Art Beat は RSS がないため Google ニュース経由）
-      - {name: 美術手帖, url: "https://news.google.com/rss/search?q=site%3Abijutsutecho.com%20when%3A3d&hl=ja&gl=JP&ceid=JP:ja", lang: ja, label: 日本, google_news: true, use_source_name: false, max_items: 30}
-      - {name: Tokyo Art Beat, url: "https://news.google.com/rss/search?q=site%3Atokyoartbeat.com%20when%3A3d&hl=ja&gl=JP&ceid=JP:ja", lang: ja, label: 日本, google_news: true, use_source_name: false, max_items: 30}
-      - {name: artscape, url: "https://artscape.jp/feed/", lang: ja, label: 日本・批評}
+      - {name: 日本のアート市場（検索）, url: "https://news.google.com/rss/search?q=%28%E3%82%A2%E3%83%BC%E3%83%88%E3%83%95%E3%82%A7%E3%82%A2%20OR%20%22%E3%82%A2%E3%83%BC%E3%83%88%E5%B8%82%E5%A0%B4%22%20OR%20%E3%82%AA%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%29%20%E7%BE%8E%E8%A1%93%20when%3A3d&hl=ja&gl=JP&ceid=JP:ja", lang: ja, label: 市場, google_news: true, lookback_days: 3, max_items: 25}
