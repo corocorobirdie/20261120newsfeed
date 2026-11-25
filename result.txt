@@ -1,0 +1,91 @@
+# 5回目: アート（行きつけ・発見・市場）
+NG 404 n=0                             https://www.ntticc.or.jp/ja/feed/
+      final=https://www.ntticc.or.jp/ja/feed/
+      feed= | first=
+NG 404 n=0                             https://www.ntticc.or.jp/feed/
+      final=https://www.ntticc.or.jp/feed/
+      feed= | first=
+NG 403 n=0                             https://www.mot-art-museum.jp/feed/
+      final=https://www.mot-art-museum.jp/feed/
+      feed= | first=
+NG 500 n=0                             https://neort.io/feed
+      final=https://neort.io/en/feed
+      feed= | first=
+NG 500 n=0                             https://neort.io/rss
+      final=https://neort.io/en/rss
+      feed= | first=
+OK 200 n=316 Wed, 4 Nov 2020 18:00:00  https://www.nmwa.go.jp/jp/rss.xml
+      final=https://www.nmwa.go.jp/jp/rss.xml
+      feed=国立西洋美術館 | first=独立行政法人国立美術館（国立西洋美術館）任期付研究員の公募について（令和２年１２月２４日（木）１７：００必着）
+NG 404 n=0                             https://www.tobikan.jp/feed/
+      final=https://www.tobikan.jp/feed/
+      feed= | first=
+OK 200 n=10  Tue, 10 Nov 2026 07:30:03 https://tomiokoyamagallery.com/feed/
+      final=https://www.tomiokoyamagallery.com/feed/
+      feed=Tomio Koyama Gallery 小山登美夫ギャラリー | first=シャルロット・デュマ参加「アムステルダム国際ドキュメンタリー映画祭」アムステルダム市内各所、オランダ
+NG 200 n=0                             https://www.gankagarou.com/feed/
+      final=https://www.gankagarou.com/feed/
+      feed=新宿眼科画廊 | first=
+NG 200 n=0                             https://gankagarou.com/feed/
+      final=https://www.gankagarou.com/feed/
+      feed=新宿眼科画廊 | first=
+NG 404 n=0                             https://artexhibition.jp/feed/
+      final=https://artexhibition.jp/feed/
+      feed= | first=
+OK 200 n=50  Tue, 24 Nov 2026 19:20:35 https://www.artsy.net/rss/news
+      final=https://www.artsy.net/rss/news
+      feed=Artsy News | first=Frieze Los Angeles announces 102 galleries for 2027 edition.
+OK 200 n=10  Tue, 24 Nov 2026 14:00:00 https://www.artnews.com/c/art-news/market/feed/
+      final=https://www.artnews.com/c/art-news/market/feed/
+      feed=Market | first=Frieze Los Angeles Lines Up 102 Exhibitors for 2027 Edition
+OK 200 n=10  Mon, 23 Nov 2026 08:00:17 https://news.artnet.com/market/feed
+      final=https://news.artnet.com/market/feed
+      feed=Market Articles | Artnet News | first=Who’s Going to Art Basel Hong Kong 2027? Here’s the Exhibito
+OK 200 n=10  Thu, 29 Feb 2024 09:00:00 https://tokion.jp/feed/
+      final=https://tokion.jp/feed/
+      feed=TOKION – カッティングエッジなカルチャー＆ファッション情報 | first=更新一時停止のお知らせ
+OK 200 n=16  Wed, 25 Nov 2026 01:14:01 https://qetic.jp/feed/
+      final=https://qetic.jp/feed/
+      feed= | first=〈Oakley〉が平野歩夢選手のシグネチャーゴーグル第2弾を発表
+NG 404 n=0                             https://www.ele-king.net/rss.xml
+      final=https://www.ele-king.net/rss.xml
+      feed= | first=
+OK 200 n=20  Wed, 25 Nov 2026 13:32:00 https://www.cinra.net/feed
+      final=https://www.cinra.net/feed
+      feed=CINRA.NET | first=風間俊介×庄司浩平『劇場版 40までにしたい10のこと』愛おしさと切なさが交錯する本予告映像
+NG 404 n=0                             https://www.fashion-press.net/news/rss.xml
+      final=https://www.fashion-press.net/news/rss.xml
+      feed= | first=
+OK 200 n=33  Thu, 19 Nov 2026 08:00:00 https://news.google.com/rss/search?q=%28%22%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%8F%BE%E4%BB%A3%E7%BE%8E%E8%A1%93%E9%A4%A8%22%20OR%20%22NTT%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%BB%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%22%20OR%20%22NEORT%22%20OR%20%22%E5%9B%BD%E7%AB%8B%E8%A5%BF%E6%B4%8B%E7%BE%8E%E8%A1%93%E9%A4%A8%22%20OR%20%22%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%BE%8E%E8%A1%93%E9%A4%A8%22%20OR%20%22%E5%B0%8F%E5%B1%B1%E7%99%BB%E7%BE%8E%E5%A4%AB%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC%22%20OR%20%22%E6%96%B0%E5%AE%BF%E7%9C%BC%E7%A7%91%E7%94%BB%E5%BB%8A%22%29%20when%3A7d&hl=ja&gl=JP&ceid=JP:ja
+      final=https://news.google.com/rss/search?q=%28%22%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%8F%BE%E4%BB%A3%E7%BE%8E%E8
+      feed="("東京都現代美術館" OR "NTTインターコミュニケーション・センター" OR "NEORT" | first=東京都美術館開館100周年記念 あなたが世界を読むために 展覧会公式サイト - 東京都美術館
+OK 200 n=12  Wed, 25 Nov 2026 01:40:08 https://news.google.com/rss/search?q=%22%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%8F%BE%E4%BB%A3%E7%BE%8E%E8%A1%93%E9%A4%A8%22%20when%3A14d&hl=ja&gl=JP&ceid=JP:ja
+      final=https://news.google.com/rss/search?q=%22%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%8F%BE%E4%BB%A3%E7%BE%8E%E8%A1
+      feed=""東京都現代美術館" when:14d" - Google ニュース | first=東京都現代美術館にて、ジェンダーやセクシュアリティをめぐる国際グループ展「スペクトロシンセシスⅤ｜ならば、発明せよ」が開
+OK 200 n=8   Wed, 28 Oct 2026 07:00:00 https://news.google.com/rss/search?q=%22ICC%22%20%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%20when%3A30d&hl=ja&gl=JP&ceid=JP:ja
+      final=https://news.google.com/rss/search?q=%22ICC%22%20%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B3%E3%83
+      feed=""ICC" インターコミュニケーション when:30d" - Google ニュース | first=はだれのもの？」の開催について - NTT東日本
+NG 200 n=0                             https://news.google.com/rss/search?q=NEORT%20when%3A30d&hl=ja&gl=JP&ceid=JP:ja
+      final=https://news.google.com/rss/search?q=NEORT%20when%3A30d&hl=ja&gl=JP&ceid=JP:ja
+      feed="NEORT when:30d" - Google ニュース | first=
+OK 200 n=9   Tue, 24 Nov 2026 11:08:28 https://news.google.com/rss/search?q=%22%E5%B0%8F%E5%B1%B1%E7%99%BB%E7%BE%8E%E5%A4%AB%22%20when%3A30d&hl=ja&gl=JP&ceid=JP:ja
+      final=https://news.google.com/rss/search?q=%22%E5%B0%8F%E5%B1%B1%E7%99%BB%E7%BE%8E%E5%A4%AB%22%20when%3A30
+      feed=""小山登美夫" when:30d" - Google ニュース | first=【小山登美夫コラム】草間彌生さんのぼやきから、 日本の美術館について思うこと - Esquire
+OK 200 n=4   Mon, 02 Nov 2026 09:59:42 https://news.google.com/rss/search?q=%22%E6%96%B0%E5%AE%BF%E7%9C%BC%E7%A7%91%E7%94%BB%E5%BB%8A%22%20when%3A30d&hl=ja&gl=JP&ceid=JP:ja
+      final=https://news.google.com/rss/search?q=%22%E6%96%B0%E5%AE%BF%E7%9C%BC%E7%A7%91%E7%94%BB%E5%BB%8A%22%20
+      feed=""新宿眼科画廊" when:30d" - Google ニュース | first=神谷QQ 「スウィート・スナッカー」 （新宿眼科画廊） - Tokyo Art Beat
+OK 200 n=36  Wed, 25 Nov 2026 05:56:46 https://news.google.com/rss/search?q=%28%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC%20%E5%80%8B%E5%B1%95%29%20when%3A3d&hl=ja&gl=JP&ceid=JP:ja
+      final=https://news.google.com/rss/search?q=%28%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC%20%E5%80%8B%E5
+      feed="(ギャラリー 個展) when:3d" - Google ニュース | first=芸術作家の第一歩を後押し 岐阜市のギャラリー、第1弾は長谷部美雪さんの油彩画展 - 中日新聞Web
+OK 200 n=11  Wed, 25 Nov 2026 04:13:36 https://news.google.com/rss/search?q=%28%E3%82%A2%E3%83%BC%E3%83%88%E3%83%95%E3%82%A7%E3%82%A2%20OR%20%22%E3%82%A2%E3%83%BC%E3%83%88%E5%B8%82%E5%A0%B4%22%20OR%20%E3%82%AA%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%29%20%E7%BE%8E%E8%A1%93%20when%3A3d&hl=ja&gl=JP&ceid=JP:ja
+      final=https://news.google.com/rss/search?q=%28%E3%82%A2%E3%83%BC%E3%83%88%E3%83%95%E3%82%A7%E3%82%A2%20OR%
+      feed="(アートフェア OR "アート市場" OR オークション) 美術 when:3d" - Googl | first=フィリップス・オークション、「KYŌBAI 競売」の全出品作品を公開 - PR TIMES
+NG 200 n=0                             https://news.google.com/rss/search?q=site%3Atokion.jp%20when%3A7d&hl=ja&gl=JP&ceid=JP:ja
+      final=https://news.google.com/rss/search?q=site%3Atokion.jp%20when%3A7d&hl=ja&gl=JP&ceid=JP:ja
+      feed="site:tokion.jp when:7d" - Google ニュース | first=
+OK 200 n=100 Tue, 24 Nov 2026 09:03:32 https://news.google.com/rss/search?q=site%3Acinra.net%20%E3%82%A2%E3%83%BC%E3%83%88%20when%3A7d&hl=ja&gl=JP&ceid=JP:ja
+      final=https://news.google.com/rss/search?q=site%3Acinra.net%20%E3%82%A2%E3%83%BC%E3%83%88%20when%3A7d&hl=j
+      feed="site:cinra.net アート when:7d" - Google ニュース | first=トラちゃん一家、美術館めぐりへ。「日本で見られるアート100選（ART100）」で行くアート旅 - CINRA
+OK 200 n=42  Sun, 22 Nov 2026 11:41:00 https://news.google.com/rss/search?q=site%3Aartexhibition.jp%20when%3A3d&hl=ja&gl=JP&ceid=JP:ja
+      final=https://news.google.com/rss/search?q=site%3Aartexhibition.jp%20when%3A3d&hl=ja&gl=JP&ceid=JP:ja
+      feed="site:artexhibition.jp when:3d" - Google ニュース | first=【大河ドラマ 豊臣兄弟！】第46回「秀次の乱」のあらすじ 世継ぎの誕生で喜びに沸く豊臣家、しかしあさひの体調が… 11月
