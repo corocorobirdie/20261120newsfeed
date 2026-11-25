@@ -170,7 +170,7 @@ function card(it) {
   a.textContent = it.title_ja || it.title;
   a.href = it.url;
   if (it.period || it.place) {  // 展覧会の会期・会場
-    node.querySelector(".title-ja").after(el("p", "event", ["🗓 " + (it.period || "会期未記載"), it.place].filter(Boolean).join("　📍 ")));
+    node.querySelector(".title-ja").after(el("p", "event", ["🗓 " + (it.period ? it.period + (periodEnded(it.period) ? "（終了）" : "") : "会期未記載"), it.place].filter(Boolean).join("　📍 ")));
   }
   const ul = node.querySelector(".summary");
   for (const s of it.summary_ja || []) ul.append(el("li", null, s));
@@ -330,6 +330,13 @@ function render() {
   if (!day.model) notes.push("要約なし（Gemini未設定）");
   if (!navigator.onLine) notes.push("オフライン（保存済みの内容を表示）");
   $("#meta").textContent = notes.join(" · ");
+}
+
+// 会期の終わり（「〜2027/2/7」の部分）が今日より前なら終了
+function periodEnded(p) {
+  const m = (p || "").match(/〜\s*(\d{4})\/(\d{1,2})\/(\d{1,2})\s*$/);
+  if (!m) return false;
+  return new Date(+m[1], +m[2] - 1, +m[3], 23, 59) < new Date();
 }
 
 // ホーム: 各タブの上位3件を見出しだけ並べ、タップでそのタブのカードへ
