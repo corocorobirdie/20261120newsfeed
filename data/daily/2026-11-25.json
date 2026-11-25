@@ -1812,26 +1812,27 @@
   ],
   "art": [
    {
-    "id": "url:48b043bddc8be3c6",
+    "id": "url:5a0134dc3eb72652",
     "kind": "news",
     "tab": "art",
     "section": null,
-    "title": "東京都現代美術館にて、ジェンダーやセクシュアリティをめぐる国際グループ展「スペクトロシンセシスⅤ｜ならば、発明せよ」が開催（Tokyo Art Beat）",
-    "title_ja": "東京都現代美術館でジェンダーとセクシュアリティをめぐる国際展「スペクトロシンセシスⅤ」開催",
+    "title": "東京都現代美術館にて、ジェンダーやセクシュアリティをめぐる国際グループ展「スペクトロシンセシスⅤ｜ならば、発明せよ」が開催",
+    "title_ja": "スペクトロシンセシスⅤ｜ならば、発明せよ",
     "summary_ja": [
-     "現代アートの重要拠点である東京都現代美術館で国際グループ展が開催。",
-     "ジェンダーやセクシュアリティを主題に表現の拡張を試みる展示内容。",
-     "「ならば、発明せよ」を掲げ多様な視点から現代社会の視覚表現に迫る。"
+     "東京都現代美術館で開催される、ジェンダーやセクシュアリティをテーマにした国際グループ展です。",
+     "アジアのLGBTQ+コミュニティの歴史や文化を可視化する「スペクトロシンセシス」シリーズの第5弾となります。",
+     "多様な背景を持つアーティストたちが、社会的な規範やアイデンティティを問い直す作品を展示します。"
     ],
-    "reason_ja": "都内の主要公立現代美術館で最新のジェンダー表現に触れられるため。",
+    "reason_ja": "現代社会の重要なテーマを国際的な視点で考察できる展覧会です。",
     "authors": [],
-    "venue": "Yahoo!ニュース",
+    "venue": "Tokyo Art Beat",
     "date": "2026-11-25",
-    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB4NGdyUXV0RVhROVg1SWpUNTB4OEhNaGtTSzR5UlhXT0xZV3BBcllkM0JBcTFXRnhfbXlTUDRPM0JaaldreHl0dXNjaVRPaUoxbzh0cFkyV3BTT2E1MVFsV2ZWeEtmUWNldkF1aUVETVpTeXlsWjltUElpMnhrdXc?oc=5",
+    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPY2c2WUsxNmVjWkY0cDJYSzhMa1RNR0w3bTFvZlRQR293REVnemlTNlBvR1dLOFRYdm1ILTNrc1ppNXgtbFgtVHRsbFFqM2F2SWRyREVqbjFtRHlUc0Fhb2ZHMkFRMEZfOWJmTVRodXBocFM1SjJlQ0NkaVBrTVZPdDBwd3dlLV81SGxfWHJpdktJcFdiSWZwZA?oc=5",
     "doi": null,
     "arxiv_id": null,
-    "abstract": "東京都現代美術館にて、ジェンダーやセクシュアリティをめぐる国際グループ展「スペクトロシンセシスⅤ｜ならば、発明せよ」が開催（Tokyo Art Beat） Yahoo!ニュース",
+    "abstract": "東京都現代美術館にて、ジェンダーやセクシュアリティをめぐる国際グループ展「スペクトロシンセシスⅤ｜ならば、発明せよ」が開催 Tokyo Art Beat",
     "tags": [
+     "行きつけ",
      "日本の展覧会",
      "美術館"
     ],
@@ -1842,7 +1843,9 @@
     "source": "rss",
     "label": "行きつけ",
     "headline_only": false,
-    "pinned": false
+    "pinned": false,
+    "period": null,
+    "place": "東京都現代美術館（東京）"
    },
    {
     "id": "url:4f759dda287688e4",
@@ -1850,13 +1853,13 @@
     "tab": "art",
     "section": null,
     "title": "東京都美術館開館100周年記念 はじまりをひらく 東京都美術館の100年",
-    "title_ja": "東京都美術館開館100周年記念展「はじまりをひらく 東京都美術館の100年」",
+    "title_ja": "はじまりをひらく 東京都美術館の100年",
     "summary_ja": [
-     "日本初の公立美術館として開館した東京都美術館の100周年記念展。",
-     "「はじまりをひらく」をテーマに同館の歩みと歴史的意義をひもとく。",
-     "上野の歴史的拠点が果たしてきた役割と美術展開の軌跡を紹介。"
+     "日本初の公立美術館として1926年に開館した東京都美術館の歴史を振り返る記念展です。",
+     "美術館の歩みを通じて、日本の美術界の発展や公募展の歴史を辿る貴重な機会となります。",
+     "開館100周年という節目に、美術館の役割やこれからの可能性を再考する展示構成です。"
     ],
-    "reason_ja": "東京の美術史を支えてきた公立美術館の背景と歩みを深く知れるため。",
+    "reason_ja": "日本の美術館の歴史と役割を深く知ることができる記念展です。",
     "authors": [],
     "venue": "美術手帖",
     "date": "2026-11-19",
@@ -1875,7 +1878,9 @@
     "source": "rss",
     "label": "行きつけ",
     "headline_only": false,
-    "pinned": false
+    "pinned": false,
+    "period": null,
+    "place": "東京都美術館（東京）"
    },
    {
     "id": "url:5b2e896dfbdfb1b0",
@@ -1883,13 +1888,13 @@
     "tab": "art",
     "section": null,
     "title": "「あなたが世界を読むために」（東京都美術館）開幕レポート。100周年の節目に5名の作家とひらく「世界との対話」｜Page 2",
-    "title_ja": "東京都美術館100周年展「あなたが世界を読むために」開幕レポート",
+    "title_ja": "あなたが世界を読むために",
     "summary_ja": [
-     "東京都美術館の開館100周年を記念する特別展が開幕。",
-     "現代表現を手がける5名の作家が参加し世界との対話を提示。",
-     "鑑賞者が作品を通じて世界を読み解く新たな視点を共有する。"
+     "東京都美術館の開館100周年を記念し、5名の作家と対話する現代アートの展覧会です。",
+     "アルベルト・ジャコメッティや谷川俊太郎など、異なる領域の作家の視点から世界を読み解きます。",
+     "鑑賞者が作品を通じて自身の世界観を広げ、新たな対話を生み出すことを目指しています。"
     ],
-    "reason_ja": "5名の作家による多様な視点から現代アートと世界の対話を学べるため。",
+    "reason_ja": "多様な表現を通じて世界を捉え直す視点が得られる展覧会です。",
     "authors": [],
     "venue": "美術手帖",
     "date": "2026-11-19",
@@ -1908,7 +1913,9 @@
     "source": "rss",
     "label": "行きつけ",
     "headline_only": false,
-    "pinned": false
+    "pinned": false,
+    "period": null,
+    "place": "東京都美術館（東京）"
    },
    {
     "id": "url:5bc99e0a490aee68",
@@ -1916,13 +1923,13 @@
     "tab": "art",
     "section": null,
     "title": "世界を読むための5つの視点。ジャコメッティから谷川俊太郎まで、東京都美術館100周年の締めくくり「あなたが世界を読むために」展が開幕",
-    "title_ja": "ジャコメッティから谷川俊太郎まで、東京都美術館「あなたが世界を読むために」展が開幕",
+    "title_ja": "あなたが世界を読むために",
     "summary_ja": [
-     "都美100周年の締めくくりとなる展覧会「あなたが世界を読むために」が開幕。",
-     "彫刻家ジャコメッティから詩人・谷川俊太郎まで多角的な作家陣が参加。",
-     "世界を読むための5つの視点を軸に多様なジャンルの表現を展覧する。"
+     "東京都美術館の100周年を締めくくる、5つの視点から世界を考察するグループ展です。",
+     "彫刻家のアルベルト・ジャコメッティから詩人の谷川俊太郎まで、多彩な作家が参加しています。",
+     "現代アートの枠を超え、文学や哲学的なアプローチで「世界を読む」試みが行われます。"
     ],
-    "reason_ja": "彫刻から現代詩まで領域を超えた表現者の対話を楽しめるため。",
+    "reason_ja": "幅広い表現形式から現代の視点を学べる注目の展覧会です。",
     "authors": [],
     "venue": "Tokyo Art Beat",
     "date": "2026-11-24",
@@ -1941,7 +1948,9 @@
     "source": "rss",
     "label": "行きつけ",
     "headline_only": false,
-    "pinned": false
+    "pinned": false,
+    "period": null,
+    "place": "東京都美術館（東京）"
    },
    {
     "id": "url:2441f7b0fd00f412",
@@ -1949,13 +1958,13 @@
     "tab": "art",
     "section": null,
     "title": "写真17/17｜「東京アートブックフェア」東京都現代美術館で、国内外約550組のアートブック＆小冊子が集結",
-    "title_ja": "東京都現代美術館で「東京アートブックフェア」開催、国内外約550组が集結",
+    "title_ja": "第16回 東京アートブックフェア",
     "summary_ja": [
-     "清澄白河の東京都現代美術館で「TOKYO ART BOOK FAIR」が開催。",
-     "国内外から約550組のアートブック出版社やZINE作家が一堂に会する。",
-     "紙メディアを通じた最新のアート表現と独立系出版物に触れられる。"
+     "東京都現代美術館を会場に、国内外から約550組の出展者が集まるアートブックの祭典です。",
+     "インディペンデントな出版文化を牽引するイベントとして、多様な小冊子やZINEが並びます。",
+     "アーティストや出版社と直接交流しながら、ユニークな出版物に出会える貴重な機会です。"
     ],
-    "reason_ja": "国内外のアートブックや独立系出版の最前線を体感できるため。",
+    "reason_ja": "アートブックの最新トレンドと多様な表現に触れられる場です。",
     "authors": [],
     "venue": "ファッションプレス",
     "date": "2026-11-20",
@@ -1964,6 +1973,7 @@
     "arxiv_id": null,
     "abstract": "写真17/17｜「東京アートブックフェア」東京都現代美術館で、国内外約550組のアートブック＆小冊子が集結 ファッションプレス",
     "tags": [
+     "行きつけ",
      "サブカル・アングラ",
      "美術館"
     ],
@@ -1974,41 +1984,44 @@
     "source": "rss",
     "label": "行きつけ",
     "headline_only": false,
-    "pinned": false
+    "pinned": false,
+    "period": null,
+    "place": "東京都現代美術館（東京）"
    },
    {
-    "id": "url:70ee1c0f8e1ec100",
+    "id": "url:68865d90586999ec",
     "kind": "news",
     "tab": "art",
     "section": null,
-    "title": "【プレビュー】「岡田敦｜幻の馬 Yururi Island 1950-2026」東京都写真美術館で12月1日から 絶海の無人島に生きる馬たちを追った15年間の軌跡",
-    "title_ja": "東京都写真美術館で「岡田敦｜幻の馬 Yururi Island 1950-2026」展が12月1日より開催",
+    "title": "推しエンタＴＶ！【東京都美術館で開催中！「オルセー美術館展」】(テレ東、2026/11/23 26:35 OA)の番組情報ページ",
+    "title_ja": "オルセー美術館展",
     "summary_ja": [
-     "恵比寿の映像・写真専門館である東京都写真美術館にて写真家・岡田敦の個展。",
-     "絶海の無人島ユルリ島に生きる馬たちを捉えた15年間の軌跡を展示。",
-     "長期間のフィールドワークに基づくドキュメンタリー写真を紹介。"
+     "印象派の名画で知られるフランスのオルセー美術館のコレクションを紹介する展覧会です。",
+     "19世紀後半の西洋美術を代表する作品群が、東京都美術館に集結しています。",
+     "西洋美術史の重要作を間近で鑑賞できる、非常に人気の高い企画展です。"
     ],
-    "reason_ja": "写真専門美術館で15年に及ぶ壮大なドキュメンタリー展示を観られるため。",
+    "reason_ja": "西洋美術の傑作をまとめて鑑賞できる貴重な機会です。",
     "authors": [],
-    "venue": "美術展ナビ",
-    "date": "2026-11-23",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFAwNEZpR2JQUFBDS2lhWTZ5NW9nVzFtOGRGRW44SDNOOGw3eW91OHhRQk45ZGxnY1JEQVV2bWszQ2poSDFxeExvYnlrOVU1NTllM2pzZnFZQVczNURvczJ5QUhNMGptUW41?oc=5",
+    "venue": "テレビ東京",
+    "date": "2026-11-24",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPWnhTYWZOVEZhaVNDeE5pOUpDci1xRkg3YVlfc2Y5bXNFRXhUYkt1Nk1QSllyS3JqNVRNRGFxaEo5QzF5Z2owS0VtR284dnh2ZVpsdUFsQ2pTYWltQ05DVFoxWlYzMWtZU0FSdGUyam80M1BWbmItVnVxZldKR1pOZlExWHBNeG02TVZwdHhqdw?oc=5",
     "doi": null,
     "arxiv_id": null,
-    "abstract": "【プレビュー】「岡田敦｜幻の馬 Yururi Island 1950-2026」東京都写真美術館で12月1日から 絶海の無人島に生きる馬たちを追った15年間の軌跡 美術展ナビ",
+    "abstract": "推しエンタＴＶ！【東京都美術館で開催中！「オルセー美術館展」】(テレ東、2026/11/23 26:35 OA)の番組情報ページ テレビ東京",
     "tags": [
      "日本の展覧会",
-     "美術館",
-     "作家"
+     "美術館"
     ],
     "score": 8,
     "author_group": null,
     "author_hits": null,
     "lang": "ja",
     "source": "rss",
-    "label": "日本",
+    "label": "行きつけ",
     "headline_only": false,
-    "pinned": false
+    "pinned": false,
+    "period": null,
+    "place": "東京都美術館（東京）"
    },
    {
     "id": "url:6225af07e48058c9",
@@ -2016,13 +2029,13 @@
     "tab": "art",
     "section": null,
     "title": "第16回「TOKYO ART BOOK FAIR」",
-    "title_ja": "第16回「TOKYO ART BOOK FAIR」開催",
+    "title_ja": "第16回 東京アートブックフェア",
     "summary_ja": [
-     "アート出版と視覚表現が交差する「TOKYO ART BOOK FAIR」第16回。",
-     "独立系出版社やアーティストが集い自作の書籍やカタログを展示・販売。",
-     "本という媒体を介した現代的な表現活動の広がりに触れる機会。"
+     "アートブックの魅力を発信する、日本最大級の出版イベントである東京アートブックフェアです。",
+     "国内外のアーティストや出版社が参加し、独自の視点で制作された書籍や小冊子を販売します。",
+     "本というメディアを通じた表現の可能性を、会場全体で体験できるイベントです。"
     ],
-    "reason_ja": "東京で定着しているアートブックカルチャーの今をチェックできるため。",
+    "reason_ja": "新しいアートの形やインディペンデントな出版文化に触れられます。",
     "authors": [],
     "venue": "デザイン情報サイト[JDN]",
     "date": "2026-11-24",
@@ -2041,7 +2054,9 @@
     "source": "rss",
     "label": "行きつけ",
     "headline_only": false,
-    "pinned": false
+    "pinned": false,
+    "period": null,
+    "place": null
    },
    {
     "id": "url:0228732867c3f090",
@@ -2049,13 +2064,13 @@
     "tab": "art",
     "section": null,
     "title": "【プレビュー】特別展「源氏物語 王朝のかがやき」 東京国立博物館で1月19日から 『源氏物語』千年の歩みを見る",
-    "title_ja": "東京国立博物館で特別展「源氏物語 王朝のかがやき」が1月19日より開催",
+    "title_ja": "特別展 源氏物語 王朝のかがやき",
     "summary_ja": [
-     "上野の東京国立博物館にて『源氏物語』を題材とした特別展が開催。",
-     "千年以上の時を超えて継承されてきた王朝美術と文化の歩みを紹介。",
-     "古典文学が日本の視覚文化に与えた影響と華麗な名品を展示する。"
+     "日本文学の最高峰『源氏物語』の千年にわたる歴史と影響を辿る特別展です。",
+     "王朝文化の美意識を象徴する絵画や工芸品を通じて、物語の世界観を紐解きます。",
+     "東京国立博物館の所蔵品を中心に、古典文学が美術に与えた影響を深く考察します。"
     ],
-    "reason_ja": "日本の伝統的な美意識や現代表現の背景にある王朝文化を学べるため。",
+    "reason_ja": "日本美術の古典と物語の美学を深く学べる展覧会です。",
     "authors": [],
     "venue": "美術展ナビ",
     "date": "2026-11-24",
@@ -2074,107 +2089,9 @@
     "source": "rss",
     "label": "日本",
     "headline_only": false,
-    "pinned": false
-   },
-   {
-    "id": "url:1d2faeaa2c57403a",
-    "kind": "news",
-    "tab": "art",
-    "section": null,
-    "title": "【プレビュー】YOSHIROTTENの展覧会『光の地動説』が11月25日からGallery 地動説（東京・東品川）で",
-    "title_ja": "【プレビュー】YOSHIROTTENの展覧会『光の地動説』が11月25日からGallery 地動説（東京・東品川）で開催",
-    "summary_ja": [
-     "グラフィックアーティストYOSHIROTTENの展覧会『光の地動説』が11月25日より開催される。",
-     "会場は東京・東品川に位置するギャラリースペース「Gallery 地動説」となる。",
-     "11月25日の開幕に向けたプレビュー情報として展示概要が公開されている。"
-    ],
-    "reason_ja": "都内で行われる注目アーティストの新展覧会情報をいち早くチェックできます。",
-    "authors": [],
-    "venue": "美術展ナビ",
-    "date": "2026-11-24",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5yMm52LU9WaG96ZmY0bDJucEd6OHhuU0U5d0REdC1NM19CdUx3dWM2SzZuNVZqX3loOHc4aHB6TGNYQ19SQ1BrcE0tMDdrNXlTdVhUUF9hRl9lRWw4TDFCTGJYNVVEOXNZ?oc=5",
-    "doi": null,
-    "arxiv_id": null,
-    "abstract": "【プレビュー】YOSHIROTTENの展覧会『光の地動説』が11月25日からGallery 地動説（東京・東品川）で 美術展ナビ",
-    "tags": [
-     "日本の展覧会",
-     "ギャラリー",
-     "作家"
-    ],
-    "score": 8,
-    "author_group": null,
-    "author_hits": null,
-    "lang": "ja",
-    "source": "rss",
-    "label": "日本",
-    "headline_only": false,
-    "pinned": false
-   },
-   {
-    "id": "url:e0632d35176ca83b",
-    "kind": "news",
-    "tab": "art",
-    "section": null,
-    "title": "「恵比寿映像祭2026」が来年2月に開催。総合テーマは「あそびのルール｜Rules of Play」",
-    "title_ja": "「恵比寿映像祭2026」が来年2月に開催。総合テーマは「あそびのルール｜Rules of Play」",
-    "summary_ja": [
-     "映像や写真の多様な表現を紹介する「恵比寿映像祭2026」が来年2月に開催される。",
-     "総合テーマには「あそびのルール｜Rules of Play」が掲げられている。",
-     "東京の恵比寿を舞台に開催される映像フェスティバルの最新テーマ情報である。"
-    ],
-    "reason_ja": "都内で毎年開催される主要な映像芸術祭のテーマと時期を事前に把握できます。",
-    "authors": [],
-    "venue": "美術手帖",
-    "date": "2026-11-25",
-    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1RZEhQSG5hWTJ6Mm9rLXNmclNPQmY0d2ZpcGNNcEgwYmxLY1BYZGhaVUlFQW5jMXFmc04wZEdKM21aeEdTWXFDaDBld0l4RDBMajFTSXB3Vk5Uand6Ym9YeGpKVzFudw?oc=5",
-    "doi": null,
-    "arxiv_id": null,
-    "abstract": "「恵比寿映像祭2026」が来年2月に開催。総合テーマは「あそびのルール｜Rules of Play」 美術手帖",
-    "tags": [
-     "日本の展覧会",
-     "美術館"
-    ],
-    "score": 8,
-    "author_group": null,
-    "author_hits": null,
-    "lang": "ja",
-    "source": "rss",
-    "label": "日本",
-    "headline_only": false,
-    "pinned": false
-   },
-   {
-    "id": "url:a80a2bf78b93dcf8",
-    "kind": "news",
-    "tab": "art",
-    "section": null,
-    "title": "松房子｜香月恵介「Afterglow(s)」",
-    "title_ja": "松房子｜香月恵介「Afterglow(s)」",
-    "summary_ja": [
-     "神宮前のギャラリーEUKARYOTEで香月恵介の個展「Afterglow(s)」が開催された。",
-     "画素の光を絵の具で描く「ピクセルペインティング」等をクロード・ロラン題材に展開。",
-     "VR空間や湿板写真など複数のメディアを往来し、視覚像の「移し替え」を探求する。"
-    ],
-    "reason_ja": "神宮前のギャラリーで展開された新進作家によるメディア横断的な試みを学べます。",
-    "authors": [],
-    "venue": "artscape",
-    "date": "2026-11-25",
-    "url": "https://artscape.jp/article/83348/",
-    "doi": null,
-    "arxiv_id": null,
-    "abstract": "会期：2026/09/25～2026/10/18 会場： EUKARYOTE ［東京都］ 公式サイト： https://eukaryote.jp/exhibition/keisuke_katasuki_soloex2026/ 神宮前のギャラリー、EUKARYOTEで香月（かつき）恵介の個展「Afterglow(s)」が開催された。本展は17世紀に描かれたクロード・ロランの絵画《エジプト逃避の休息》を題材に、「ピクセルペインティング（Pixel Painting）」やVRchat空間、湿板写真など複数の媒体をめぐって展開する作品群からなる。 「ピクセルペインティング」とは香月が長年取り組んできた技法で、画像が表示された液晶ディスプレイに近接した際に視認できる赤、緑、青の三原色の透過光を、その光量差による濃淡を含めて不透明な絵の具によって描き起こす絵画を指す。 この技法によって描かれた絵画を前にすると、描かれている対象だけでなく、支持体への意識──パソコンに表示された対象を見るとき、同時に液晶ディスプレイそのものも見ている──が喚起される。さらにはディスプレイの表面を通り抜けてくる光が、絵の具やキャンバスといった物理的に触れられるメディウムを用いて表現されることで、「描いた」と「表示された」が混合する現代におけるまなざしのあり方が浮かび上がってくる。実際、私たちがiPadで絵を描くとき、線を引くことと、その線がRGBの画素として表示されるプロセスは同時に進行する。 本展より［筆者撮影］ 本展ではさらに理想風景画家と呼ばれるクロード・ロランと彼の名に由来する「クロード・グラス」に注目し ★1 、現実には存在しない景色や像を求める人間の普遍的な精神性に焦点を当てている。フランス・ロレーヌ地方の出身者であることを名に残すロランはイタリアで活躍し、ローマ近郊の風景をそのまま写し取るような描写力を備えながら、構図や光の表現によって現実を凌駕することで「理想風景」を描いた画家として位置付けられている。香月はそうしたロランの絵画から、聖母マリアと幼子イエス、天使たちが川の近くで体を休める《エジプト逃避の休息》を選び ★2 、絵画やVR空間、写真といった複数の表現形態へと展開している。 本展より［筆者撮影］ 湿板写真は香月がVR空間に立ち上げた《エジプト逃避の休息》をバーチャルフォトグラフィとして捉えたものだが、そもそもロランの絵画自体が、ベツレヘムからエジプトへと移動する過程で立ち寄るはずのないローマ近郊を舞台にしたフィクショナルな空間を描いたものである。それゆえに香月の湿板写真は絵画における仮想空間をデジタル空間に置き換え、そのスクリーンショットをガラス板に転写して紙に起こす工程を経たものだといえる。現実には存在しないデジタルイメージを物理メディアである紙へと展開する「顛倒」は、液晶ディスプレイの特徴を絵の具によって表現する「ピクセルペインティング」の方法論に沿う。そしてこの手工芸的な営みは時間と手間を伴うために、ふたたび香月の執心の矛先──イメージを移し替えること──を際立たせる ★3 。 画家が風景を絵画に、クロード・グラスが現実の景色を絵画的なイメージへと変換したように、香月は絵画とディスプレイ、デジタル空間と湿板写真といった異なるメディアを往来し、また往来すること自体の強調により、イメージの移し替えにこそ創造的価値を見出すかのようだ。本作においてはVRのデジタル空間と湿板写真という異なる時代における視覚メディアが結ばれ、存在しない風景にも向けられる、遠くを見ることへの欲求がメディアの歴史という時間に対しても適用されているように感じられた。イメージが表出する場と、場と場を行き来する表象のあり方をめぐるような作品群だった。 本展は、ギャラリー空間と、会期中のみ公開されたVRChat上の仮装空間の二つの場で構成されていた［筆者撮影］ 鑑賞日：2026/10/14（水） ★1──クロード・グラスはコンパクトミラーのようなかたちをした黒味を帯びた凸面鏡で、映り込んだ風景を陰影の強いピクチャレスクな像として示す。香月はクロード・グラスそのものを撮影した湿板写真を本展に出品している。 ★2──「エジプト逃避の休息」はロランが重ねて描いた画題だが、本展では1640〜45年頃に描かれた一点が選ばれている。 ★3──ロランの絵画を新たな媒体へ移し替える際、香月という作家個人の気配がほとんど排されていることも特徴的だ。わずかに見出せたことは、ロランの絵画にある石積みの落差高が、VR空間においては大量のガチョウに変換されているように見えたことである。 参考文献 ・藤田治彦「クロード・グラスの映像」『映像学』（日本映像学会、1999） https://ir.library.osaka-u.ac.jp/repo/ouka/all/26614/eizo44_77.pdf",
-    "tags": [
-     "ギャラリー",
-     "作家"
-    ],
-    "score": 8,
-    "author_group": null,
-    "author_hits": null,
-    "lang": "ja",
-    "source": "rss",
-    "label": "日本・批評",
-    "headline_only": false,
-    "pinned": false
+    "pinned": false,
+    "period": "2027/1/19〜",
+    "place": "東京国立博物館（東京）"
    },
    {
     "id": "url:ac96764e40e5f5ea",
@@ -2182,13 +2099,13 @@
     "tab": "art",
     "section": null,
     "title": "【東京】OPEN SITE 11",
-    "title_ja": "【東京】OPEN SITE 11",
+    "title_ja": "OPEN SITE 11",
     "summary_ja": [
-     "企画公募プログラムを行うトーキョーアーツアンドスペース本郷で「OPEN SITE 11」が開催。",
-     "応募482企画から選ばれた展示・パフォーマンス・dot部門等の企画を2会期で展開する。",
-     "トークイベントやワークショップも実施され、多様な表現活動が集まる場となる。"
+     "若手アーティストの登竜門として知られるトーキョーアーツアンドスペース（TOKAS）の公募プログラムです。",
+     "展示、パフォーマンス、dot部門から選出された多様な表現が、2会期にわたり本郷の会場で展開されます。",
+     "実験的な試みを支援するTOKASらしい、現代アートの最前線に触れられる貴重な機会となっています。"
     ],
-    "reason_ja": "本郷のTOKASで公募選出された新鋭アーティストたちの先端的な表現に触れられます。",
+    "reason_ja": "若手作家の実験的な作品をまとめて見られるため。",
     "authors": [],
     "venue": "artscape",
     "date": "2026-11-25",
@@ -2197,6 +2114,7 @@
     "arxiv_id": null,
     "abstract": "トーキョーアーツアンドスペース本郷にて、「OPEN SITE 11」が開催されています。 「OPEN SITE」は、あらゆる表現活動が集まるプラットフォームの構築を目指し、2016年より始まった企画公募プログラムです。 11回目となる2026年度は、482企画の応募の中から展示部門4企画、パフォーマンス部門2企画、dot部門2企画が選出されました。さらにTOKAS推奨プログラムと普及プログラムを加えた全10企画が、2会期にわたって実施されます。 実施企画 ■Part 1｜2026/11/21（土）～12/20（日） ［展示］劉子涵（リュウ・ズーハン）／エラーが現れる時 ［展示］フランシスカ・アンジェラ／The Magnolia Grows at Night ［パフォーマンス］米川幸リオン／（あるいは）限界ニュータウン ［パフォーマンス］李文皓（リ・ウェンハオ）／SOLO ［TOKAS普及プログラム］青柳菜摘、細井美裕／本郷で／描線を／聞く ― 観察するための音声ガイド創作ワークショップ ＊各企画の開催日時・詳細は こちら をご覧ください。 ■Part 2｜2027/01/09（土）～02/07（日） ［展示］ユジン・ジョン／SEWER vol. 1 堆 ［展示］原千夏／対岸 ［TOKAS推奨プログラム］ホアキン・アラス／Memory is a film ［dot］豊田ゆり佳／それ私が代わりにやっておきます ［dot］大竹紗央、パク・ジユ／ハビタブル・ゾーン（居住可能圏） ＊各企画の開催日時・詳細は こちら をご覧ください。 関連イベント ■Part 2｜オープニング・トーク 日時 ｜2027/01/09（土）16:00～17:30 会場 ｜トーキョーアーツアンドスペース本郷（1F、2F） 出演 ｜ユジン・ジョン、原千夏、川崎陽子（KYOTO EXPERIMENT 共同アーティスティック・ディレクター）、畠中実（キュレーター、美術・音楽批評） 参加費 ｜無料 言語 ｜日英逐次通訳 ＊詳細は こちら をご覧ください。 会期：Part 1｜2026/11/21（土）～12/20（日）、Part 2｜2027/01/09（土）～02/07（日） 会場： トーキョーアーツアンドスペース本郷 （東京都文京区本郷2-4-16） 開館時間：［展示］11:00～19:00（入場は閉館30分前まで） ＊［パフォーマンス・dot］企画により異なる 休館日：月曜日（11/23、1/11は開館）、11/24、12/21～01/08、01/12 入場料：［展示・dot］＝無料、［パフォーマンス］＝有料 ＊パフォーマンス公演および一部イベントは予約制。 主催：トーキョーアーツアンドスペース（公益財団法人東京都歴史文化財団 東京都現代美術館） 公式サイト： https://www.tokyoartsandspace.jp/archive/exhibition/2026/20261121-7603.html",
     "tags": [
+     "美術館",
      "日本の展覧会",
      "サブカル・アングラ"
     ],
@@ -2207,39 +2125,114 @@
     "source": "rss",
     "label": "日本・批評",
     "headline_only": false,
-    "pinned": false
+    "pinned": false,
+    "period": "2026/11/21〜2027/2/7",
+    "place": "トーキョーアーツアンドスペース本郷（東京）"
    },
    {
-    "id": "url:35237c315277adb3",
+    "id": "url:a0362655c44dbb95",
     "kind": "news",
     "tab": "art",
     "section": null,
-    "title": "The US$2.4 billion art auction week: big sales, bigger expectations",
-    "title_ja": "24億ドルのアートオークションウィーク：巨額の売上とさらに高まる期待",
+    "title": "歴史のイメージを揺さぶる。ニュー・ミュージアムでのアーサー・ジャファ「私はトニーだ」展が問う、見ることの倫理｜Page 2",
+    "title_ja": "アーサー・ジャファ「私はトニーだ」展",
     "summary_ja": [
-     "総額24億ドル（約3600億円）規模となる大型のアートオークションウィークが開催された。",
-     "主要競売で大きな売上が達成されるとともに、今後のアート市場への期待がさらに高まっている。",
-     "世界的な最高峰アート市場の規模感と活況を示す最新の取引動向を伝えている。"
+     "黒人文化の歴史的イメージを再構築する映像作家、アーサー・ジャファの個展がニューヨークで開催されています。",
+     "ジャファは、黒人の経験や暴力の記憶をコラージュ的に扱う手法で国際的に高く評価されているアーティストです。",
+     "本展では、見るという行為の倫理を問い直すような、重層的な映像インスタレーションが展開されています。"
     ],
-    "reason_ja": "世界の大型アートオークションの市場規模や勢いを把握するのに役立ちます。",
+    "reason_ja": "現代映像表現の重要作家の思考に触れられるため。",
     "authors": [],
-    "venue": "The Business Times",
-    "date": "2026-11-22",
-    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNR3lNTWFGTzVLZnBuOGNRcjJwd3lXbVE2RjI4blFYenN3ME93RHJ6UlBYSUJPZmNLVmZ3ZFo5aGZMSS1jbTllb29iN29ONWIzWVl5WTNsRmpRajA0eVVRcjNudjE2QlllM1RYbWhLWGFqOFdGeURqNEpSSHk1NC12dlRfY2hMV2pIWXdncldSNTlKYmxBdDQtYktiXzNJSHRzZjd5V1hKdlk5YmM?oc=5",
+    "venue": "美術手帖",
+    "date": "2026-11-23",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5XZjVpMFpUN3JldTZnU1Y5QzIxYjRhQ2ZEd3FlWlk2cGVFT1AtTlZoRkt5RVRYOE5OdURJQXBJTVJJWTUzY0x3MGl3MmkzRTFXbHRZekMtMVJSVVFyUU5vYXJaelNFeUV4dmc?oc=5",
     "doi": null,
     "arxiv_id": null,
-    "abstract": "The US$2.4 billion art auction week: big sales, bigger expectations The Business Times",
+    "abstract": "歴史のイメージを揺さぶる。ニュー・ミュージアムでのアーサー・ジャファ「私はトニーだ」展が問う、見ることの倫理｜Page 2 美術手帖",
     "tags": [
-     "市場・オークション"
+     "海外の展覧会",
+     "批評・論考"
     ],
     "score": 7,
     "author_group": null,
     "author_hits": null,
-    "lang": "en",
+    "lang": "ja",
     "source": "rss",
-    "label": "市場",
+    "label": "日本",
     "headline_only": false,
-    "pinned": false
+    "pinned": false,
+    "period": null,
+    "place": null
+   },
+   {
+    "id": "url:70ee1c0f8e1ec100",
+    "kind": "news",
+    "tab": "art",
+    "section": null,
+    "title": "【プレビュー】「岡田敦｜幻の馬 Yururi Island 1950-2026」東京都写真美術館で12月1日から 絶海の無人島に生きる馬たちを追った15年間の軌跡",
+    "title_ja": "岡田敦｜幻の馬 Yururi Island 1950-2026",
+    "summary_ja": [
+     "写真家・岡田敦が、北海道の無人島・ユルリ島で野生化した馬たちを15年間にわたり記録したプロジェクトです。",
+     "岡田は、写真表現を通じて人間と自然の関わりを深く探求し続ける写真家として知られています。",
+     "絶海の孤島で生き抜く馬たちの姿を通じ、生命の尊厳や歴史の重層性を写し出した作品群が展示されます。"
+    ],
+    "reason_ja": "長期的な視点で自然と生命を捉えた写真展のため。",
+    "authors": [],
+    "venue": "美術展ナビ",
+    "date": "2026-11-23",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFAwNEZpR2JQUFBDS2lhWTZ5NW9nVzFtOGRGRW44SDNOOGw3eW91OHhRQk45ZGxnY1JEQVV2bWszQ2poSDFxeExvYnlrOVU1NTllM2pzZnFZQVczNURvczJ5QUhNMGptUW41?oc=5",
+    "doi": null,
+    "arxiv_id": null,
+    "abstract": "【プレビュー】「岡田敦｜幻の馬 Yururi Island 1950-2026」東京都写真美術館で12月1日から 絶海の無人島に生きる馬たちを追った15年間の軌跡 美術展ナビ",
+    "tags": [
+     "日本の展覧会",
+     "美術館"
+    ],
+    "score": 7,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "ja",
+    "source": "rss",
+    "label": "日本",
+    "headline_only": false,
+    "pinned": false,
+    "period": "2026/12/1〜",
+    "place": "東京都写真美術館（東京）"
+   },
+   {
+    "id": "url:ffc0eba12b20c880",
+    "kind": "news",
+    "tab": "art",
+    "section": null,
+    "title": "【山種美術館開館６０周年特別企画】同館学芸部顧問の山下裕二・明治学院大学教授が選ぶ「ベスト３」①福田美蘭《班猫》――「竹内栖鳳の『班猫』にインスパイアされた作品。エメラルドグリーンの目が印象的です」",
+    "title_ja": "山種美術館開館60周年特別企画：山下裕二が選ぶベスト3",
+    "summary_ja": [
+     "山種美術館の開館60周年を記念し、美術史家・山下裕二が同館のコレクションから名品を選出しています。",
+     "福田美蘭は、古典絵画を現代的な視点で再解釈する手法で知られる日本画家です。",
+     "竹内栖鳳の代表作『班猫』へのオマージュである本作を通じ、日本画の系譜と現代の対話を楽しめます。"
+    ],
+    "reason_ja": "日本画の名品を専門家の視点で再発見できるため。",
+    "authors": [],
+    "venue": "美術展ナビ",
+    "date": "2026-11-23",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9mRUx5cVhmMldiWThnSFJyWDhMLWdvQTFTTXZhdElfejJDRWtLQ3p0Q3VIcFJTX3hreGRXTGRKVXJHX1FUYTRHSnhETmJRMFFkejVicFZ0RUYwMXU0ek16MnBBZjMydmxD?oc=5",
+    "doi": null,
+    "arxiv_id": null,
+    "abstract": "【山種美術館開館６０周年特別企画】同館学芸部顧問の山下裕二・明治学院大学教授が選ぶ「ベスト３」①福田美蘭《班猫》――「竹内栖鳳の『班猫』にインスパイアされた作品。エメラルドグリーンの目が印象的です」 美術展ナビ",
+    "tags": [
+     "作家",
+     "美術館"
+    ],
+    "score": 7,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "ja",
+    "source": "rss",
+    "label": "日本",
+    "headline_only": false,
+    "pinned": false,
+    "period": null,
+    "place": null
    },
    {
     "id": "url:4ac4738f952698ba",
@@ -2247,13 +2240,13 @@
     "tab": "art",
     "section": null,
     "title": "International photography museum Fotografiska opens in Shenzhen",
-    "title_ja": "国際写真美術館フォトグラフィスカが中国・深圳にオープン",
+    "title_ja": "写真美術館「Fotografiska」が深圳に開館",
     "summary_ja": [
-     "グローバル展開する写真美術館フォトグラフィスカが中国・深圳に新たな拠点をオープンした。",
-     "中国国内で2カ所目となるこの施設は、急速に発展する深圳の文化的野心に応えるものとなる。",
-     "世界的な写真専門ミュージアムがアジアで活動範囲を広げる最新の動きを示している。"
+     "ストックホルム発の国際的な写真美術館「Fotografiska」が、中国の深圳に新たな拠点をオープンしました。",
+     "同館は、写真とライフスタイルを融合させた展示で世界的に展開する現代的な美術館組織です。",
+     "深圳の文化的な野心に応える形で、国際的な写真作品を広く紹介する場となることが期待されています。"
     ],
-    "reason_ja": "アジアの近隣都市で進む国際的なアート拠点の進出と写真展示の動向を知れます。",
+    "reason_ja": "国際的な美術館の動向を知ることができるため。",
     "authors": [],
     "venue": "The Art Newspaper",
     "date": "2026-11-23",
@@ -2271,7 +2264,9 @@
     "source": "rss",
     "label": "世界",
     "headline_only": false,
-    "pinned": false
+    "pinned": false,
+    "period": null,
+    "place": "Fotografiska（深圳）"
    },
    {
     "id": "url:3eaa78065fd912a2",
@@ -2279,13 +2274,13 @@
     "tab": "art",
     "section": null,
     "title": "Chile’s first Anglican church to host a new museum",
-    "title_ja": "チリ初の聖公会教会が新たな美術館を開設へ",
+    "title_ja": "チリ初の聖公会教会が新しい美術館に",
     "summary_ja": [
-     "チリ初の聖公会（アングリカン）教会である歴史的大聖堂に新しい美術館が作られる。",
-     "向かいで移民博物館を運営する「デスティノ・バルパライソ」が50年契約で修復と管理を行う。",
-     "歴史的建築物の保存・再生と博物館運営を組み合わせた文化拠点としての活用プロジェクトである。"
+     "チリのバルパライソにある歴史的な聖公会教会が、美術館として再活用されることになりました。",
+     "移民博物館を運営する団体が管理を担い、建物の修復と展示スペースとしての整備が進められます。",
+     "歴史的建造物を保存しつつ、地域の文化拠点として再生させるプロジェクトとして注目されています。"
     ],
-    "reason_ja": "海外における歴史的建築の修復・再生と新ミュージアム開設の事例を把握できます。",
+    "reason_ja": "歴史的建造物の活用事例として興味深いため。",
     "authors": [],
     "venue": "The Art Newspaper",
     "date": "2026-11-23",
@@ -2303,7 +2298,43 @@
     "source": "rss",
     "label": "世界",
     "headline_only": false,
-    "pinned": false
+    "pinned": false,
+    "period": null,
+    "place": "Destino Valparaíso（バルパライソ）"
+   },
+   {
+    "id": "url:e579a79bbe90eb5d",
+    "kind": "news",
+    "tab": "art",
+    "section": null,
+    "title": "Flooding in southwestern US underlines risks of Trump administration’s reduction of Bears Ears National Monument",
+    "title_ja": "米国南西部の洪水とベアーズ・イヤーズ国定公園の保護リスク",
+    "summary_ja": [
+     "米国南西部で発生した洪水が、保護区の縮小による考古学的遺跡へのリスクを浮き彫りにしました。",
+     "トランプ政権下で進められた国定公園の指定解除や縮小が、環境保護の観点から懸念されています。",
+     "自然災害と政治的な土地管理政策が、文化遺産の保存に与える影響を問いかけるニュースです。"
+    ],
+    "reason_ja": "文化遺産保護と政治の関わりを考えるため。",
+    "authors": [],
+    "venue": "The Art Newspaper",
+    "date": "2026-11-23",
+    "url": "https://www.theartnewspaper.com/2026/11/22/flooding-us-southwest-bears-ears-national-monument-trump-admin",
+    "doi": null,
+    "arxiv_id": null,
+    "abstract": "Recent floods in the Four Corners region of the southwest posed relatively little immediate risk to archaeological sites, but exposed risks due to scaling back of protected areas",
+    "tags": [
+     "制度・政策"
+    ],
+    "score": 7,
+    "author_group": null,
+    "author_hits": null,
+    "lang": "en",
+    "source": "rss",
+    "label": "世界",
+    "headline_only": false,
+    "pinned": false,
+    "period": null,
+    "place": null
    }
   ]
  }
