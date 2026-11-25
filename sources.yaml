@@ -84,7 +84,7 @@ news_tabs:
     # (b) インフォーマルな記事
     feeds:
       - {name: World Inequality Lab (WID), url: "https://wid.world/news-article/feed/", lang: en}
-      - {name: Branko Milanovic, url: "https://branko2f7.substack.com/feed", lang: en}
+      - {name: Branko Milanovic, url: "https://branko2f7.substack.com/feed", lang: en, via_proxy: true}
       - {name: VoxEU (CEPR), url: "https://cepr.org/rss/vox-content", lang: en}
       - {name: Project Syndicate, url: "https://www.project-syndicate.org/rss", lang: en}
       - {name: Our World in Data, url: "https://ourworldindata.org/atom.xml", lang: en}
@@ -123,7 +123,7 @@ news_tabs:
     min_score: 6
     max_per_source: 4
     feeds:
-      - {name: Lobsterr Letter, url: "https://lobsterr.substack.com/feed", lang: ja, pinned: true, lookback_days: 8}
+      - {name: Lobsterr Letter, url: "https://lobsterr.substack.com/feed", lang: ja, via_proxy: true, pinned: true, lookback_days: 8}
       - {name: Rest of World, url: "https://restofworld.org/feed/latest/", lang: en}
       - {name: Aeon, url: "https://aeon.co/feed.rss", lang: en}
       - {name: Noema, url: "https://www.noemamag.com/feed/", lang: en}

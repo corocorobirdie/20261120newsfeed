@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import calendar
+import os
 import re
+from urllib.parse import quote
 from datetime import datetime, timezone
 
 import feedparser
@@ -38,14 +40,20 @@ def _clean_url(u: str) -> str:
 def fetch_feed(feed: dict, today: datetime, since: str, status: dict) -> list[dict]:
     """feed: {name, url, lang, label, headline_only, section, max_items}"""
     accept = "application/rss+xml, application/atom+xml, application/xml, text/xml, */*"
+    url = feed["url"]
+    # GitHub から直接読めないフィード（Substack）は、Apps Script に代わりに取ってもらう
+    if feed.get("via_proxy") and os.environ.get("FEED_PROXY_URL") and os.environ.get("FEED_PROXY_TOKEN"):
+        url = f"{os.environ['FEED_PROXY_URL']}?action=feed&token={quote(os.environ['FEED_PROXY_TOKEN'])}&url={quote(url, safe='')}"
     try:
         try:
-            r = http_get(feed["url"], headers={"User-Agent": UA, "Accept": accept}, tries=2)
+            r = http_get(url, headers={"User-Agent": UA, "Accept": accept}, tries=2)
         except Exception:  # noqa: BLE001  一部のサイト（Substack など）は時々拒否するので、ブラウザ風にもう一度
-            r = http_get(feed["url"], headers={"User-Agent": BROWSER_UA, "Accept": accept, "Accept-Language": "en,ja;q=0.8"}, tries=2)
+            r = http_get(url, headers={"User-Agent": BROWSER_UA, "Accept": accept, "Accept-Language": "en,ja;q=0.8"}, tries=2)
         parsed = feedparser.parse(r.content)
+        if not parsed.entries and r.content[:1] == b"{":  # 中継側のエラー（JSON）
+            raise RuntimeError(r.text[:80])
     except Exception as e:  # noqa: BLE001
-        status[feed["name"]] = f"取得失敗: {str(e)[:80]}"
+        status[feed["name"]] = f"取得失敗: {str(e)[:80].replace(os.environ.get('FEED_PROXY_TOKEN') or '<none>', '***')}"
         print(f"  {feed['name']}: 取得失敗 {e}")
         return []
     out = []

@@ -27,6 +27,8 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          FEED_PROXY_URL: ${{ secrets.FEED_PROXY_URL }}
+          FEED_PROXY_TOKEN: ${{ secrets.FEED_PROXY_TOKEN }}
         run: |
           TABS=$(grep -v '^#' tools/test_tabs.txt 2>/dev/null | tr -d ' \n' || true)
           if [ -n "$TABS" ]; then python -m feed.run --light --only "$TABS" --out /tmp/test_tabs.json > /tmp/test_tabs.log 2>&1 || true; tail -50 /tmp/test_tabs.log; fi

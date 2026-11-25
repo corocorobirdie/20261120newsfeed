@@ -1,7 +1,7 @@
 // Service worker: ホーム画面から開けるようにし、一度読み込んだ日は電波がなくても読めるようにする。
 //  - 画面の部品（HTML/CSS/JS/アイコン）: キャッシュを先に返し、裏で新しい版を取得（次回から反映）
 //  - データ（data/*.json）: まずネットから取り、つながらなければキャッシュを返す
-const VERSION = "v1";
+const VERSION = "v2";
 const SHELL = `shell-${VERSION}`;
 const DATA = "data-v1";
 const SHELL_FILES = ["./", "index.html", "style.css", "app.js", "manifest.webmanifest", "site-config.json",

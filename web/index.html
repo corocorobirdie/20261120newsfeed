@@ -50,7 +50,15 @@
     <h2>設定</h2>
     <label for="proxy">大学経由で開くための入口アドレス</label>
     <input id="proxy" type="url" inputmode="url" autocomplete="off" placeholder="https://〇〇.idm.oclc.org/login?url=">
-    <p class="hint">設定すると、論文の「開く」が大学のプロキシ経由になります（DOI のある論文のみ）。このアドレスはこの端末の中だけに保存され、どこにも送信・公開されません。空にすると解除。</p>
+    <p class="hint">設定すると、論文の「開く」が大学のプロキシ経由になります（DOI のある論文のみ）。このアドレスはこの端末と、同期を設定した場合は自分の Google ドライブにだけ保存され、サイトやリポジトリには公開されません。空にすると解除。</p>
+    <h3>端末間の同期</h3>
+    <p class="hint">しおり・文献の把握度・上の設定を、自分の Google ドライブ経由でほかの端末と揃えます。</p>
+    <label for="sync-url">同期アドレス（Apps Script の Web アプリの URL）</label>
+    <input id="sync-url" type="url" inputmode="url" autocomplete="off" placeholder="https://script.google.com/macros/s/…/exec">
+    <label for="sync-token">合言葉</label>
+    <input id="sync-token" type="text" autocomplete="off" spellcheck="false">
+    <p class="hint" id="sync-status"></p>
+    <button id="copy-sync-link" type="button" class="secondary" hidden>ほかの端末用の同期リンクをコピー</button>
     <div class="dialog-actions">
       <button value="cancel" type="submit" class="secondary">閉じる</button>
       <button value="save" type="submit" id="save-settings">保存</button>

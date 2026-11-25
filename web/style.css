@@ -165,3 +165,7 @@ dialog#settings .hint { font-size: 12.5px; color: var(--muted); margin: 8px 0 14
 .levels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 10px; }
 .lv-btn { font: inherit; font-size: 12px; padding: 5px 2px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--muted); cursor: pointer; }
 .lv-btn.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+dialog#settings { max-height: 90vh; overflow-y: auto; }
+dialog#settings h3 { font-size: 14.5px; margin: 18px 0 4px; padding-top: 14px; border-top: 1px solid var(--line, rgb(128 128 128 / .25)); }
+dialog#settings input + label { margin-top: 12px; }
+#copy-sync-link { margin-bottom: 8px; }

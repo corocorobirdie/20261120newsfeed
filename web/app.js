@@ -14,22 +14,23 @@ const SAVED = "saved";  // 保存済みタブ
 const LIB = "library";  // 文献タブ（前提論文）
 
 // ---------------------------------------------------------------- しおり（保存）
-// いまは端末の中（localStorage）に保存。記事の中身ごと持つので、日次データが消えても読める。
-// 将来 Apps Script で全端末同期にするときは、この bookmarks の読み書きを差し替える。
+// 端末の中（localStorage）に保存し、同期を設定していれば Apps Script 経由で自分のドライブとも揃える。
+// 記事の中身ごと持つので、日次データが消えても読める。外したしおりは削除の記録（deleted_at）として残す。
 const bookmarks = {
   all() { return store.get("bookmarks", {}); },
-  has(id) { return id in this.all(); },
+  has(id) { const b = this.all()[id]; return !!b && !b.deleted_at; },
   toggle(it) {
     const b = this.all();
-    if (b[it.id]) delete b[it.id];
+    if (this.has(it.id)) b[it.id] = { id: it.id, deleted_at: new Date().toISOString() };
     else {
       const { _section, _ref, ...item } = it;
       b[it.id] = { ...item, saved_at: new Date().toISOString() };
     }
     store.set("bookmarks", b);
-    return !!b[it.id];
+    sync.soon();
+    return this.has(it.id);
   },
-  list() { return Object.values(this.all()).sort((a, b) => (a.saved_at < b.saved_at ? 1 : -1)); },
+  list() { return Object.values(this.all()).filter((x) => !x.deleted_at).sort((a, b) => (a.saved_at < b.saved_at ? 1 : -1)); },
 };
 
 const $ = (s) => document.querySelector(s);
@@ -340,7 +341,7 @@ const LEVELS = ["未把握", "概要は把握", "読んだ", "しっかり読ん
 const canonStatus = {
   all() { return store.get("canon_status", {}); },
   get(id) { return (this.all()[id] || {}).level || 0; },
-  set(id, level) { const s = this.all(); s[id] = { level, updated: new Date().toISOString() }; store.set("canon_status", s); },
+  set(id, level) { const s = this.all(); s[id] = { level, updated: new Date().toISOString() }; store.set("canon_status", s); sync.soon(); },
 };
 
 async function loadCanon() {
@@ -557,21 +558,103 @@ function viaProxy(it) {
   return p + "https://doi.org/" + encodeURI(it.doi);
 }
 
+// ---------------------------------------------------------------- 端末間の同期（Apps Script）
+// 同期アドレスと合言葉は端末の中だけに保存する。データは自分の Google ドライブの1ファイルに入る。
+const sync = {
+  conf() { return store.get("sync", null); },
+  timer: null,
+  busy: false,
+  soon() { if (!this.conf()) return; clearTimeout(this.timer); this.timer = setTimeout(() => this.run(), 1500); },
+  localState() {
+    return {
+      bookmarks: store.get("bookmarks", {}),
+      canon_status: store.get("canon_status", {}),
+      prefs: { proxy_prefix: { v: proxyPrefix(), t: store.get("proxy_prefix_t", "") } },
+    };
+  },
+  async run() {
+    const c = this.conf();
+    if (!c || this.busy || !navigator.onLine) return;
+    this.busy = true;
+    try {
+      const res = await fetch(c.url, { method: "POST", body: JSON.stringify({ token: c.token, action: "sync", state: this.localState() }) });
+      const m = await res.json();
+      if (m.error) throw new Error(m.error);
+      store.set("bookmarks", m.bookmarks || {});
+      store.set("canon_status", m.canon_status || {});
+      const pp = (m.prefs || {}).proxy_prefix;
+      if (pp && pp.t) { store.set("proxy_prefix", pp.v || ""); store.set("proxy_prefix_t", pp.t); }
+      store.set("sync_last", new Date().toISOString());
+      store.set("sync_error", "");
+      if (day) render();
+    } catch (e) {
+      store.set("sync_error", String(e.message || e));
+    } finally {
+      this.busy = false;
+      showSyncStatus();
+    }
+  },
+  link() {
+    const c = this.conf();
+    return c ? location.origin + location.pathname + "#sync=" + btoa(JSON.stringify(c)) : "";
+  },
+};
+
+function showSyncStatus() {
+  const box = $("#sync-status");
+  if (!box) return;
+  const c = sync.conf(), last = store.get("sync_last", ""), err = store.get("sync_error", "");
+  box.textContent = !c ? "未設定（この端末の中だけに保存しています）"
+    : err ? `同期できませんでした: ${err}`
+    : last ? `同期済み（${new Date(last).toLocaleString("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" })}）`
+    : "同期待ち";
+  if ($("#copy-sync-link")) $("#copy-sync-link").hidden = !c;
+}
+
+// ほかの端末で作った「同期リンク」（#sync=...）から開いたら、設定を取り込んでアドレスから消す
+(function importSyncLink() {
+  const m = location.hash.match(/^#sync=(.+)$/);
+  if (!m) return;
+  try {
+    const c = JSON.parse(atob(decodeURIComponent(m[1])));
+    if (c.url && c.token) store.set("sync", { url: c.url, token: c.token });
+  } catch { /* 壊れたリンクは無視 */ }
+  history.replaceState(null, "", location.pathname + location.search);
+})();
+
 $("#open-settings").addEventListener("click", () => {
   $("#proxy").value = proxyPrefix();
+  const c = sync.conf() || {};
+  if (!$("#sync-url")) { $("#settings").showModal(); return; }
+  $("#sync-url").value = c.url || "";
+  $("#sync-token").value = c.token || "";
+  showSyncStatus();
   $("#settings").showModal();
+});
+$("#copy-sync-link")?.addEventListener("click", async (ev) => {
+  ev.preventDefault();
+  try { await navigator.clipboard.writeText(sync.link()); ev.target.textContent = "コピーしました"; }
+  catch { prompt("このリンクをほかの端末で開いてください", sync.link()); }
 });
 $("#settings").addEventListener("close", () => {
   if ($("#settings").returnValue !== "save") return;
   const v = $("#proxy").value.trim();
-  store.set("proxy_prefix", v);
+  if (v !== proxyPrefix()) { store.set("proxy_prefix", v); store.set("proxy_prefix_t", new Date().toISOString()); }
+  if ($("#sync-url")) {
+    const url = $("#sync-url").value.trim(), token = $("#sync-token").value.trim();
+    store.set("sync", url && token ? { url, token } : null);
+  }
   if (day) render();
+  sync.run();
 });
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") sync.run(); });
+window.addEventListener("online", () => sync.run());
 
 (async () => {
   try {
     try { siteConfig = { ...siteConfig, ...(await getJSON("site-config.json")) }; } catch { /* なくても動く */ }
     loadCanon();
+    sync.run();
     index = await getJSON("data/index.json");
     if (!index.latest) throw new Error("no data");
     await loadDay(index.latest);
