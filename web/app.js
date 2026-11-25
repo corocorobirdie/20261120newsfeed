@@ -10,6 +10,7 @@ const TAB_LABELS = {
   art: "アート",
 };
 const TAB_ORDER = Object.keys(TAB_LABELS);
+const HOME = "home";    // ホーム（ハイライト・今日の基本文献・各タブの上位）
 const SAVED = "saved";  // 保存済みタブ
 const LIB = "library";  // 文献タブ（前提論文）
 
@@ -43,7 +44,7 @@ let index = { dates: [] };
 let siteConfig = { ask_claude_url: "", ask_claude_tabs: {} };
 const SECTION_LABELS = { papers: "論文（実証・政策）", articles: "記事・コラム" };
 let day = null;
-let currentTab = store.get("tab", "papers");
+let currentTab = HOME;  // 開くたびにホームから
 const filter = { q: "", tag: "" };  // 絞り込み（現在のタブ内）
 
 // ---------------------------------------------------------------- テーマ
@@ -76,7 +77,7 @@ async function loadDay(date) {
   $("#date").textContent = fmtDate(date);
   $("#next").disabled = i <= 0;
   $("#prev").disabled = i < 0 || i >= index.dates.length - 1;
-  if (currentTab !== SAVED && currentTab !== LIB && !day.tabs[currentTab]) currentTab = TAB_ORDER.find((t) => day.tabs[t]) || "papers";
+  if (![HOME, SAVED, LIB].includes(currentTab) && !day.tabs[currentTab]) currentTab = HOME;
   render();
 }
 
@@ -96,6 +97,11 @@ function el(tag, cls, text) {
 function renderTabs() {
   const nav = $("#tabs");
   nav.replaceChildren();
+  const h = el("button", null, "ホーム");
+  h.setAttribute("role", "tab");
+  h.setAttribute("aria-selected", String(currentTab === HOME));
+  h.addEventListener("click", () => { currentTab = HOME; filter.tag = ""; render(); window.scrollTo({ top: 0 }); });
+  nav.append(h);
   for (const t of TAB_ORDER) {
     if (!day.tabs[t]) continue;
     const b = el("button", null, TAB_LABELS[t]);
@@ -126,7 +132,7 @@ function renderHighlights() {
   const byId = new Map(all.map((x) => [x.id, x]));
   const items = (day.highlights || []).map((id) => byId.get(id)).filter(Boolean);
   const box = $("#highlights");
-  box.hidden = items.length === 0 || !!(filter.q || filter.tag) || currentTab === SAVED || currentTab === LIB;  // 絞り込み中・保存済みタブでは隠す
+  box.hidden = items.length === 0 || !!(filter.q || filter.tag) || currentTab !== HOME;  // ホームだけに出す
   const ol = $("#hl-list");
   ol.replaceChildren();
   for (const it of items) {
@@ -163,6 +169,9 @@ function card(it) {
   const a = node.querySelector(".title-ja a");
   a.textContent = it.title_ja || it.title;
   a.href = it.url;
+  if (it.period || it.place) {  // 展覧会の会期・会場
+    node.querySelector(".title-ja").after(el("p", "event", ["🗓 " + (it.period || "会期未記載"), it.place].filter(Boolean).join("　📍 ")));
+  }
   const ul = node.querySelector(".summary");
   for (const s of it.summary_ja || []) ul.append(el("li", null, s));
   node.querySelector(".reason").textContent = it.reason_ja || "";
@@ -249,7 +258,7 @@ function matches(it) {
   if (filter.tag && !(it.tags || []).includes(filter.tag)) return false;
   if (!filter.q) return true;
   const hay = norm([it.title, it.title_ja, (it.summary_ja || []).join(" "), it.reason_ja, (it.authors || []).join(" "),
-    it.venue, it.abstract, (it.tags || []).join(" ")].join(" "));
+    it.venue, it.place, it.abstract, (it.tags || []).join(" ")].join(" "));
   return norm(filter.q).split(/\s+/).filter(Boolean).every((w) => hay.includes(w));
 }
 
@@ -295,8 +304,12 @@ function render() {
   renderHighlights();
   renderTodayCanon();
   if (currentTab === LIB) { renderLibrary(); return; }
+  if (currentTab === HOME && !filter.q) { renderHome(); return; }
   const saved = currentTab === SAVED;
-  const all = saved ? bookmarks.list() : resolve(day.tabs[currentTab] || []);
+  // ホームで検索したときは、その日の全タブから探す
+  const all = saved ? bookmarks.list()
+    : currentTab === HOME ? TAB_ORDER.flatMap((t) => (day.tabs[t] || []).filter((x) => !x.ref))
+    : resolve(day.tabs[currentTab] || []);
   const items = all.filter(matches);
   renderFilters(all.length, items.length);
   const list = $("#list");
@@ -315,6 +328,37 @@ function render() {
   const notes = [];
   if (day.generated_at) notes.push(`更新 ${day.generated_at.slice(11, 16)}`);
   if (!day.model) notes.push("要約なし（Gemini未設定）");
+  if (!navigator.onLine) notes.push("オフライン（保存済みの内容を表示）");
+  $("#meta").textContent = notes.join(" · ");
+}
+
+// ホーム: 各タブの上位3件を見出しだけ並べ、タップでそのタブのカードへ
+function renderHome() {
+  renderFilters(0, 0);
+  const nodes = [];
+  for (const t of TAB_ORDER) {
+    const lst = (day.tabs[t] || []).filter((x) => !x.ref);
+    if (!lst.length) continue;
+    const sec = el("section", "home-tab");
+    const head = el("button", "home-head");
+    head.append(el("span", null, TAB_LABELS[t]), el("span", "count", `${day.tabs[t].length}件 →`));
+    head.addEventListener("click", () => { currentTab = t; filter.tag = ""; render(); window.scrollTo({ top: 0 }); });
+    sec.append(head);
+    const ol = el("ol", "home-list");
+    for (const it of lst.slice(0, 3)) {
+      const li = el("li");
+      const a = el("a", null, it.title_ja || it.title);
+      a.href = "#" + encodeURIComponent(it.id);
+      a.addEventListener("click", (e) => { e.preventDefault(); jumpTo(it); });
+      li.append(a, el("span", "hl-src", [it.period ? "🗓 " + it.period : "", it.venue].filter(Boolean).join(" · ")));
+      ol.append(li);
+    }
+    sec.append(ol);
+    nodes.push(sec);
+  }
+  $("#list").replaceChildren(...nodes);
+  const notes = [];
+  if (day.generated_at) notes.push(`更新 ${day.generated_at.slice(11, 16)}`);
   if (!navigator.onLine) notes.push("オフライン（保存済みの内容を表示）");
   $("#meta").textContent = notes.join(" · ");
 }
@@ -527,7 +571,7 @@ function pickToday() {
 
 function renderTodayCanon() {
   const box = $("#today-canon");
-  const it = currentTab === LIB || currentTab === SAVED || filter.q || filter.tag ? null : pickToday();
+  const it = currentTab !== HOME || filter.q || filter.tag ? null : pickToday();
   box.hidden = !it;
   if (!it) return;
   const v = canonView(it);

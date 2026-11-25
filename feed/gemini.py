@@ -163,14 +163,17 @@ class Gemini:
             "summary_ja": {"type": "array", "items": {"type": "string"}},
             "reason_ja": {"type": "string"}},
             "required": ["i", "title_ja", "summary_ja", "reason_ja"]}}
+        event = kind == "event"  # 展覧会など: 会期と会場も取り出す
+        if event:
+            schema["items"]["properties"].update({"period": {"type": "string"}, "place": {"type": "string"}})
         for k in range(0, len(items), n):
             batch = items[k:k + n]
             lines = []
             for i, it in enumerate(batch):
                 ab = (it.get("abstract") or "")[:2500]
                 who = f"\n  著者: {', '.join(it.get('authors', [])[:8])}" if it.get("authors") else ""
-                lines.append(f"[{i}] {it['title']}{who}\n  掲載: {it.get('venue','')}\n  本文/要旨: {ab or '（要旨なし：タイトルから推測できる範囲で、推測であることがわかる書き方で）'}")
-            what = "論文" if kind == "paper" else "記事"
+                lines.append(f"[{i}] {it['title']}{who}\n  掲載: {it.get('venue','')}（{it.get('date','')}）\n  本文/要旨: {ab or '（要旨なし：タイトルから推測できる範囲で、推測であることがわかる書き方で）'}")
+            what = "論文" if kind == "paper" else "記事"  # article / event
             prompt = (
                 f"以下の各{what}について、日本語で次を作ってください。\n"
                 "- title_ja: 自然な日本語タイトル。英語など外国語のタイトルは必ず日本語に訳す（原題が日本語のときだけ原題のまま）。"
@@ -178,7 +181,10 @@ class Gemini:
                 f"- summary_ja: {what}の内容を3行（3つの文字列、各60字程度まで）で要約。"
                 "専門用語は日本の研究者が使う訳語を使い、必要なら英語を括弧で添える\n"
                 "- reason_ja: この読者におすすめする理由を1行（40字程度）\n"
-                f"{reader}誇張せず、与えられた本文・要旨に書かれていないことは書かないこと。\n\n"
+                + ("- period: 展覧会・イベントの会期（例: 2026/11/20〜2027/2/15、始まりだけわかるなら 2026/12/1〜、"
+                   "終わりだけなら 〜2027/1/12）。タイトル・本文に書かれている場合だけ。展覧会でない・書かれていなければ空文字\n"
+                   "- place: 会場名（都市がわかれば「会場名（都市）」）。書かれている場合だけ。なければ空文字\n" if event else "")
+                + f"{reader}誇張せず、与えられた本文・要旨に書かれていないことは書かないこと。\n\n"
                 + "\n\n".join(lines))
             res = self.generate_json(prompt, schema)
             for r in res or []:
@@ -187,6 +193,11 @@ class Gemini:
                     it["title_ja"] = r.get("title_ja", "").strip()
                     it["summary_ja"] = [s.strip() for s in r.get("summary_ja", []) if s.strip()][:3]
                     it["reason_ja"] = r.get("reason_ja", "").strip()
+                    if event:
+                        for f in ("period", "place"):
+                            v = (r.get(f) or "").strip()
+                            if v and v not in ("不明", "なし", "-"):
+                                it[f] = v
 
 
 # ---------------------------------------------------------------- キーなし時の簡易採点

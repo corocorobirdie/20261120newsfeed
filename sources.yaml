@@ -202,6 +202,7 @@ news_tabs:
     min_score: 6
     max_per_source: 3
     max_per_label: {市場: 4}
+    event_info: true   # 要約で会期・会場も取り出す
     show: 15
     summarize: 15
     # 美術館・ギャラリーの公式サイトは RSS がないところが多いので、名前で Google ニュースを検索して拾う

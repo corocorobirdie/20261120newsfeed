@@ -169,3 +169,16 @@ dialog#settings { max-height: 90vh; overflow-y: auto; }
 dialog#settings h3 { font-size: 14.5px; margin: 18px 0 4px; padding-top: 14px; border-top: 1px solid var(--line, rgb(128 128 128 / .25)); }
 dialog#settings input + label { margin-top: 12px; }
 #copy-sync-link { margin-bottom: 8px; }
+
+/* ホーム: 各タブの上位 */
+.home-tab { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px 6px; margin: 0 0 12px; }
+.home-head { all: unset; cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; width: 100%; font-weight: 700; font-size: 15px; padding: 2px 0 6px; }
+.home-head .count { font-weight: 500; font-size: 13px; color: var(--accent); }
+.home-list { margin: 0; padding-left: 1.2em; }
+.home-list li { margin: 0 0 8px; line-height: 1.5; }
+.home-list a { color: var(--text); text-decoration: none; }
+.home-list a:hover { text-decoration: underline; }
+.home-list .hl-src { display: block; font-size: 12px; color: var(--muted); }
+
+/* 展覧会の会期・会場 */
+.card .event { margin: 2px 0 6px; font-size: 13.5px; font-weight: 600; color: var(--accent); }

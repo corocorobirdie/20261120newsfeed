@@ -22,7 +22,7 @@ from .store import Seen, append_papers, save_daily
 
 SITE_FIELDS = ["id", "kind", "tab", "section", "title", "title_ja", "summary_ja", "reason_ja", "authors", "venue",
                "date", "url", "doi", "arxiv_id", "abstract", "tags", "score", "author_group", "author_hits", "lang",
-               "source", "label", "headline_only", "pinned"]
+               "source", "label", "headline_only", "pinned", "period", "place"]
 
 
 def dedupe(items: list[dict]) -> list[dict]:
@@ -153,7 +153,7 @@ def run_news_tab(name: str, tc: dict, today: datetime, seen: Seen, gem: Gemini, 
     if summ.enabled:
         print(f"■ {name} の日本語要約")
         targets = [it for it in shown if not (it.get("headline_only") and it["lang"] == "ja")][: tc.get("summarize", 10) + len(pinned)]
-        summarize_with_retry(summ, targets, "article", tc.get("reader"))
+        summarize_with_retry(summ, targets, "event" if tc.get("event_info") else "article", tc.get("reader"))
         for it in targets:
             if it.get("headline_only"):  # 有料記事は見出しの翻訳だけ（本文は取得・要約しない）
                 it["summary_ja"] = []
