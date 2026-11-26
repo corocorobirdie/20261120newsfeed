@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-26",
+ "updated": "2026-11-27",
  "basis": {
   "authors": 38,
-  "feed_papers": 113
+  "feed_papers": 124
  },
  "items": [
   {
@@ -2857,6 +2857,39 @@
    "rank": 74
   },
   {
+   "id": "W3177243356",
+   "score": 27.5,
+   "n_authors": 13,
+   "n_feed": 1,
+   "cited_by_authors": [
+    "David McCarthy",
+    "Frank Cowell",
+    "Hun Chung",
+    "James E. Foster",
+    "Koichi Tadenuma",
+    "Marc Fleurbaey",
+    "Marcus Pivato",
+    "Matthew D. Adler",
+    "Stéphane Zuber",
+    "Susumu Cato",
+    "Valentino Dardanoni",
+    "Walter Bossert",
+    "Yves Sprumont"
+   ],
+   "title": "A Theory of Justice",
+   "year": 1971,
+   "type": "book",
+   "doi": "10.4159/9780674257689",
+   "venue": "Harvard University Press eBooks",
+   "authors": [
+    "John Rawls"
+   ],
+   "cited_by_count": 16401,
+   "abstract": "Though the revised edition of A Theory of Justice , published in 1999, is the definitive statement of John Rawls’s view, much of the extensive literature on his theory refers to the first edition. This reissue makes it once again available for scholars and serious students of Rawls’s work.",
+   "url": "https://doi.org/10.4159/9780674257689",
+   "rank": 75
+  },
+  {
    "id": "W2073981548",
    "score": 27.5,
    "n_authors": 13,
@@ -2889,7 +2922,40 @@
    "cited_by_count": 7061,
    "abstract": "",
    "url": "https://doi.org/10.2307/1913475",
-   "rank": 75
+   "rank": 76
+  },
+  {
+   "id": "W1963883253",
+   "score": 27.5,
+   "n_authors": 13,
+   "n_feed": 1,
+   "cited_by_authors": [
+    "David McCarthy",
+    "James E. Foster",
+    "Kalle Mikkola",
+    "Kensei Nakamura",
+    "Kohei Kamaga",
+    "Marc Fleurbaey",
+    "Marcus Pivato",
+    "Massimo Marinacci",
+    "Matthew D. Adler",
+    "Stéphane Zuber",
+    "Susumu Cato",
+    "Walter Bossert",
+    "Yves Sprumont"
+   ],
+   "title": "A Mathematical Theory of Saving",
+   "year": 1928,
+   "type": "article",
+   "doi": "10.2307/2224098",
+   "venue": "The Economic Journal",
+   "authors": [
+    "Frank Plumpton Ramsey"
+   ],
+   "cited_by_count": 7279,
+   "abstract": "",
+   "url": "https://doi.org/10.2307/2224098",
+   "rank": 77
   },
   {
    "id": "W1514677183",
@@ -2922,7 +2988,7 @@
    "cited_by_count": 319,
    "abstract": "This paper reexamines the welfare economics of risk. It singles out a class of criteria, the “expected equally distributed equivalent,” as the unique class that avoids serious drawbacks of existing approaches. Such criteria behave like ex post criteria when the final statistical distribution of well-being is known ex ante and like ex ante criteria when risk generates no inequality. The paper also provides a new result on the tension between inequality aversion and respect of individual ex ante preferences, in the vein of Harsanyi’s aggregation theorem.",
    "url": "https://doi.org/10.1086/656513",
-   "rank": 76
+   "rank": 78
   },
   {
    "id": "W3011924088",
@@ -2954,7 +3020,7 @@
    "cited_by_count": 1532,
    "abstract": "",
    "url": "https://openalex.org/W3011924088",
-   "rank": 77
+   "rank": 79
   },
   {
    "id": "W2129678216",
@@ -2985,7 +3051,7 @@
    "cited_by_count": 3402,
    "abstract": "",
    "url": "https://doi.org/10.1016/0022-0531(75)90050-2",
-   "rank": 78
+   "rank": 80
   },
   {
    "id": "W2127238399",
@@ -3016,7 +3082,7 @@
    "cited_by_count": 5795,
    "abstract": "",
    "url": "https://doi.org/10.2307/2296779",
-   "rank": 79
+   "rank": 81
   },
   {
    "id": "W577478859",
@@ -3051,7 +3117,7 @@
    "cited_by_count": 403,
    "abstract": "",
    "url": "https://doi.org/10.1007/978-1-4020-7964-1",
-   "rank": 80
+   "rank": 82
   },
   {
    "id": "W4252707658",
@@ -3087,40 +3153,7 @@
    "merged_ids": [
     "W2580645530"
    ],
-   "rank": 81
-  },
-  {
-   "id": "W3177243356",
-   "score": 26.0,
-   "n_authors": 13,
-   "n_feed": 0,
-   "cited_by_authors": [
-    "David McCarthy",
-    "Frank Cowell",
-    "Hun Chung",
-    "James E. Foster",
-    "Koichi Tadenuma",
-    "Marc Fleurbaey",
-    "Marcus Pivato",
-    "Matthew D. Adler",
-    "Stéphane Zuber",
-    "Susumu Cato",
-    "Valentino Dardanoni",
-    "Walter Bossert",
-    "Yves Sprumont"
-   ],
-   "title": "A Theory of Justice",
-   "year": 1971,
-   "type": "book",
-   "doi": "10.4159/9780674257689",
-   "venue": "Harvard University Press eBooks",
-   "authors": [
-    "John Rawls"
-   ],
-   "cited_by_count": 16401,
-   "abstract": "Though the revised edition of A Theory of Justice , published in 1999, is the definitive statement of John Rawls’s view, much of the extensive literature on his theory refers to the first edition. This reissue makes it once again available for scholars and serious students of Rawls’s work.",
-   "url": "https://doi.org/10.4159/9780674257689",
-   "rank": 82
+   "rank": 83
   },
   {
    "id": "W3124542096",
@@ -3154,7 +3187,7 @@
    "cited_by_count": 248,
    "abstract": "",
    "url": "https://doi.org/10.1016/s1574-0110(02)80014-5",
-   "rank": 83
+   "rank": 84
   },
   {
    "id": "W3022254642",
@@ -3187,7 +3220,7 @@
    "cited_by_count": 570,
    "abstract": "Left freely to themselves, a group of rational individuals often fail to cooperate even when the product of social cooperation is beneficial to all. Hence, the author argues, a rule of collective decision making is clearly needed that specifies how social cooperation should be organised among contributing individuals. Suzumura gives a systematic presentation of the Arrovian impossibility theorems of social choice theory, so as to describe and enumerate the various factors that are responsible for the stability of the voluntary association of free and rational individuals. Among other topics covered are an axiomatic characterisation of the concept of a rational choice, the simple majority decision rule and its extensions, the social choice implications of the concept of equity as nonenvy, the constrained majoritarian collective choice rules and the conflict between the Paretian ethics and the libertarian claims of individual rights.",
    "url": "https://doi.org/10.1017/cbo9780511897993",
-   "rank": 84
+   "rank": 85
   },
   {
    "id": "W2333548830",
@@ -3220,7 +3253,7 @@
    "cited_by_count": 760,
    "abstract": "",
    "url": "https://doi.org/10.2307/1909773",
-   "rank": 85
+   "rank": 86
   },
   {
    "id": "W2140483541",
@@ -3255,7 +3288,7 @@
    "cited_by_count": 178,
    "abstract": "",
    "url": "https://doi.org/10.1016/s1574-0110(02)80015-7",
-   "rank": 86
+   "rank": 87
   },
   {
    "id": "W2139556055",
@@ -3288,7 +3321,7 @@
    "cited_by_count": 541,
    "abstract": "",
    "url": "https://doi.org/10.2307/2296766",
-   "rank": 87
+   "rank": 88
   },
   {
    "id": "W2076059989",
@@ -3322,7 +3355,7 @@
    "cited_by_count": 746,
    "abstract": "",
    "url": "https://doi.org/10.1016/0022-0531(80)90065-4",
-   "rank": 88
+   "rank": 89
   },
   {
    "id": "W2059815359",
@@ -3355,7 +3388,7 @@
    "cited_by_count": 689,
    "abstract": "",
    "url": "https://doi.org/10.2307/1913949",
-   "rank": 89
+   "rank": 90
   },
   {
    "id": "W1982488265",
@@ -3388,39 +3421,6 @@
    "cited_by_count": 223,
    "abstract": "",
    "url": "https://doi.org/10.1007/bf00135080",
-   "rank": 90
-  },
-  {
-   "id": "W1963883253",
-   "score": 26.0,
-   "n_authors": 13,
-   "n_feed": 0,
-   "cited_by_authors": [
-    "David McCarthy",
-    "James E. Foster",
-    "Kalle Mikkola",
-    "Kensei Nakamura",
-    "Kohei Kamaga",
-    "Marc Fleurbaey",
-    "Marcus Pivato",
-    "Massimo Marinacci",
-    "Matthew D. Adler",
-    "Stéphane Zuber",
-    "Susumu Cato",
-    "Walter Bossert",
-    "Yves Sprumont"
-   ],
-   "title": "A Mathematical Theory of Saving",
-   "year": 1928,
-   "type": "article",
-   "doi": "10.2307/2224098",
-   "venue": "The Economic Journal",
-   "authors": [
-    "Frank Plumpton Ramsey"
-   ],
-   "cited_by_count": 7279,
-   "abstract": "",
-   "url": "https://doi.org/10.2307/2224098",
    "rank": 91
   },
   {
